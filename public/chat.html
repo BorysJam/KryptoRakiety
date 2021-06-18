@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css">
+
+
+
+ 
+  
+  <title>KryptoRakiety - Chat</title>
+</head>
+<body>
+  <div class="chat-container">
+    <header class="chat-header">
+      <h1 class='hjedynka'>KryptoRakiety</h1>
+     <div class="logo"><img src='img/logo.png' id='logo'></div> 
+     <input type="checkbox" id='checklight'>
+      <a href="index.html" class="btn" id='btn-leave'>Opuść chat</a>
+
+      
+      
+    </header>
+    <main class="chat-main">
+      <div class="chat-sidebar">
+        <h3><i class="fas fa-comments"></i> Pokoje:</h3>
+        <h2 id="name-room"></h2>
+        <h3><i class="fas fa-users"></i> Użytkownicy: <i class="fas fa-circle" style="color:#0fb832"></i></h3>
+        <ul id="users">
+      
+       
+        </ul>
+      </div>
+      <div class="chat-messages">
+					
+      </div>
+    </main>
+    <div class="chat-form-container">
+      <form id="chat-form">
+        <i class="far fa-smile fa-2x" id="smiley" style="color: white; margin-right: 10px"></i>
+        <input
+          id="msg"
+          type="text"
+          placeholder="Napisz wiadomość"
+          required
+          autocomplete="off"
+          maxlength="510"
+        />
+        
+       
+        <button class="btn"><i class="fas fa-paper-plane"></i>Wyślij</button>
+      </form>
+    </div>
+  </div>
+  <div class="emoji">
+    <p class='icon' id="smile" style="font-size:24px">&#128512;</p>
+    <p class='icon' id="smilebig" style="font-size:24px">&#128515;</p>
+    <p class='icon' id="smileclosedeye"style="font-size:24px">&#128516;</p>
+    <p class='icon' id="bigsmile" style="font-size:24px">&#128513;</p>
+    <p class='icon' id="xsmile"style="font-size:24px">&#128518;</p>
+    <p class='icon' id="smile1"style="font-size:24px">&#128517;</p>
+    <p class='icon' id="smile2"style="font-size:24px">&#129315;</p>
+    <p class='icon' id="smile3"style="font-size:24px">&#128514;</p>
+    <p class='icon' id="smile4"style="font-size:24px">&#128578;</p>
+    <p class='icon' id="smile5"style="font-size:24px">&#128579;</p>
+    <p class='icon' id="smile6"style="font-size:24px">&#128521;</p>
+    <p class='icon' id="smile7"style="font-size:24px">&#128522;</p>
+    <p class='icon' id="smile8"style="font-size:24px">&#128519;</p>
+    <p class='icon' id="smile9"style="font-size:24px">&#129392;</p>
+    <p class='icon' id="smile10"style="font-size:24px">&#128525;</p>
+    <p class='icon' id="smile11"style="font-size:24px">	&#128523;</p>
+    <p class='icon' id="smile12"style="font-size:24px">&#128539;</p>
+    <p class='icon' id="smile13"style="font-size:24px">&#128540;</p>
+    <p class='icon' id="smile14"style="font-size:24px">&#129322;</p>
+    <p class='icon' id="smile15"style="font-size:24px">&#128541;</p>
+    <p class='icon' id="smile16"style="font-size:24px">&#129297;</p>
+  </div>
+  
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/qs/6.10.1/qs.min.js'></script>
+  <script src='/socket.io/socket.io.js'></script>
+  <script src="js/main.js"></script>
+
+
+</body>
+</html>
