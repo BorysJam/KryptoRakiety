@@ -55,8 +55,13 @@ io.on('connection', socket =>{
 });
 
 
-const PORT = 5000 || process.env.PORT;
 
-server.listen(PORT, ()=> console.log(`Server running on port: ${PORT}`));
+
+server.listen(process.env.PORT || 3000, ()=> console.log(`Server running on port: 3000`));
 
  
+//const PORT = 3000 || process.env.PORT;
+
+//server.listen(PORT, ()=> console.log(`Server running on port: ${PORT}`));
+
+
