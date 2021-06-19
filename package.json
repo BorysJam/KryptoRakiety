@@ -4,7 +4,7 @@
   "description": "Aplikacja czatowa wersja alpha 0.0.1",
   "main": "server.js",
   "scripts": {
-    "start": "node server",
+    "start": "nodemon server.js",
     "dev": "nodemon server"
   },
   "author": "Borys Jamrozinski",
