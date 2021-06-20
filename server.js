@@ -5,7 +5,7 @@ const socketio = require('socket.io');
 const formatMessage = require('./utils/messages');
 const {userJoin, getCurrentUser, disconnectUser} = require('./utils/users');
 
-const admin = 'Admin kryptorakiet';
+const admin = 'Admin KryptoRakiety';
 
 const app = express();
 const server = http.createServer(app);
@@ -46,7 +46,7 @@ io.on('connection', socket =>{
     socket.on('disconnect', () => {
         const user = disconnectUser(socket.id)
         if (user){
-            io.emit('message',formatMessage(admin, `<b>${user.username}</b> Użytkownik opuscil czat`));
+            io.emit('message',formatMessage(admin, `<b>${user.username}</b> Użytkownik opuścil czat`));
             
         }
 

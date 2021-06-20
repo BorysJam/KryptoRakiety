@@ -14,15 +14,15 @@
 }
 
 .lightMode{
-	--dark-color-a: #e82a2a;
-	--dark-color-b: #571823;
+	--dark-color-a: #F72C25;
+	--dark-color-b: #F7B32B;
 	
-	--light-color: #b8d800;
+	--light-color: #2D1E2F;
 	--success-color: #401346;
 	--error-color: #12752b;
-	--light-background-msg: rgba(0, 0, 0, 0.918);
+	--light-background-msg: rgba(40,42,54,255);
 	--left-msg: #ffffff;
-	--right-msg: #ff0077;
+	--right-msg: #F72C25;
 }
 
 * {
@@ -66,6 +66,13 @@ a {
 /* Chat Page */
 #moon-icon{
 	float: right;
+}
+#users{
+	font-size: 20px;
+	background: rgba(0, 0, 0, 0.1);
+	padding: 10px;
+	margin-bottom: 20px;
+	font-weight: bold;
 }
 .logo{
 	position: absolute;
@@ -373,9 +380,96 @@ background-color: #d0e3ffbb;
 @media (max-width: 700px) {
 	.chat-main {
 		display: block;
+		height: 33rem;
 	}
 
 	.chat-sidebar {
 		display: none;
 	}
+	.hjedynka{
+		font-size: 24px;
+		margin-left: 10px;
+	}
+	#checklight{
+		position: absolute;
+	width: 45px;
+	height: 20px;
+	-webkit-appearance: none;
+	background: #000000;
+	outline: none;
+	border-radius: 20px;
+	box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
+	transition: .5s;
+	left: 57%;
+	}
+	#checklight:before{
+		content: '';
+		position: absolute;
+		width: 20px;
+		height: 20px;
+		border-radius: 20px;
+		top:0;
+		left: 0;
+		background: #fff;
+		transform: scale(1.1);
+		box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+		transition: .5s;
+	}
+	#checklight:checked::before{
+		left: 30px;
+	}
+	#btn-leave{
+	position: relative;
+	border-radius: 6px;
+	padding: 5px;
+	margin-right: -10px;
+	float: right;
+	}
+	.logo{
+		display: none;
+	}
+	.chat-messages .message{
+		padding: 10px;
+	margin-bottom: 6px;
+	background-color: var(--light-color);
+	border-radius: 30px;
+	max-width: 50%;
+	font-size: 14px;
+	
+
+	}
+	.chat-messages .message .meta {
+		font-size: 11px;
+		font-weight: bold;
+		color: var(--dark-color-c);
+		opacity: 0.7;
+		margin-bottom: 7px;
+		padding-left: 0px;
+		
+	}
+	
+	
+	.chat-messages .message .meta span {
+		margin-left: 3px;
+		color: rgb(22, 19, 19);
+	}
+	.chat-messages {	
+		padding: 30px;
+		max-height: 525px;
+		overflow-y: scroll;
+	
+	}
+	.chat-form-container {
+		padding: 10px 10px;
+		
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+		
+	}
+		
+	.chat-form-container input[type='text'] {
+		font-size: 14px;
+		
+	}
+	
 }
