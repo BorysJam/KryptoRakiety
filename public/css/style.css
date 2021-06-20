@@ -404,7 +404,7 @@ background-color: #d0e3ffbb;
 		margin-left: 10px;
 	}
 	#checklight{
-		position: absolute;
+	position: absolute;
 	width: 45px;
 	height: 20px;
 	-webkit-appearance: none;
@@ -435,7 +435,8 @@ background-color: #d0e3ffbb;
 	position: relative;
 	border-radius: 6px;
 	padding: 5px;
-	margin-right: -10px;
+	margin-right: 2px;
+	font-size: 12px;
 	float: right;
 	}
 	.logo{
@@ -452,7 +453,7 @@ background-color: #d0e3ffbb;
 
 	}
 	.chat-messages .message .meta {
-		font-size: 11px;
+		font-size: 12px;
 		font-weight: bold;
 		color: var(--dark-color-c);
 		opacity: 0.7;
@@ -482,6 +483,15 @@ background-color: #d0e3ffbb;
 		
 	.chat-form-container input[type='text'] {
 		font-size: 14px;
+		
+	}
+	.chat-header {
+		border-top-left-radius: 8px;
+		border-top-right-radius: 8px;
+		padding: 10px;
+		
+		height: 100px;
+		margin-top: 50px;
 		
 	}
 	
