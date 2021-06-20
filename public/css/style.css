@@ -11,18 +11,28 @@
 	--btn-leave: rgba(0, 0, 22, 0.5);
 	--left-msg: #d0e3ffbb;
 	--right-msg: #2A5EE8;
+	--button-send: #2A5EE8;
+	--background: white;
+	--form-background: #2A5EE8;
+	--border-on-form: none;
+	--scrollbar-bg: rgb(243, 242, 255);
 }
 
 .lightMode{
-	--dark-color-a: #F72C25;
-	--dark-color-b: #F7B32B;
+	--dark-color-a:#0084ff;
+	--dark-color-b: #242526;
 	
-	--light-color: #2D1E2F;
+	--light-color: #0084ff;
 	--success-color: #401346;
 	--error-color: #12752b;
-	--light-background-msg: rgba(40,42,54,255);
+	--light-background-msg: #242526;
 	--left-msg: #ffffff;
-	--right-msg: #F72C25;
+	--right-msg: #0084ff;
+	--button-send: white;
+	--background: #18191a;
+	--form-background: #242526;
+	--border-on-form: 1px solid rgb(51, 49, 49);
+	--scrollbar-bg: #242526;
 }
 
 * {
@@ -36,7 +46,7 @@ body {
 	font-size: 18px;
 	
 	margin: 10px;
-	background: var(--light-background-msg);
+	background: var(--background);
 	color: #1c1e21;
 }
 
@@ -109,7 +119,7 @@ a {
 	
 }
 ::-webkit-scrollbar{
-	background:rgb(243, 242, 255);
+	background:var(--scrollbar-bg);
 	
 	
 }
@@ -143,6 +153,7 @@ a {
 .chat-sidebar {
 	background: var(--dark-color-b);
 	color: #fff;
+	border-right: var(--border-on-form);
 	padding: 20px 20px 60px;
 	overflow-y: scroll;
 	overflow: hidden;
@@ -195,7 +206,7 @@ a {
 	left: 73%;
 }
 #checklight:checked{
-	background: salmon;
+	background: #d0e3ffbb;
 }
 #checklight:before{
 	content: '';
@@ -265,7 +276,7 @@ a {
 	margin-right: 65px;
 	float: right;
 	background-color: var(--btn-leave);
-	opacity: 0.8;
+	opacity: 0.6;
 	color: white;
 }
 #btn-leave:hover{
@@ -274,6 +285,7 @@ a {
 }
 .btn{
 	border-radius: 8px;
+	color: var(--button-send);
 	
 }
 .btn:hover{
@@ -283,9 +295,10 @@ a {
 
 .chat-form-container {
 	padding: 20px 80px;
-	background-color: var(--dark-color-a);
+	background-color: var(--form-background);
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
+	border-top: var(--border-on-form)
 	
 }
 
