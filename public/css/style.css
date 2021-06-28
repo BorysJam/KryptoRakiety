@@ -24,7 +24,7 @@
 	
 	--light-color: #0084ff;
 	--success-color: #401346;
-	--error-color: #12752b;
+	--error-color: #e01111;
 	--light-background-msg: #242526;
 	--left-msg: #ffffff;
 	--right-msg: #0084ff;
@@ -235,7 +235,7 @@ a {
 }
 
 .chat-messages {	
-	padding: 40px;
+	padding: 30px;
 	max-height: 700px;
 	overflow-y: scroll;
 
@@ -282,6 +282,9 @@ a {
 #btn-leave:hover{
 	background-color: var(--error-color);
 	opacity: 1;
+}
+#exit_svg{
+	display: none;
 }
 .btn{
 	border-radius: 8px;
@@ -437,9 +440,9 @@ background-color: #d0e3ffbb;
 	}
 	#btn-leave{
 	position: relative;
-	border-radius: 6px;
-	padding: 5px;
-	margin-right: 2px;
+	border-radius: 4px;
+	padding: 6px;
+	margin-right: 4px;
 	font-size: 12px;
 	float: right;
 	}
@@ -483,6 +486,7 @@ background-color: #d0e3ffbb;
 		border-bottom-right-radius: 0;
 		
 	}
+	
 		
 	.chat-form-container input[type='text'] {
 		font-size: 14px;
