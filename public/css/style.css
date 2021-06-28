@@ -490,10 +490,9 @@ background-color: #d0e3ffbb;
 		
 	}
 	.chat-header {
-		border-top-left-radius: 8px;
-		border-top-right-radius: 8px;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
 		padding: 10px;
-		
 		height: 100px;
 		
 		
