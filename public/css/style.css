@@ -450,7 +450,7 @@ background-color: #d0e3ffbb;
 		padding: 10px;
 	margin-bottom: 6px;
 	background-color: var(--light-color);
-	border-radius: 30px;
+	border-radius: 14px;
 	max-width: 50%;
 	font-size: 14px;
 	
@@ -468,14 +468,13 @@ background-color: #d0e3ffbb;
 	
 	
 	.chat-messages .message .meta span {
-		margin-left: 3px;
+		margin-left: 10px;
 		color: rgb(22, 19, 19);
 	}
 	.chat-messages {	
-		padding: 30px;
-		max-height: 525px;
+		padding: 15px;
+		max-height: 29.5rem;
 		overflow-y: scroll;
-	
 	}
 	.chat-form-container {
 		padding: 10px 10px;
@@ -504,6 +503,9 @@ background-color: #d0e3ffbb;
 		left: 0vh;
 		
 		
+	}
+	::-webkit-scrollbar{
+		width: 8px;	
 	}
 	
 }
