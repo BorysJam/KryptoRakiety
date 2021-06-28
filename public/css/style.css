@@ -16,6 +16,7 @@
 	--form-background: #2A5EE8;
 	--border-on-form: none;
 	--scrollbar-bg: rgb(243, 242, 255);
+	--button-bg: white;
 }
 
 .lightMode{
@@ -33,6 +34,7 @@
 	--form-background: #242526;
 	--border-on-form: 1px solid rgb(51, 49, 49);
 	--scrollbar-bg: #242526;
+	--button-bg: #0c0d0e;
 }
 
 * {
@@ -276,7 +278,7 @@ a {
 	margin-right: 65px;
 	float: right;
 	background-color: var(--btn-leave);
-	opacity: 0.6;
+	opacity: 0.95;
 	color: white;
 }
 #btn-leave:hover{
@@ -287,8 +289,10 @@ a {
 	display: none;
 }
 .btn{
+	margin-left: 6px;
 	border-radius: 8px;
 	color: var(--button-send);
+	background-color: var(--button-bg);
 	
 }
 .btn:hover{
@@ -443,7 +447,7 @@ background-color: #d0e3ffbb;
 	border-radius: 4px;
 	padding: 6px;
 	margin-right: 4px;
-	font-size: 12px;
+	font-size: 14px;
 	float: right;
 	}
 	.logo{
@@ -510,6 +514,10 @@ background-color: #d0e3ffbb;
 	}
 	::-webkit-scrollbar{
 		width: 8px;	
+	}
+	.btn{
+		padding: 8px;
+		font-size: 14px;
 	}
 	
 }
