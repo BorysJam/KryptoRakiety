@@ -391,6 +391,10 @@ background-color: #d0e3ffbb;
 }
 
 @media (max-width: 700px) {
+	body{
+		margin: 0;
+		padding: 0;
+	}
 	.chat-main {
 		display: block;
 		height: 33rem;

@@ -14,7 +14,7 @@ const socket = io();
 //Join chatroom
 socket.emit('joinRoom', {username, room});
 
-//message from server 
+//message from server   
 socket.on('message', message => {
     console.log(message);
     outputMessage(message);
@@ -25,18 +25,18 @@ socket.on('message', message => {
 
 
 //message submit 
-chatForm.addEventListener('submit', (e) =>{
-    e.preventDefault();
+chatForm.addEventListener('submit', (event) =>{
+    event.preventDefault();
 
     //get message text
-    const msg = e.target.elements.msg.value;
+    const msg = event.target.elements.msg.value;
 
     //emit messsage to the server
     socket.emit('chatMessage', msg);
 
     //clear input after submitting message
-    e.target.elements.msg.value = '';
-    e.target.elements.msg.focus();
+    event.target.elements.msg.value = '';
+    event.target.elements.msg.focus();
 });
 
 
@@ -148,6 +148,30 @@ const emoji = ()=>{
         })
     document.querySelector('#smile16').addEventListener('click', ()=>{
     document.querySelector('#msg').value = document.querySelector('#msg').value + "🤑";
+        })
+    document.querySelector('#smile17').addEventListener('click', ()=>{
+    document.querySelector('#msg').value = document.querySelector('#msg').value + "💸";
+        })
+    document.querySelector('#smile18').addEventListener('click', ()=>{
+    document.querySelector('#msg').value = document.querySelector('#msg').value + "💰";
+        })
+    document.querySelector('#smile19').addEventListener('click', ()=>{
+    document.querySelector('#msg').value = document.querySelector('#msg').value + "👻";
+        })
+    document.querySelector('#smile20').addEventListener('click', ()=>{
+    document.querySelector('#msg').value = document.querySelector('#msg').value + "💩";
+        })
+    document.querySelector('#smile21').addEventListener('click', ()=>{
+    document.querySelector('#msg').value = document.querySelector('#msg').value + "😤";
+        })
+    document.querySelector('#smile22').addEventListener('click', ()=>{
+    document.querySelector('#msg').value = document.querySelector('#msg').value + "🤮";
+        })
+    document.querySelector('#smile23').addEventListener('click', ()=>{
+    document.querySelector('#msg').value = document.querySelector('#msg').value + "🥳";
+        })
+    document.querySelector('#smile24').addEventListener('click', ()=>{
+    document.querySelector('#msg').value = document.querySelector('#msg').value + "💵";
         })
     }
     emoji()

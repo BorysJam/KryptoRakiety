@@ -28,6 +28,7 @@ io.on('connection', socket =>{
         socket.join(user.room);
         
         socket.emit('message', formatMessage(admin, `Witamy w KryptoRakiety <b>${user.username}</b>`));
+
     
         //Broadcast when a user connects 
         socket.broadcast.to(user.room).emit('message',formatMessage(admin,  `<b>${user.username}</b> dołączył/dołączyła do czatu`));
