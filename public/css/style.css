@@ -493,7 +493,15 @@ background-color: #d0e3ffbb;
 		border-top-left-radius: 0;
 		border-top-right-radius: 0;
 		padding: 10px;
-		height: 100px;
+		height: 100px;	
+	}
+	.emoji{
+		background:rgb(241, 241, 241);
+		height: 200px;
+		width: 80%;
+		position: absolute;
+		top: 23rem;
+		left: 0vh;
 		
 		
 	}
