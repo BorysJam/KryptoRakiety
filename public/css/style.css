@@ -380,14 +380,15 @@ background-color: #d0e3ffbb;
 	background-color: var(--dark-color-a);
 	color: white;
 	width: 100%;
-	outline: none;
-	
+	outline: 2px solid;
+	font-weight: 700;
 	margin: 0 auto;
 	
 }
 #btnjoin:hover{
-	background-color: #1c1e21;
-	color:#567ce4;
+	background-color:white;
+	color:var(--dark-color-a);
+
 }
 
 #username{
