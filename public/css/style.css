@@ -124,13 +124,13 @@ a {
 	
 }
 ::-webkit-scrollbar{
-	background: rgba(0, 0, 0, 0.1);
+	background: white;
 	
 	
 }
 
 ::-webkit-scrollbar-thumb{
-	background:var(--dark-color-c);
+	background: rgb(243, 240, 240);
 	border-radius: 10px;
 }
 
@@ -477,6 +477,7 @@ background-color: #d0e3ffbb;
 
 @media (max-width: 600px) {
 	body{
+		background: var(--dark-color-a);
 		margin: 0;
 		padding: 0;
 	}
@@ -490,11 +491,11 @@ background-color: #d0e3ffbb;
 	}
 	.hjedynka{
 		font-size: 24px;
-		margin-left: 10px;
+		margin-left: 0px;
 	}
 	#checklight{
-	position: absolute;
-	width: 45px;
+	position: relative;
+	width: 35px;
 	height: 20px;
 	-webkit-appearance: none;
 	background: #000000;
@@ -502,7 +503,7 @@ background-color: #d0e3ffbb;
 	border-radius: 20px;
 	box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
 	transition: .5s;
-	left: 57%;
+	
 	}
 	#checklight:before{
 		content: '';
@@ -510,29 +511,42 @@ background-color: #d0e3ffbb;
 		width: 20px;
 		height: 20px;
 		border-radius: 20px;
-		top:0;
-		left: 0;
 		background: #fff;
 		transform: scale(1.1);
 		box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
 		transition: .5s;
 	}
 	#checklight:checked::before{
-		left: 30px;
+		left: 20px;
+	}
+	.checkbox_container{
+		margin-top: 2%;
+		margin-left: 15%;
 	}
 	#btn-leave{
 	position: relative;
 	border-radius: 4px;
-	padding: 6px;
-	margin-right: 4px;
+	padding: 4px;
+
 	font-size: 14px;
 	float: right;
+	}
+	.Container_btn{
+		margin-left: 15%;
 	}
 	.logo{
 		display: none;
 	}
 	
-	
+	.chat-messages .message{
+		max-width: 65%;
+		font-size: 12px;
+		border-radius: 12px;
+		padding: 12px;
+	}
+	.chat-messages .image{
+		margin: 0;
+	}
 
 	.chat-messages .message .meta {
 		font-size: 12px;
@@ -555,18 +569,30 @@ background-color: #d0e3ffbb;
 		overflow-y: scroll;
 	}
 	.chat-form-container {
-		padding: 10px 10px;
+		padding: 10px 0px;
 		
 		border-bottom-left-radius: 0;
 		border-bottom-right-radius: 0;
 		
 	}
-
-	
+	.chat-form-container .inputFileBtn{
+		margin: 0;
+		margin-left: 5px;
+		
+	}
+	.fa-images{
+		font-size:1.5em;
+	}
+	.fa-smile{
+		font-size: 1.5em;
+		margin-top: 3px;
+	}
 	
 		
 	.chat-form-container input[type='text'] {
-		font-size: 14px;
+		font-size: 12px;
+		height: 35px;
+		margin-left: -5px;
 		
 	}
 	.chat-header {

@@ -40,7 +40,7 @@ socket.on('sentImg', Imgsrc => {
     // Create Img...
     
     fileMessageSend(Imgsrc);
-    console.log(Imgsrc)
+  
     chatMessages.scrollTop = chatMessages.scrollHeight;
     
 })
