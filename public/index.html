@@ -17,7 +17,7 @@
 	<body>
 		<div class="join-container">
 			<header class="join-header">
-				<img src='img/minilogo.png' id='minilogo'><h1>KryptoRakiety</h1>
+				<h1>KryptoRakiety</h1>
 			</header>
 			<main class="join-main">
 				<form action="chat.html">
@@ -29,8 +29,7 @@
 							id="username"
 							placeholder="Podaj pseudonim..."
 							required
-							maxlength="30"
-						/>
+							maxlength="30"/>
 					</div>
 					<div class="form-control">
 						<label for="room">Pokój</label>
@@ -43,15 +42,13 @@
 							<option value="Szybkie-Rakiety">Szybkie Rakiety</option>
 						</select>
 					</div>
-					<button type="submit" class="btn" id='btnjoin'>Dołącz do czatu</button>
+					<div class="btnjoin"><button type="submit" class="btn" id='btnjoin'>Dołącz do czatu</button></div>
 				</form>
 			</main>
 		</div>
-		<style>
-			body{
-				background-color: rgb(1, 1, 14);
-			}
-		</style>
+		<div class="background_container">
+			<video loop muted autoplay class="background" src="vid/video.mp4"></video>
+		</div>
 	</body>
 	
 </html>

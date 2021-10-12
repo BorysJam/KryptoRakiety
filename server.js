@@ -3,27 +3,22 @@ const http = require('http');
 const express = require('express');
 const socketio = require('socket.io');
 const formatMessage = require('./utils/messages');
-const {userJoin, getCurrentUser, disconnectUser} = require('./utils/users');
-
-const admin = 'Admin KryptoRakiety';
-
+const formatFileMessage = require('./utils/filemessages')
+const {userJoin, getCurrentUser, disconnectUser, userCheckRoom} = require('./utils/users');
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
-
-const countUsers = io.engine.clientsCount;
+const admin = 'Admin KryptoRakiety';
 
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
 
 //run when client connects
-
 io.on('connection', socket =>{
     socket.on('joinRoom', ({username, room}) =>{
 
         const user = userJoin(socket.id, username, room);
-        
         
         socket.join(user.room);
         
@@ -32,25 +27,49 @@ io.on('connection', socket =>{
     
         //Broadcast when a user connects 
         socket.broadcast.to(user.room).emit('message',formatMessage(admin,  `<b>${user.username}</b> dołączył/dołączyła do czatu`));
+        
+
+       
+       io.to(user.room).emit('usersList', {
+           room: user.room,
+           users: userCheckRoom(user.room)
+       })
        
     });
+  //send image file
+    socket.on('submitImage', src => {
+        
+        const user = getCurrentUser(socket.id);
+        //Client submit an image
+        io.to(user.room).emit('sentImg', formatFileMessage(user.username, src)); //the server send the image src to all clients
+   
+    })
 
-  
+
 
     //listen for chatMessage
     socket.on('chatMessage', msg => {
         const user = getCurrentUser(socket.id);
         io.to(user.room).emit('message',formatMessage(user.username, msg));
     });
+  
     
     
     socket.on('disconnect', () => {
         const user = disconnectUser(socket.id)
+        
         if (user){
             io.emit('message',formatMessage(admin, `<b>${user.username}</b> Użytkownik opuścil czat`));
+            io.to(user.room).emit('usersList', {
+                room: user.room,
+                users: userCheckRoom(user.room)
+            })
+            //usersList.splice(user.username)
+            //io.to(user.room).emit('usersList', usersList)
+           // console.log(usersList)
             
         }
-
+        
     
     });
 });

@@ -1,4 +1,4 @@
-const users = [];
+ const users = [];
 
 //Join user to chat
 function userJoin(id, username, room){
@@ -22,13 +22,17 @@ function disconnectUser(id){
     }
 }
 //narazie nie uzywane
-function userCheckLi(room){
+function userCheckRoom(room){
     return users.filter(user => user.room === room)
 }
+
+
+
 //nieuzywane
 module.exports = {
     userJoin,
     getCurrentUser,
     disconnectUser,
-    userCheckLi
+    userCheckRoom, 
+    
 }

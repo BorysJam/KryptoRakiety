@@ -1,14 +1,17 @@
 const chatForm = document.getElementById('chat-form');
 const chatMessages = document.querySelector('.chat-messages');
-
-
+const content = document.querySelector('.user_list') 
+const inputText = document.querySelector('#msg')
+const fileMsgInput = document.querySelector('#fileMsg')
+const fileInputBtn = document.querySelector('.inputFileBtn')
 // Get username and rooms from url with help of qs (script is in the chat.html)
 const {username, room} = Qs.parse(location.search, {
     ignoreQueryPrefix: true
 });
-
-console.log(username, room);
-
+fileInputBtn.addEventListener('click', function(){
+    fileMsgInput.click()
+})
+//socket.io is on
 const socket = io();
 
 //Join chatroom
@@ -22,42 +25,106 @@ socket.on('message', message => {
     //scroll down everytime you get a message
     chatMessages.scrollTop = chatMessages.scrollHeight;
 });
+//lista uzytkowników
+socket.on('usersList',({room, users}) =>{
+    viewUsers(users)
+    nameRoom(room)
+
+    content.scrollTop = content.scrollHeight
+})
 
 
+
+
+socket.on('sentImg', Imgsrc => {
+    // Create Img...
+    
+    fileMessageSend(Imgsrc);
+    console.log(Imgsrc)
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+    
+})
+
+var src
+
+const setImgSrc = (e)=>{
+    const fileReader = new FileReader()
+    fileReader.onload = () => (src = fileReader.result)
+    
+    fileReader.readAsArrayBuffer(e.files[0])
+    
+}
+const submitImage = ()=> {socket.emit('submitImage', src)
+}
+
+
+function ignoreInput(){
+    inputText.removeAttribute("required")
+}
 //message submit 
-chatForm.addEventListener('submit', (event) =>{
-    event.preventDefault();
-
+chatForm.addEventListener('submit', (e) =>{
+    
+    e.preventDefault();
+    if(src !== undefined){
+    ignoreInput()
+    
+    submitImage()
+    src = undefined;
+    chatForm.reset()
+    
+    
+    
+}
+    else if(inputText.value !== ''){
+    
     //get message text
-    const msg = event.target.elements.msg.value;
+    const msg = e.target.elements.msg.value;
 
     //emit messsage to the server
     socket.emit('chatMessage', msg);
-
+    
     //clear input after submitting message
-    event.target.elements.msg.value = '';
-    event.target.elements.msg.focus();
+    e.target.elements.msg.value = '';
+    e.target.elements.msg.focus();
+}
 });
 
+//audio files 
+const audioLeft = '/soundE/receiveSound.mp3';
+const audioRight = '/soundE/sound.mp3'
 
 //output message to DOM
 function outputMessage(message){
     const div = document.createElement('div');
+    
     div.classList.add('message');
     div.innerHTML = `<p class="meta" >${message.username}<span>${message.czas}</span></p><p class="text">${message.text}</p>`;
     
     if(message.username === username){
-        div.style.marginLeft = '50%';
+        div.style.float = 'right'
+        div.style.clear = 'both'
+        //div.style.marginLeft = '60%';
         div.style.textAlign = 'right';
         div.style.color = 'white';
         div.style.backgroundColor = 'var(--right-msg)';
        
+        //const audio = new Audio(audioRight);
+        //audio.play();
+        
+       
     }else{
         div.style.backgroundColor = 'var(--left-msg)';
+       
+        //const audio = new Audio(audioLeft);
+       // audio.play();
     }
     document.querySelector('.chat-messages').appendChild(div);
 
+
+
 }
+
+
 
 
 
@@ -84,98 +151,7 @@ function outputMessage(message){
   });  
 
 
-//pick emoji from div
-const emoji = ()=>{
-   document.querySelector('#smile').addEventListener('click', ()=>{
-    document.querySelector('#msg').value = document.querySelector('#msg').value + "😀";
-        })
-    document.querySelector('#smilebig').addEventListener('click', ()=>{
-    document.querySelector('#msg').value = document.querySelector('#msg').value + "😃";
-        })
-    document.querySelector('#smileclosedeye').addEventListener('click', ()=>{
-    document.querySelector('#msg').value = document.querySelector('#msg').value + "😄";
-        })
-    document.querySelector('#bigsmile').addEventListener('click', ()=>{
-    document.querySelector('#msg').value = document.querySelector('#msg').value + "😁";
-        })
-    document.querySelector('#xsmile').addEventListener('click', ()=>{
-    document.querySelector('#msg').value = document.querySelector('#msg').value + "😆";
-        })
-    document.querySelector('#smile1').addEventListener('click', ()=>{
-    document.querySelector('#msg').value = document.querySelector('#msg').value + "😅";
-        })
-    document.querySelector('#smile2').addEventListener('click', ()=>{
-    document.querySelector('#msg').value = document.querySelector('#msg').value + "🤣";
-        })
-    document.querySelector('#smile3').addEventListener('click', ()=>{
-    document.querySelector('#msg').value = document.querySelector('#msg').value + "😂";
-        })
-    document.querySelector('#smile4').addEventListener('click', ()=>{
-    document.querySelector('#msg').value = document.querySelector('#msg').value + "🙂";
-        })
-    document.querySelector('#smile5').addEventListener('click', ()=>{
-    document.querySelector('#msg').value = document.querySelector('#msg').value + "🙃";
-        })
-    document.querySelector('#smile6').addEventListener('click', ()=>{
-    document.querySelector('#msg').value = document.querySelector('#msg').value + "😉";
-        })
-    document.querySelector('#smile7').addEventListener('click', ()=>{
-    document.querySelector('#msg').value = document.querySelector('#msg').value + "😊";
-        })
-    document.querySelector('#smile8').addEventListener('click', ()=>{
-    document.querySelector('#msg').value = document.querySelector('#msg').value + "😇";
-        })
-    document.querySelector('#smile9').addEventListener('click', ()=>{
-    document.querySelector('#msg').value = document.querySelector('#msg').value + "🥰";
-        })
-    document.querySelector('#smile10').addEventListener('click', ()=>{
-    document.querySelector('#msg').value = document.querySelector('#msg').value + "😍";
-        })
-    document.querySelector('#smile11').addEventListener('click', ()=>{
-    document.querySelector('#msg').value = document.querySelector('#msg').value + "😋";
-        })
-    document.querySelector('#smile12').addEventListener('click', ()=>{
-    document.querySelector('#msg').value = document.querySelector('#msg').value + "😛";
-        })
-    document.querySelector('#smile13').addEventListener('click', ()=>{
-    document.querySelector('#msg').value = document.querySelector('#msg').value + "😜";
-        })
-    document.querySelector('#smile14').addEventListener('click', ()=>{
-    document.querySelector('#msg').value = document.querySelector('#msg').value + "🤪";
-        })
-    document.querySelector('#smile15').addEventListener('click', ()=>{
-    document.querySelector('#msg').value = document.querySelector('#msg').value + "😝";
-        })
-    document.querySelector('#smile16').addEventListener('click', ()=>{
-    document.querySelector('#msg').value = document.querySelector('#msg').value + "🤑";
-        })
-    document.querySelector('#smile17').addEventListener('click', ()=>{
-    document.querySelector('#msg').value = document.querySelector('#msg').value + "💸";
-        })
-    document.querySelector('#smile18').addEventListener('click', ()=>{
-    document.querySelector('#msg').value = document.querySelector('#msg').value + "💰";
-        })
-    document.querySelector('#smile19').addEventListener('click', ()=>{
-    document.querySelector('#msg').value = document.querySelector('#msg').value + "👻";
-        })
-    document.querySelector('#smile20').addEventListener('click', ()=>{
-    document.querySelector('#msg').value = document.querySelector('#msg').value + "💩";
-        })
-    document.querySelector('#smile21').addEventListener('click', ()=>{
-    document.querySelector('#msg').value = document.querySelector('#msg').value + "😤";
-        })
-    document.querySelector('#smile22').addEventListener('click', ()=>{
-    document.querySelector('#msg').value = document.querySelector('#msg').value + "🤮";
-        })
-    document.querySelector('#smile23').addEventListener('click', ()=>{
-    document.querySelector('#msg').value = document.querySelector('#msg').value + "🥳";
-        })
-    document.querySelector('#smile24').addEventListener('click', ()=>{
-    document.querySelector('#msg').value = document.querySelector('#msg').value + "💵";
-        })
-    }
-    emoji()
-       
+
 
 //Light mode/Dark mode
 let lightMode = localStorage.getItem('lightMode');
@@ -212,18 +188,94 @@ lightModeToggle.addEventListener('click', ()=>{
 })
     
 
-
 //pokaz nazwe pokoju
-const nameRoom = ()=>{
+const nameRoom = (room)=>{
     document.querySelector('#name-room').innerText = room;
-
 } 
-nameRoom()
 
-// pokaz uzytkownika
-
-const nameUserList = ()=>{
-    document.querySelector('#users').innerText = username;
+function viewUsers(users){
+    const userz = []
+    userz.push(users.map(user => user.username))
+    const li = document.querySelector('#users')
+    li.innerHTML = `${users.map(user => `<li class="userzz">${user.username}</li>`).join('')}`  
+  //  userz.forEach(element => {
+   //     li.addEventListener('click', ()=>{
+   //         console.log(element)
+   //     })
+    //});
     
 }
-nameUserList()
+
+
+
+
+function fileMessageSend(src){
+    const div = document.createElement('div');
+    div.classList.add('message');
+    const img = document.createElement('img')
+    img.classList.add('image')
+    img.src = (window.URL || window.webkitURL).createObjectURL(
+    new Blob([src.file], {
+    type: 'image/png/jpg'
+    }))
+
+    div.innerHTML = `<p class="meta" >${src.username}<span>${src.czas}</span></p>`;
+    div.appendChild(img)   
+    img.style.maxWidth = '100%';
+    if(src.username === username){
+        div.style.float = 'right'
+        div.style.display = 'inline'
+       // div.style.marginLeft = '50%';
+        div.style.textAlign = 'right';
+        div.style.color = 'white';
+        div.style.backgroundColor = 'var(--right-msg)';
+      //  const audio = new Audio(audioRight);
+       // audio.play();
+   
+    }
+    else{
+
+    div.style.backgroundColor = 'var(--left-msg)';
+   // const audio = new Audio(audioLeft);
+     //   audio.play();
+
+    }
+
+    document.querySelector('.chat-messages').appendChild(div) 
+}
+
+//hide sidebar 
+const sideBar = document.querySelector('.chat-sidebar')
+const hideSideBar = document.querySelector('.fa-bars')
+const rightArrow = document.querySelector('.fa-arrow-right')
+
+hideSideBar.addEventListener('click', ()=>{
+    document.body.classList.add('showHideSidebar')
+    sideBar.style.display = 'none'
+    document.querySelector('.chat-main').style.display = 'grid';
+    document.querySelector('.chat-main').style.gridTemplateColumns = '100% 100% 100%'
+    rightArrow.style.display = 'block'
+    
+
+    
+})
+
+//show sidebar
+rightArrow.addEventListener('click', ()=>{
+    sideBar.style.display = ""
+    document.querySelector('.chat-main').style.gridTemplateColumns = ''
+     rightArrow.style.display = ''
+})
+
+//hover over title or logo 
+const hjedynka = document.querySelector('.hjedynka')
+const logo = document.querySelector('.logo')
+
+hjedynka.addEventListener('mouseover', ()=>{
+    logo.style.opacity = '0.9'
+    hjedynka.style.opacity = '0.9'
+})
+hjedynka.addEventListener('mouseout', ()=>{
+    logo.style.opacity = ''
+    hjedynka.style.opacity = ''
+})  
