@@ -521,7 +521,7 @@ background-color: #d0e3ffbb;
 	}
 	.checkbox_container{
 		margin-top: 2%;
-		margin-left: 15%;
+		margin-left: 10%;
 	}
 	#btn-leave{
 	position: relative;
@@ -617,6 +617,7 @@ background-color: #d0e3ffbb;
 	.btn{
 		padding: 8px;
 		font-size: 14px;
+		background: white;
 	}
 	.background_container{
 		display: none;
