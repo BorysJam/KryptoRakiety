@@ -592,5 +592,11 @@ background-color: #d0e3ffbb;
 		padding: 8px;
 		font-size: 14px;
 	}
+	.background_container{
+		display: none;
+	}
+	.background{
+		display: none;
+	}
 	
 }
