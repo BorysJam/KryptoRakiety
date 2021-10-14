@@ -492,7 +492,7 @@ background-color: #d0e3ffbb;
 	}
 	.hjedynka{
 		font-size: 24px;
-		margin-left: 0px;
+		margin-left: 6px;
 	}
 	#checklight{
 	position: relative;
@@ -504,6 +504,7 @@ background-color: #d0e3ffbb;
 	border-radius: 20px;
 	box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
 	transition: .5s;
+	
 	
 	}
 	#checklight:before{
@@ -523,6 +524,9 @@ background-color: #d0e3ffbb;
 	.checkbox_container{
 		margin-top: 2%;
 		margin-left: 10%;
+		padding: 10px;
+		margin-right: 40px;
+		
 	}
 	#btn-leave{
 	position: relative;
@@ -544,9 +548,11 @@ background-color: #d0e3ffbb;
 		font-size: 12px;
 		border-radius: 12px;
 		padding: 12px;
+		
 	}
 	.chat-messages .image{
 		margin: 0;
+		max-height: fit-content;
 	}
 
 	.chat-messages .message .meta {
@@ -571,7 +577,8 @@ background-color: #d0e3ffbb;
 	}
 	.chat-form-container {
 		padding: 10px 0px;
-		
+		width: 95%;
+		margin: 0 auto;
 		border-bottom-left-radius: 0;
 		border-bottom-right-radius: 0;
 		
@@ -594,6 +601,7 @@ background-color: #d0e3ffbb;
 		font-size: 12px;
 		height: 35px;
 		margin-left: -5px;
+		
 		
 	}
 	.chat-header {
@@ -625,6 +633,9 @@ background-color: #d0e3ffbb;
 	}
 	.background{
 		display: none;
+	}
+	.chat-container{
+		max-width: 100%;
 	}
 	
 }
