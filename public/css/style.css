@@ -481,6 +481,9 @@ background-color: #d0e3ffbb;
 		background: var(--dark-color-a);
 		margin: 0;
 		padding: 0;
+		height: 100%;
+		position: fixed;
+	
 	}
 	.chat-main {
 		display: block;
@@ -532,12 +535,12 @@ background-color: #d0e3ffbb;
 	position: relative;
 	border-radius: 4px;
 	padding: 4px;
-
+	
 	font-size: 14px;
 	float: right;
 	}
 	.Container_btn{
-		margin-left: 15%;
+		margin-left: 12%;
 	}
 	.logo{
 		display: none;
