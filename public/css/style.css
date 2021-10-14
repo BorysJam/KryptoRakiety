@@ -488,7 +488,8 @@ background-color: #d0e3ffbb;
 	}
 	.chat-main {
 		display: block;
-		height: 29.5rem;
+		min-height: 29.5rem;
+		max-height: 40rem;
 	}
 
 	.chat-sidebar {
