@@ -7,7 +7,9 @@ const formatFileMessage = require('./utils/filemessages')
 const {userJoin, getCurrentUser, disconnectUser, userCheckRoom} = require('./utils/users');
 const app = express();
 const server = http.createServer(app);
-const io = socketio(server);
+const io = socketio(server, {
+    maxHttpBufferSize: 1e8
+});
 const admin = 'Admin KryptoRakiety';
 
 // Set static folder
