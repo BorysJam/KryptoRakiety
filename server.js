@@ -4,7 +4,7 @@ const express = require('express');
 const socketio = require('socket.io');
 const formatMessage = require('./utils/messages');
 const formatFileMessage = require('./utils/filemessages')
-const {userJoin, getCurrentUser, disconnectUser, userCheckRoom} = require('./utils/users');
+const {userJoin, getCurrentUser, disconnectUser, userCheckRoom, userx} = require('./utils/users');
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server, {
@@ -18,6 +18,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //run when client connects
 io.on('connection', socket =>{
+    socket.emit('usercheck', userx)
     socket.on('joinRoom', ({username, room}) =>{
 
         const user = userJoin(socket.id, username, room);

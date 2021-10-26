@@ -34,5 +34,5 @@ module.exports = {
     getCurrentUser,
     disconnectUser,
     userCheckRoom, 
-    
+    userx: users
 }

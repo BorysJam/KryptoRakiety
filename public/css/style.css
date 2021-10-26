@@ -375,6 +375,11 @@ background-color: #d0e3ffbb;
 .btnjoin{
 	text-align: center;
 }
+#exclamationTriangle{
+	display: none;
+	margin-left: 20px;
+
+}
 #btnjoin{
 	padding: 18px;
 	background-color: var(--dark-color-a);

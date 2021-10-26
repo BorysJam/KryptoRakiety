@@ -22,6 +22,7 @@
 			<main class="join-main">
 				<form action="chat.html">
 					<div class="form-control">
+						<p class='duplicateP'></p>
 						<label for="username">Pseudonim</label>
 						<input
 							type="text"
@@ -42,13 +43,15 @@
 							<option value="Szybkie-Rakiety">Szybkie Rakiety</option>
 						</select>
 					</div>
-					<div class="btnjoin"><button type="submit" class="btn" id='btnjoin'>Dołącz do czatu</button></div>
+					<div class="btnjoin"><button type="submit" class="btn" id='btnjoin'>Dołącz do czatu<i class="fas fa-exclamation-triangle" id="exclamationTriangle"></i></button></div>
 				</form>
 			</main>
 		</div>
 		<div class="background_container">
 			<video loop muted autoplay class="background" src="vid/video.mp4"></video>
 		</div>
+		<script src='/socket.io/socket.io.js'></script>
+		<script src="js/userValidation.js"></script>
 	</body>
 	
 </html>
