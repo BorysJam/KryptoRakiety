@@ -24,6 +24,15 @@ io.on('connection', socket =>{
         const user = userJoin(socket.id, username, room);
         
         socket.join(user.room);
+
+        socket.on('sendPriv', privName =>{
+            if(privName){
+            const userp = userx.find(({username}) => username === privName)
+            const wysylka = username + socket.id;
+            socket.emit('wysylka', wysylka)
+            socket.to(userp.id).emit('privateNot', {usernamex: username, id: wysylka})
+        }    
+        })
         
         socket.emit('message', formatMessage(admin, `Witamy w KryptoRakiety <b>${user.username}</b>`));
 
@@ -37,6 +46,10 @@ io.on('connection', socket =>{
            room: user.room,
            users: userCheckRoom(user.room)
        })
+       socket.on('changeROOM', (privName)=>{
+        socket.emit('changeURL', privName)
+        
+    })
        
     });
   //send image file
@@ -77,7 +90,9 @@ io.on('connection', socket =>{
     });
 });
 
-
+app.get('*', (req, res)=>{
+    res.send('Error 404')
+})
 
 
 server.listen(process.env.PORT || 3000, ()=> console.log(`Server running on port: 3000`));

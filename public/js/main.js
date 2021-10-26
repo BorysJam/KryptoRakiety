@@ -14,6 +14,10 @@ fileInputBtn.addEventListener('click', function(){
 //socket.io is on
 const socket = io();
 
+function changeRoom(roomName){
+    location.search = `username=` + username + '&room=' + roomName;
+}
+
 //Join chatroom
 socket.emit('joinRoom', {username, room});
 
@@ -25,10 +29,28 @@ socket.on('message', message => {
     //scroll down everytime you get a message
     chatMessages.scrollTop = chatMessages.scrollHeight;
 });
+
+//prywatne wiadomosci powiadomienie
+socket.on('privateNot', ({usernamex, id}) => {
+    
+    const not = document.createElement('div')
+    not.classList.add('messageNotification')
+    not.innerHTML = 'nowa wiadomosc od ' + usernamex;
+    not.style.width = '100%'
+    not.style.height = '100px'
+    not.style.marginTop = '2rem'
+    sideBar.appendChild(not)
+    
+    document.querySelector('.messageNotification').addEventListener('click', ()=>{
+        
+        location.search = 'username='+username+'&room='+ id;
+    })
+})
+
 //lista uzytkowników
 socket.on('usersList',({room, users}) =>{
     viewUsers(users)
-    nameRoom(room)
+    nameRoom(room, users)
 
     content.scrollTop = content.scrollHeight
 })
@@ -50,7 +72,7 @@ var src
 const setImgSrc = (e)=>{
     const fileReader = new FileReader()
     fileReader.onload = () => (src = fileReader.result)
-    
+    document.querySelector('#fa-images').style.color = 'grey'
     fileReader.readAsArrayBuffer(e.files[0])
     
 }
@@ -70,6 +92,7 @@ chatForm.addEventListener('submit', (e) =>{
     
     submitImage()
     src = undefined;
+    document.querySelector('#fa-images').style.color = ''
     chatForm.reset()
     
     
@@ -189,20 +212,25 @@ lightModeToggle.addEventListener('click', ()=>{
     
 
 //pokaz nazwe pokoju
-const nameRoom = (room)=>{
+const nameRoom = (room, users)=>{
     document.querySelector('#name-room').innerText = room;
-} 
+    document.querySelector('.onlineUsersNumber').innerHTML = users.length;
+}
 
 function viewUsers(users){
     const userz = []
     userz.push(users.map(user => user.username))
-    const li = document.querySelector('#users')
-    li.innerHTML = `${users.map(user => `<li class="userzz">${user.username}</li>`).join('')}`  
-  //  userz.forEach(element => {
-   //     li.addEventListener('click', ()=>{
-   //         console.log(element)
-   //     })
-    //});
+    const Userli = document.querySelector('#users')
+    Userli.innerHTML = `${users.map(user => `<li class="userzz">${user.username}</li>`).join('')}`  
+   
+
+    Userli.addEventListener('click', (e)=>{
+        e.preventDefault()
+    
+        var privName = e.target.innerText;
+        socket.emit('sendPriv', privName)
+        socket.on('wysylka', wysylka => location.search = `username=` + username + '&room=' + wysylka)
+    })
     
 }
 
@@ -240,6 +268,8 @@ function fileMessageSend(src){
      //   audio.play();
 
     }
+    img.addEventListener('click', ()=>{
+    img.requestFullscreen()})
 
     document.querySelector('.chat-messages').appendChild(div) 
 }
@@ -248,10 +278,13 @@ function fileMessageSend(src){
 const sideBar = document.querySelector('.chat-sidebar')
 const hideSideBar = document.querySelector('.fa-bars')
 const rightArrow = document.querySelector('.fa-arrow-right')
+const formContainer = document.querySelector('.chat-form-container form');
+
 
 hideSideBar.addEventListener('click', ()=>{
     document.body.classList.add('showHideSidebar')
     sideBar.style.display = 'none'
+    formContainer.style.marginLeft = '0px';
     document.querySelector('.chat-main').style.display = 'grid';
     document.querySelector('.chat-main').style.gridTemplateColumns = '100% 100% 100%'
     rightArrow.style.display = 'block'
@@ -265,6 +298,7 @@ rightArrow.addEventListener('click', ()=>{
     sideBar.style.display = ""
     document.querySelector('.chat-main').style.gridTemplateColumns = ''
      rightArrow.style.display = ''
+     formContainer.style.marginLeft = ''
 })
 
 //hover over title or logo 
@@ -279,3 +313,30 @@ hjedynka.addEventListener('mouseout', ()=>{
     logo.style.opacity = ''
     hjedynka.style.opacity = ''
 })  
+
+const hiddenLinks = document.querySelectorAll('.hidden_links')
+const hiddenContainer = document.querySelector('.hidden_container')
+    
+
+//Zmiana stałych pokoi
+for(var i = 0; i < hiddenLinks.length; i++){
+    hiddenLinks[i].addEventListener('click', (e)=>{
+           e.preventDefault()
+           var roomName = e.target.innerText;
+           
+           changeRoom(roomName)
+       })
+   
+}
+  
+
+const downArrowUsers = document.querySelector('.fa-chevron-down')
+const nameUsers = document.querySelector('#name-room')
+
+downArrowUsers.addEventListener('click', ()=>{
+    if(hiddenContainer.style.display === 'block'){
+        hiddenContainer.style.display = 'none'
+    }else{
+    hiddenContainer.style.display = 'block'
+    }
+})

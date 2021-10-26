@@ -163,6 +163,18 @@ a {
 	overflow-y:auto; 
     overflow-x:hidden;
 }
+.hidden_container{
+	background: var(--dark-color-a);
+	padding: 10px;
+	display: none;
+}
+.hidden_container h2:hover{
+	transform: scale(1.1);
+}
+.hidden_links{
+	margin-bottom: 2%;
+}
+
 .fa-bars{
 	float: right;
 }
