@@ -512,6 +512,9 @@ background-color: #d0e3ffbb;
 	.chat-sidebar {
 		display: none;
 	}
+	.chat-container{
+		max-width: 100%;
+	}
 	.hjedynka{
 		font-size: 24px;
 		margin-left: 6px;
