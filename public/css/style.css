@@ -491,25 +491,7 @@ background-color: #d0e3ffbb;
 	margin-top: 20px;
 	width: 100%;
 }
-.background_container{
-	position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    overflow: hidden;
-    z-index: -100;
-	opacity: 0.9;
-}
-.background{
-	position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-  min-height: 100vh;
-  z-index: 1;
-  filter: hue-rotate(137deg);
-}
+
 
 @media (max-width: 600px) {
 	body{
@@ -671,14 +653,6 @@ background-color: #d0e3ffbb;
 		font-size: 14px;
 		background: white;
 	}
-	.background_container{
-		display: none;
-	}
-	.background{
-		display: none;
-	}
-	.chat-container{
-		max-width: 100%;
-	}
+
 	
 }
