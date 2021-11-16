@@ -25,7 +25,7 @@ const admin = 'Admin KryptoRakiety';
 
 const mongoURI = process.env.mongoURI
 
-const mongoDB = `mongodb+srv://borysj:${mongoURI}@cluster0.x1i4d.mongodb.net/message-chat-collection?retryWrites=true&w=majority`
+const mongoDB = `mongodb+srv://borysj:` + mongoURI +  `cluster0.x1i4d.mongodb.net/message-chat-collection?retryWrites=true&w=majority`
 
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true}).then(()=>{
     console.log('connected to database')
