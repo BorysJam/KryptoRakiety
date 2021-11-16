@@ -1,17 +1,17 @@
 :root {
-	--dark-color-a: #4e40bf;
-	--dark-color-b: #4e40bf;
+	--dark-color-a: #750b37;
+	--dark-color-b: #750b37;
 	--dark-color-c: rgb(22, 19, 19);
 	--light-color: white;
 	--success-color: #5cb85c;
 	--error-color: #d9534f;
 	--light-background-msg: white;
 
-	--left-msg: #d0e3ffbb;
-	--right-msg: #4e40bf;
-	--button-send: #4e40bf;
+	--left-msg: #d6d6d6bb;
+	--right-msg: #750b37;
+	--button-send: #750b37;
 	--background: white;
-	--form-background: #4e40bf;
+	--form-background: #750b37;
 	--border-on-form: none;
 	--button-bg: white;
 }
@@ -67,6 +67,12 @@ a {
 	font-weight: 600;
 	margin-left: 6px;
 	border-radius: 8px;
+	border: 1px solid var(--dark-color-a);
+}
+.btn:hover{
+	color: var(--light-color);
+	background: var(--dark-color-a);
+	border: 1px solid white;
 }
 
 .Container_btn{
@@ -505,16 +511,19 @@ a {
 	color: var(--dark-color-a);
 	white-space: nowrap;
 	background-color: var(--light-color);
+	
 }
 #btn-leave:hover{
-	background-color: var(--error-color);
+	background-color: var(--dark-color-a);
+	color: var(--light-color);
 	
+}
+#btn-leave:hover .fa-door-open{
+	color: var(--light-color);
 }
 #exit_svg{
 	display: none;
 }
-
-
 
 .chat-form-container {
 	padding: 20px 20px;
@@ -757,8 +766,9 @@ background-color: #d0e3ffbb;
 		overflow-y: scroll;
 	}
 	.chat-form-container {
-		padding: 10px 0px;
-		width: 95%;
+		padding: 10px 10px;
+		
+		width: 100%;
 		margin: 0 auto;
 		border-bottom-left-radius: 0;
 		border-bottom-right-radius: 0;
@@ -781,7 +791,7 @@ background-color: #d0e3ffbb;
 	.chat-form-container input[type='text'] {
 		font-size: 12px;
 		height: 35px;
-		margin-left: -5px;
+		
 		
 		
 	}
@@ -812,6 +822,13 @@ background-color: #d0e3ffbb;
 		padding: 8px;
 		font-size: 14px;
 		background: white;
+	}
+	.chat-form-container input[type='text']{
+		padding: 0;
+	}
+	.chat-form{
+		display: flex;
+		justify-content: center;
 	}
 
 	
