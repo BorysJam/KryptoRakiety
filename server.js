@@ -1,16 +1,33 @@
 const path = require('path');
+const moment = require('moment');
+const dotenv = require('dotenv');
 const http = require('http');
+const mongoose = require('mongoose');
+const Msg = require('./utils/messagemodel');
 const express = require('express');
 const socketio = require('socket.io');
 const formatMessage = require('./utils/messages');
-const formatFileMessage = require('./utils/filemessages')
+const formatFileMessage = require('./utils/filemessages');
 const {userJoin, getCurrentUser, disconnectUser, userCheckRoom, userx} = require('./utils/users');
+moment.locale("pl")
 const app = express();
+const dotenvRes = dotenv.config();
 const server = http.createServer(app);
 const io = socketio(server, {
     maxHttpBufferSize: 1e8
 });
+
+
+
 const admin = 'Admin KryptoRakiety';
+
+
+const mongoDB = `mongodb+srv://borysj:${process.env.MONGO}@cluster0.x1i4d.mongodb.net/message-chat-collection?retryWrites=true&w=majority`
+
+mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true}).then(()=>{
+    console.log('connected to database')
+}).catch(err => console.log(err))
+
 
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
@@ -18,23 +35,38 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //run when client connects
 io.on('connection', socket =>{
+    
+    Msg.find().then(result => {
+        socket.emit('output-message', result)
+       
+    })
     socket.emit('usercheck', userx)
     socket.on('joinRoom', ({username, room}) =>{
 
         const user = userJoin(socket.id, username, room);
-        
         socket.join(user.room);
+        
+        setTimeout(()=>{
+            socket.emit('message', formatMessage(admin, `Witamy w KryptoRakiety <b>${user.username}</b>`));
+        },600)
 
         socket.on('sendPriv', privName =>{
             if(privName){
-            const userp = userx.find(({username}) => username === privName)
-            const wysylka = username + socket.id;
-            socket.emit('wysylka', wysylka)
-            socket.to(userp.id).emit('privateNot', {usernamex: username, id: wysylka})
+            var userp = userx.find(({username}) => username === privName)
+            var wysylka = username + socket.id;
+            
+            var userID = userp.id;
+            socket.emit('wysylka', {usernamex: privName ,id: wysylka, time: moment().format('MMMM Do, h:mm'), user: username})
+            if(userID !== undefined){
+                socket.to(userID).emit('privateNot', {usernamex: username, id: wysylka, time: moment().format('MMMM Do, h:mm')})
+            }else{
+                return
+            }
+            
         }    
         })
         
-        socket.emit('message', formatMessage(admin, `Witamy w KryptoRakiety <b>${user.username}</b>`));
+        
 
     
         //Broadcast when a user connects 
@@ -65,8 +97,20 @@ io.on('connection', socket =>{
 
     //listen for chatMessage
     socket.on('chatMessage', msg => {
-        const user = getCurrentUser(socket.id);
-        io.to(user.room).emit('message',formatMessage(user.username, msg));
+        const user = getCurrentUser(socket.id)
+        const socketid = socket.id;
+        const username = user.username
+        const room = user.room
+        moment.locale('pl')
+        const czas = moment().format('MMMM Do, h:mm')
+        const text = msg;
+        const message = new Msg({socketid, username, text, room, czas})
+        message.save()
+        io.to(user.room).emit('message',formatMessage(user.username, msg))
+        
+        
+        
+       
     });
   
     
@@ -75,14 +119,11 @@ io.on('connection', socket =>{
         const user = disconnectUser(socket.id)
         
         if (user){
-            io.emit('message',formatMessage(admin, `<b>${user.username}</b> Użytkownik opuścil czat`));
+            io.to(user.room).emit('message',formatMessage(admin, `<b>${user.username}</b> Użytkownik opuścil czat`));
             io.to(user.room).emit('usersList', {
                 room: user.room,
                 users: userCheckRoom(user.room)
             })
-            //usersList.splice(user.username)
-            //io.to(user.room).emit('usersList', usersList)
-           // console.log(usersList)
             
         }
         
@@ -96,10 +137,4 @@ app.get('*', (req, res)=>{
 
 
 server.listen(process.env.PORT || 3000, ()=> console.log(`Server running on port: 3000`));
-
- 
-//const PORT = 3000 || process.env.PORT;
-
-//server.listen(PORT, ()=> console.log(`Server running on port: ${PORT}`));
-
 

@@ -4,10 +4,31 @@ const content = document.querySelector('.user_list')
 const inputText = document.querySelector('#msg')
 const fileMsgInput = document.querySelector('#fileMsg')
 const fileInputBtn = document.querySelector('.inputFileBtn')
+
+//hide sidebar 
+const sideBar = document.querySelector('.chat-sidebar')
+const hideSideBar = document.querySelector('.fa-bars')
+const rightArrow = document.querySelector('.fa-arrow-right')
+const formContainer = document.querySelector('.chat-form-container');
+//messagebox
+const quit_message_box = document.getElementById('exit_box')
+const messagebox = document.querySelector('.message_box')
+const message_icon = document.querySelector('.fa-inbox')
+const message_icon_text = document.querySelector('.inbox_iconTxt')
+
+const messagesReceivedBox = document.querySelector('#messagesReceived')
+const messagesSentBox = document.querySelector('#messagesSent')
+const sentMsgDivBox = document.querySelector('.sentMsgDiv')
+const receivedMsgDivBox = document.querySelector('.receivedDiv')
+
+
 // Get username and rooms from url with help of qs (script is in the chat.html)
 const {username, room} = Qs.parse(location.search, {
     ignoreQueryPrefix: true
 });
+if(username.length < 4){
+    window.location.href = "index.html"
+}
 fileInputBtn.addEventListener('click', function(){
     fileMsgInput.click()
 })
@@ -21,31 +42,148 @@ function changeRoom(roomName){
 //Join chatroom
 socket.emit('joinRoom', {username, room});
 
+socket.on('output-message', data =>{
+    if(data.length){
+        data.forEach((msg) => {
+            if(msg.room == room){
+                if(msg.text && msg.czas){
+                    outputMessage(msg)
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                } 
+            }
+        })
+    }
+})
+
+
 //message from server   
 socket.on('message', message => {
-    console.log(message);
     outputMessage(message);
    
     //scroll down everytime you get a message
     chatMessages.scrollTop = chatMessages.scrollHeight;
 });
 
+//array obiektów zawierających dane do prywatnych wiadomosci
+var userArrayMSG = [];
+var sentuserArrayMSG = [];
 //prywatne wiadomosci powiadomienie
-socket.on('privateNot', ({usernamex, id}) => {
+socket.on('privateNot', ({usernamex, id, time}) => {
+    outputPrivateNotification(usernamex)
+    savetoBox(usernamex, id, time)
     
-    const not = document.createElement('div')
-    not.classList.add('messageNotification')
-    not.innerHTML = 'nowa wiadomosc od ' + usernamex;
-    not.style.width = '100%'
-    not.style.height = '100px'
-    not.style.marginTop = '2rem'
-    sideBar.appendChild(not)
-    
-    document.querySelector('.messageNotification').addEventListener('click', ()=>{
+    if(document.querySelector('.messageNotification')){
+        document.querySelector('.fa-envelope').addEventListener('click', ()=>{
+            
+            location.search = 'username='+username+'&room='+ id;
+            //tutaj mam dodac wiadomosci do wyslanych 
+         })
+        document.querySelector('.fa-trash').addEventListener('click',()=>{
+            sideBar.removeChild(document.querySelector('.messageNotification'))
+        })
         
-        location.search = 'username='+username+'&room='+ id;
-    })
+    }
+    
+    
 })
+
+function outputPrivateNotification(usernamex){
+    const not = document.createElement('div');
+    not.classList.add('messageNotification');
+    not.innerHTML = 'PM od ' + usernamex + `<i class="fas fa-envelope"></i><i class="fas fa-trash"></i>`;
+    not.style.width = '100%';
+    not.style.height = '50px';
+    not.style.marginTop = '2rem';
+    sideBar.appendChild(not);
+}
+
+
+
+function savetoBox(usernamex, id, time){
+    var link = 'username='+username+'&room='+ id;
+   
+    userArrayMSG.push({link, usernamex, username, time})
+   
+    sessionStorage.setItem('link', JSON.stringify(userArrayMSG))
+}
+
+
+// save to inbox
+function sentsavetoBox(usernamex, id, time, user){
+    var link = 'username='+username+'&room='+ id;
+  
+    sentuserArrayMSG.push({link, usernamex, time, user})
+   
+    sessionStorage.setItem('sentlink', JSON.stringify(sentuserArrayMSG))
+}
+
+
+if(sessionStorage.getItem('link')){
+    userArrayMSG = JSON.parse(sessionStorage.getItem('link'))
+}else{
+    userArrayMSG = []
+}
+
+if(sessionStorage.getItem('sentlink')){
+    sentuserArrayMSG = JSON.parse(sessionStorage.getItem('sentlink'))
+    console.log(sentuserArrayMSG)
+}else{
+    sentuserArrayMSG = []
+}
+
+if(userArrayMSG.length > 0){
+    userArrayMSG.forEach((e)=>{
+        if(e.username === username){
+            const n = document.createElement('div');
+            n.className = 'messageboxmsglink';
+            const link = e.link;
+            n.innerHTML = "<h3>" + e.usernamex + "</h3>" +  "<p>"+ '<b> Otwórz rozmowe </b>' + e.link + "</p>" + "<span id='timeNotification'>" + e.time + "</span>"
+            n.style.width = '100%';
+            n.style.height = '50px';
+            receivedMsgDivBox.appendChild(n)
+            document.querySelectorAll('.numberReceived').forEach(e => {
+                e.innerHTML  = " (" + userArrayMSG.length + ") ";
+            })
+            
+            n.addEventListener('click',(e)=>{
+                location.search = link;
+            })
+        }else{
+            userArrayMSG = [];
+            e.innerHTML  = " (" + userArrayMSG.length + ") ";
+        } 
+        
+    })
+}
+
+
+
+if(sentuserArrayMSG.length > 0){
+    console.log(sentuserArrayMSG)
+    sentuserArrayMSG.forEach((e)=>{
+        if(e.user === username){
+            const n = document.createElement('div');
+            n.className = 'messageboxmsglink';
+            const link = e.link;
+            n.innerHTML = "<h3>" + e.usernamex + "</h3>" +  "<p>"+ '<b> Otwórz rozmowe </b>' + e.link + "</p>" + "<span id='timeNotification'>" + e.time + "</span>"
+            n.style.width = '100%';
+            n.style.height = '50px';
+            sentMsgDivBox.appendChild(n)
+            document.querySelector('.numberSent').innerHTML = " (" + sentuserArrayMSG.length + ") ";
+            
+            n.addEventListener('click',(e)=>{
+                location.search = link;
+            })
+        }else{
+            sentuserArrayMSG = [];
+            e.innerHTML  = " (" + sentuserArrayMSG.length + ") ";
+        } 
+        
+    })
+}else{
+    console.log(sentuserArrayMSG)
+    document.querySelector('.numberSent').innerHTML = " (" + sentuserArrayMSG.length + ") ";
+}
 
 //lista uzytkowników
 socket.on('usersList',({room, users}) =>{
@@ -130,14 +268,12 @@ function outputMessage(message){
         div.style.textAlign = 'right';
         div.style.color = 'white';
         div.style.backgroundColor = 'var(--right-msg)';
-       
         //const audio = new Audio(audioRight);
         //audio.play();
         
        
     }else{
         div.style.backgroundColor = 'var(--left-msg)';
-       
         //const audio = new Audio(audioLeft);
        // audio.play();
     }
@@ -153,25 +289,25 @@ function outputMessage(message){
 
 //emoji 
 
-    const emojidiv = document.querySelector('.emoji')
-    const smiley = document.querySelector('#smiley')
-    smiley.addEventListener('click', ()=>{
-        if (emojidiv.style.display == 'none'){
-        emojidiv.style.display ='block';
-        smiley.style.color = '#d0e3ffbb';
-    }
-    else{
-        emojidiv.style.display ='none';
-        smiley.style.color = 'white';
-    }})
+  //  const emojidiv = document.querySelector('.emoji')
+  //  const smiley = document.querySelector('#smiley')
+   // smiley.addEventListener('click', ()=>{
+    //    if (emojidiv.style.display == 'none'){
+     //   emojidiv.style.display ='block';
+      //  smiley.style.color = '#d0e3ffbb';
+    //}
+    //else{
+     //   emojidiv.style.display ='none';
+     //   smiley.style.color = 'white';
+    //}})
 
     //click outside the emoji div to close it
-    window.addEventListener('mouseup',(event)=>{
-        if(event.target != emojidiv && event.target.parentNode != emojidiv){
-            emojidiv.style.display = 'none';
-            smiley.style.color = 'white';
-        }
-  });  
+    //window.addEventListener('mouseup',(event)=>{
+     //   if(event.target != emojidiv && event.target.parentNode != emojidiv){
+      //      emojidiv.style.display = 'none';
+       //     smiley.style.color = 'white';
+        //}
+  //});  
 
 
 
@@ -220,8 +356,8 @@ const nameRoom = (room, users)=>{
 function viewUsers(users){
     const userz = []
     userz.push(users.map(user => user.username))
-    const Userli = document.querySelector('#users')
-    Userli.innerHTML = `${users.map(user => `<li class="userzz">${user.username}</li>`).join('')}`  
+    const Userli = document.querySelector('#users')    
+    Userli.innerHTML = `${users.map(user => `<li class="userzz">${user.username}<i class="far fa-edit"></i></li>`).join('')}`  
    
 
     Userli.addEventListener('click', (e)=>{
@@ -229,7 +365,11 @@ function viewUsers(users){
     
         var privName = e.target.innerText;
         socket.emit('sendPriv', privName)
-        socket.on('wysylka', wysylka => location.search = `username=` + username + '&room=' + wysylka)
+        socket.on('wysylka', ({usernamex, id, time, user}) => {
+            location.search = `username=` + username + '&room=' + id;
+            sentsavetoBox(usernamex, id, time, user)
+        })
+        
     })
     
 }
@@ -253,7 +393,6 @@ function fileMessageSend(src){
     if(src.username === username){
         div.style.float = 'right'
         div.style.display = 'inline'
-       // div.style.marginLeft = '50%';
         div.style.textAlign = 'right';
         div.style.color = 'white';
         div.style.backgroundColor = 'var(--right-msg)';
@@ -274,11 +413,7 @@ function fileMessageSend(src){
     document.querySelector('.chat-messages').appendChild(div) 
 }
 
-//hide sidebar 
-const sideBar = document.querySelector('.chat-sidebar')
-const hideSideBar = document.querySelector('.fa-bars')
-const rightArrow = document.querySelector('.fa-arrow-right')
-const formContainer = document.querySelector('.chat-form-container form');
+
 
 
 hideSideBar.addEventListener('click', ()=>{
@@ -340,3 +475,45 @@ downArrowUsers.addEventListener('click', ()=>{
     hiddenContainer.style.display = 'block'
     }
 })
+
+//open message box 
+
+
+
+message_icon && message_icon_text.addEventListener("click", ()=>{
+    messagebox.style.display = "flex";
+    window.addEventListener("keydown", (e)=>{
+        if(e.code === "Escape"){
+            niepokaz()
+        }
+        
+    })
+})
+
+function niepokaz(){
+    messagebox.style.display = "none";
+}
+
+
+messagesSentBox.addEventListener("click", ()=>{
+    receivedMsgDivBox.style.display = 'none';
+    sentMsgDivBox.style.display = 'block';
+})
+messagesReceivedBox.addEventListener("click", ()=>{
+    sentMsgDivBox.style.display = "none";
+    receivedMsgDivBox.style.display = "block";
+})
+
+const isPhone = function(){
+    const match = window.matchMedia('(pointer:coarse)')
+    return (match && match.matches)
+}
+const whatType = `${isPhone() ? true : false} `
+console.log(whatType)
+const sidebarDisplay = sideBar.style.display
+console.log(sidebarDisplay)
+if(whatType === true &&  sidebarDisplay === "grid"){
+    formContainer.style.display = "none"
+}else{
+    formContainer.style.display = ""
+}

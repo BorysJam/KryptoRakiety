@@ -10,8 +10,10 @@
   "author": "Borys Jamrozinski",
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "moment": "^2.29.1",
+    "mongoose": "^6.0.12",
     "socket.io": "^4.0.1"
   },
   "devDependencies": {

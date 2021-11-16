@@ -32,8 +32,3 @@ CheckDuplicateusername.addEventListener('keyup', ()=>{
     }
 	})
     
-
-
-
-
-

@@ -21,8 +21,8 @@
         <h1 class='hjedynka'>KryptoRakiety</h1>
         <div class="logo_div"><img src='img/logo.svg' class='logo'></div>
         </div>
-      <div class="checkbox_container"><input type="checkbox" id='checklight'></div>
-      <div class="Container_btn"><a href="index.html" class="btn" id='btn-leave'>Opuść chat</a></div>
+        <div class="numberOfUsers"><p class="onlineUsersNumber"></p></div>
+      <div class="Container_btn"><input type="checkbox" id='checklight'><a href="index.html" class="btn" id='btn-leave'>Wyjście <i class="fas fa-door-open"></i></a></div>
    
 
       
@@ -32,8 +32,11 @@
       <i class="fas fa-arrow-right"></i>
       <div class="chat-sidebar">
         <i class="fas fa-bars"></i>
-        <h3><i class="fas fa-comments"></i> Pokoje:</h3>
-        <h2 id="name-room"></h2><span><i class="fas fa-chevron-down"></i></span>
+        <h3><i class="fas fa-comments"></i> Pokoje</h3>
+        <div class="nameRoom_container">
+          <h3 id="name-room"></h3><i class="fas fa-chevron-down"></i>
+        </div>
+        
         <div class="hidden_container">
           <h2 class='hidden_links'>Bitcoin</h2>
           <h2 class='hidden_links'>Ethereum</h2>
@@ -42,10 +45,15 @@
           <h2 class='hidden_links'>Litecoin</h2>
           <h2 class='hidden_links'>Szybkie-Rakiety</h2>
         </div>
-        <h3 class="onlineUsers"><i class="fas fa-users"></i> Użytkownicy:</h3>
-        <h3 class="onlineUsersNumber"></h3>
+        <h3 class="onlineUsers"><i class="fas fa-users"></i> Użytkownicy</h3>
+        
         <div class="user_list"> <div id="users"></div></div>
         
+        <h3 class="inbox_iconTxt">
+          <i class="fas fa-inbox" id="inbox_icon"></i> Wiadomości
+          <span class="numberReceived"></span>
+        </h3>
+       
       </div>
       <div class="chat-messages">
 					
@@ -73,43 +81,21 @@
       </form>
     </div>
   </div>
-  <div class="emoji">
-    <p class='icon' id="smile" style="font-size:24px">&#128512;</p>
-    <p class='icon' id="smilebig" style="font-size:24px">&#128515;</p>
-    <p class='icon' id="smileclosedeye"style="font-size:24px">&#128516;</p>
-    <p class='icon' id="bigsmile" style="font-size:24px">&#128513;</p>
-    <p class='icon' id="xsmile"style="font-size:24px">&#128518;</p>
-    <p class='icon' id="smile1"style="font-size:24px">&#128517;</p>
-    <p class='icon' id="smile2"style="font-size:24px">&#129315;</p>
-    <p class='icon' id="smile3"style="font-size:24px">&#128514;</p>
-    <p class='icon' id="smile4"style="font-size:24px">&#128578;</p>
-    <p class='icon' id="smile5"style="font-size:24px">&#128579;</p>
-    <p class='icon' id="smile6"style="font-size:24px">&#128521;</p>
-    <p class='icon' id="smile7"style="font-size:24px">&#128522;</p>
-    <p class='icon' id="smile8"style="font-size:24px">&#128519;</p>
-    <p class='icon' id="smile9"style="font-size:24px">&#129392;</p>
-    <p class='icon' id="smile10"style="font-size:24px">&#128525;</p>
-    <p class='icon' id="smile11"style="font-size:24px">	&#128523;</p>
-    <p class='icon' id="smile12"style="font-size:24px">&#128539;</p>
-    <p class='icon' id="smile13"style="font-size:24px">&#128540;</p>
-    <p class='icon' id="smile14"style="font-size:24px">&#129322;</p>
-    <p class='icon' id="smile15"style="font-size:24px">&#128541;</p>
-    <p class='icon' id="smile16"style="font-size:24px">&#129297;</p>
-    <p class='icon' id="smile17"style="font-size:24px">💸</p>
-    <p class='icon' id="smile18"style="font-size:24px">💰</p>
-    <p class='icon' id="smile19"style="font-size:24px">👻</p>
-    <p class='icon' id="smile20"style="font-size:24px">💩</p>
-    <p class='icon' id="smile21"style="font-size:24px">😤</p>
-    <p class='icon' id="smile22"style="font-size:24px">🤮</p>
-    <p class='icon' id="smile23"style="font-size:24px">🥳</p>
-    <p class='icon' id="smile24"style="font-size:24px">💵</p>
-    
+  <div class="message_box">
+    <div class="message_boxHeader">
+      <a id="messagesReceived">Otrzymane <span class="numberReceived"></span></a>
+      <a id="messagesSent">Wysłane <span class="numberSent"></span></a>
+      <i class="fas fa-times" id='exit_box' onclick="niepokaz()"></i>
+    </div>
+    <div class="receivedDiv"></div>   
+    <div class="sentMsgDiv"></div>
   </div>
+
+ 
   
   <script src='https://cdnjs.cloudflare.com/ajax/libs/qs/6.10.1/qs.min.js'></script>
   <script src='/socket.io/socket.io.js'></script>
   <script src="js/main.js"></script>
-
-
+  
 </body>
 </html>
