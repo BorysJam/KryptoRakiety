@@ -1,0 +1,34 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>{{title}}</title>
+    
+</head>
+<div class="header_container">    
+     <div class="mobileLogo"><a href="/"><img src="/img/logo.svg"></a></div>
+    <div class="hamburgerLogo">
+        <img onclick="showMenu()" src="/img/menu-icon.svg" class="menuIcon">
+    </div>
+    <ul class="headul">
+        <div class="logoContainer"><a href="/"><img src="/img/logo.svg"></a></div>
+        <li><a href="/crypto">Crypto</a></li>
+        <li><a href="/about">O nas</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li class="contactliheader"><a href="/kontakt">Kontakt</a></li>
+        <li class="chatliheader"><a href="/join-chat">Czat</a></li>
+    </ul>
+</div>
+<script>
+    const headul =  document.querySelector('.headul')
+    function showMenu(){
+        if(headul.style.display !== 'grid'){
+            headul.style.display = 'grid'
+        }else{
+            headul.style.display = 'none'
+        }
+        
+       
+    }
+</script>
+

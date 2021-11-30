@@ -1,6 +1,7 @@
 const socket = io();
 
 var userVal;
+console.log(userVal)
 
 socket.on('usercheck', userx=>{
     console.log(userx)
@@ -24,7 +25,7 @@ CheckDuplicateusername.addEventListener('keyup', ()=>{
         xTriangle.style.display = ''
         duplicateText.innerHTML = ''
     }   
-    if(duplicate){
+    else if(duplicate){
         console.log(duplicate)
         btn.disabled = true;
         xTriangle.style.display = 'inline'

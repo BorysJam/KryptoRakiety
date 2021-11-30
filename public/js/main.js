@@ -9,7 +9,7 @@ const fileInputBtn = document.querySelector('.inputFileBtn')
 const sideBar = document.querySelector('.chat-sidebar')
 const hideSideBar = document.querySelector('.fa-bars')
 const rightArrow = document.querySelector('.fa-arrow-right')
-const formContainer = document.querySelector('.chat-form-container');
+const formContainer = document.querySelector('.chat-form-container form');
 //messagebox
 const quit_message_box = document.getElementById('exit_box')
 const messagebox = document.querySelector('.message_box')
@@ -26,8 +26,10 @@ const receivedMsgDivBox = document.querySelector('.receivedDiv')
 const {username, room} = Qs.parse(location.search, {
     ignoreQueryPrefix: true
 });
-if(username.length < 4){
-    window.location.href = "index.html"
+
+
+if(username.length < 4 || room === undefined){
+    window.location.href = "index"
 }
 fileInputBtn.addEventListener('click', function(){
     fileMsgInput.click()
@@ -63,6 +65,21 @@ socket.on('message', message => {
     //scroll down everytime you get a message
     chatMessages.scrollTop = chatMessages.scrollHeight;
 });
+
+//checks if user is typing
+inputText.addEventListener("keypress", ()=>{
+    socket.emit('typing', username)
+})
+
+//listening for the user is typing data from the server
+socket.on('userIsTyping', data =>{
+    console.log(data)
+    document.querySelector('.userTyping').innerHTML = "Użytkownik " + data + " pisze..."
+    setTimeout(()=>{
+        document.querySelector('.userTyping').innerHTML = ""
+    },3000)
+})
+
 
 //array obiektów zawierających dane do prywatnych wiadomosci
 var userArrayMSG = [];
@@ -115,76 +132,79 @@ function sentsavetoBox(usernamex, id, time, user){
     sentuserArrayMSG.push({link, usernamex, time, user})
    
     sessionStorage.setItem('sentlink', JSON.stringify(sentuserArrayMSG))
+    
 }
-
-
 if(sessionStorage.getItem('link')){
     userArrayMSG = JSON.parse(sessionStorage.getItem('link'))
+    messageLink()
 }else{
     userArrayMSG = []
 }
 
+
+
 if(sessionStorage.getItem('sentlink')){
     sentuserArrayMSG = JSON.parse(sessionStorage.getItem('sentlink'))
-    console.log(sentuserArrayMSG)
+    sentMessageLink()
 }else{
     sentuserArrayMSG = []
 }
-
-if(userArrayMSG.length > 0){
-    userArrayMSG.forEach((e)=>{
-        if(e.username === username){
-            const n = document.createElement('div');
-            n.className = 'messageboxmsglink';
-            const link = e.link;
-            n.innerHTML = "<h3>" + e.usernamex + "</h3>" +  "<p>"+ '<b> Otwórz rozmowe </b>' + e.link + "</p>" + "<span id='timeNotification'>" + e.time + "</span>"
-            n.style.width = '100%';
-            n.style.height = '50px';
-            receivedMsgDivBox.appendChild(n)
-            document.querySelectorAll('.numberReceived').forEach(e => {
+function messageLink(){
+    if(userArrayMSG.length > 0){
+        userArrayMSG.forEach((e)=>{
+            if(e.username === username){
+                const n = document.createElement('div');
+                n.className = 'messageboxmsglink';
+                const link = e.link;
+                n.innerHTML = "<h3>" + e.usernamex + "</h3>" +  "<p>"+ '<b> Otwórz rozmowe </b>' + e.link + "</p>" + "<span id='timeNotification'>" + e.time + "</span>"
+                n.style.width = '100%';
+                n.style.height = '50px';
+                receivedMsgDivBox.appendChild(n)
+                document.querySelectorAll('.numberReceived').forEach(e => {
+                    e.innerHTML  = " (" + userArrayMSG.length + ") ";
+                })
+                
+                n.addEventListener('click',(e)=>{
+                    location.search = link;
+                })
+            }else{
+                userArrayMSG = [];
                 e.innerHTML  = " (" + userArrayMSG.length + ") ";
-            })
+            } 
             
-            n.addEventListener('click',(e)=>{
-                location.search = link;
-            })
-        }else{
-            userArrayMSG = [];
-            e.innerHTML  = " (" + userArrayMSG.length + ") ";
-        } 
-        
-    })
+        })
+    }
 }
 
 
 
-if(sentuserArrayMSG.length > 0){
-    console.log(sentuserArrayMSG)
-    sentuserArrayMSG.forEach((e)=>{
-        if(e.user === username){
-            const n = document.createElement('div');
-            n.className = 'messageboxmsglink';
-            const link = e.link;
-            n.innerHTML = "<h3>" + e.usernamex + "</h3>" +  "<p>"+ '<b> Otwórz rozmowe </b>' + e.link + "</p>" + "<span id='timeNotification'>" + e.time + "</span>"
-            n.style.width = '100%';
-            n.style.height = '50px';
-            sentMsgDivBox.appendChild(n)
-            document.querySelector('.numberSent').innerHTML = " (" + sentuserArrayMSG.length + ") ";
+function sentMessageLink(){
+    if(sentuserArrayMSG.length > 0){
+        sentuserArrayMSG.forEach((e)=>{
+            if(e.user === username){
+                const n = document.createElement('div');
+                n.className = 'messageboxmsglink';
+                const link = e.link;
+                n.innerHTML = "<h3>" + e.usernamex + "</h3>" +  "<p>"+ '<b> Otwórz rozmowe </b>' + e.link + "</p>" + "<span id='timeNotification'>" + e.time + "</span>"
+                n.style.width = '100%';
+                n.style.height = '50px';
+                sentMsgDivBox.appendChild(n)
+                document.querySelector('.numberSent').innerHTML = " (" + sentuserArrayMSG.length + ") ";
+                
+                n.addEventListener('click',(e)=>{
+                    location.search = link;
+                })
+            }else{
+                sentuserArrayMSG = [];
+                e.innerHTML  = " (" + sentuserArrayMSG.length + ") ";
+            } 
             
-            n.addEventListener('click',(e)=>{
-                location.search = link;
-            })
-        }else{
-            sentuserArrayMSG = [];
-            e.innerHTML  = " (" + sentuserArrayMSG.length + ") ";
-        } 
-        
-    })
-}else{
-    console.log(sentuserArrayMSG)
-    document.querySelector('.numberSent').innerHTML = " (" + sentuserArrayMSG.length + ") ";
+        })
+    }else{
+        console.log(sentuserArrayMSG)
+        document.querySelector('.numberSent').innerHTML = " (" + sentuserArrayMSG.length + ") ";
+    }
 }
-
 //lista uzytkowników
 socket.on('usersList',({room, users}) =>{
     viewUsers(users)
@@ -226,18 +246,18 @@ chatForm.addEventListener('submit', (e) =>{
     
     e.preventDefault();
     if(src !== undefined){
-    ignoreInput()
-    
-    submitImage()
-    src = undefined;
-    document.querySelector('#fa-images').style.color = ''
-    chatForm.reset()
+        ignoreInput()
+        submitImage()
+        src = undefined;
+        document.querySelector('#fa-images').style.color = ''
+        chatForm.reset()
     
     
     
 }
     else if(inputText.value !== ''){
     
+  
     //get message text
     const msg = e.target.elements.msg.value;
 
@@ -250,9 +270,12 @@ chatForm.addEventListener('submit', (e) =>{
 }
 });
 
-//audio files 
-const audioLeft = '/soundE/receiveSound.mp3';
-const audioRight = '/soundE/sound.mp3'
+function chatCommands(e){
+    if((e.target.elements.msg.value).includes("--bitcoin")){
+        (e.target.elements.msg.value).replace("--bitcoin", "Bitcoin data: 1000")
+    }
+}
+
 
 //output message to DOM
 function outputMessage(message){
@@ -416,38 +439,48 @@ function fileMessageSend(src){
 
 
 
-hideSideBar.addEventListener('click', ()=>{
-    document.body.classList.add('showHideSidebar')
-    sideBar.style.display = 'none'
-    formContainer.style.marginLeft = '0px';
-    document.querySelector('.chat-main').style.display = 'grid';
-    document.querySelector('.chat-main').style.gridTemplateColumns = '100% 100% 100%'
-    rightArrow.style.display = 'block'
+
+//checking screen max width 
+const checkMobile = window.matchMedia("(max-width: 600px)")
+
+//if under 600 showhidemobile else pc
+if(checkMobile.matches){
+    showHideMobile()
+}else{
+    showHideSidePc()
+}
+//show sidebar over 600px
+function showHideSidePc(){
+    rightArrow.addEventListener('click', ()=>{
+        sideBar.style.display = ""
+        document.querySelector('.chat-main').style.gridTemplateColumns = ''
+         rightArrow.style.display = ''
+         formContainer.style.marginLeft = ''
+    })
     
-
+    hideSideBar.addEventListener('click', ()=>{
+       
+        sideBar.style.display = 'none'
+        formContainer.style.marginLeft = '0px';
+        document.querySelector('.chat-main').style.gridTemplateColumns = '100% 100% 100%'
+        rightArrow.style.display = 'block'  
+    })
+}
+//show hide sidebar under 600px
+function showHideMobile(){
+    rightArrow.addEventListener('click', ()=>{
+        sideBar.style.display = "grid"
+        
+         rightArrow.style.display = 'none'
+    })
     
-})
+    hideSideBar.addEventListener('click', ()=>{
+       
+        sideBar.style.display = ''
+        rightArrow.style.display = 'block'  
+    })
+}
 
-//show sidebar
-rightArrow.addEventListener('click', ()=>{
-    sideBar.style.display = ""
-    document.querySelector('.chat-main').style.gridTemplateColumns = ''
-     rightArrow.style.display = ''
-     formContainer.style.marginLeft = ''
-})
-
-//hover over title or logo 
-const hjedynka = document.querySelector('.hjedynka')
-const logo = document.querySelector('.logo')
-
-hjedynka.addEventListener('mouseover', ()=>{
-    logo.style.opacity = '0.9'
-    hjedynka.style.opacity = '0.9'
-})
-hjedynka.addEventListener('mouseout', ()=>{
-    logo.style.opacity = ''
-    hjedynka.style.opacity = ''
-})  
 
 const hiddenLinks = document.querySelectorAll('.hidden_links')
 const hiddenContainer = document.querySelector('.hidden_container')
@@ -504,16 +537,3 @@ messagesReceivedBox.addEventListener("click", ()=>{
     receivedMsgDivBox.style.display = "block";
 })
 
-const isPhone = function(){
-    const match = window.matchMedia('(pointer:coarse)')
-    return (match && match.matches)
-}
-const whatType = `${isPhone() ? true : false} `
-console.log(whatType)
-const sidebarDisplay = sideBar.style.display
-console.log(sidebarDisplay)
-if(whatType === true &&  sidebarDisplay === "grid"){
-    formContainer.style.display = "none"
-}else{
-    formContainer.style.display = ""
-}

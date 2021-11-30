@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/logoFavicon.png">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    {{>header}}
+    
+     <h1 class='tresc1'>{{text}}</h1>
+    <div class="imag_contain">
+       <div class="loremContainer">
+           <p class="lorem">KryptoRakiety jest dedykowane dla osób zainteresowanych tematyką oraz handlem kryptowalutami jak i ich aktualnymi kursami. 
+                        Sprawdzaj kursy, poznawaj nowe waluty i czatuj o nich już teraz! <br> <br> Wyobraź sobie że znajdujesz nową ciekawą walutę i chcesz się tym podzielić ze światem. Dołącz do czatu i pochwal się swoim odkryciem!
+        </p>
+        <a href="/join-chat" class="linkJoinChat"><button class="btnJoinChat">Dołącz do czatu</a></button></a>
+       </div>
+        
+        <img src='/img/img.jpeg'>
+    </div>
+   
+    
+    <h2 class="h2kursy">Top 10 aktualnie</h2>
+    <div class="kursyContainer">
+     <div class="kursy">    
+        <div class="kurs"><image class="kursImg"></image><span class="createRankSymbol"></span><span class="createSpanName"></span><span class="createSpanPrice"></span><span class="createSpan1hChange"></span></div>
+        <div class="kurs"><image class="kursImg"></image><span class="createRankSymbol"></span><span class="createSpanName"></span><span class="createSpanPrice"></span><span class="createSpan1hChange"></span></div>
+        <div class="kurs"><image class="kursImg"></image><span class="createRankSymbol"></span><span class="createSpanName"></span><span class="createSpanPrice"></span><span class="createSpan1hChange"></span></div>
+        <div class="kurs"><image class="kursImg"></image><span class="createRankSymbol"></span><span class="createSpanName"></span><span class="createSpanPrice"></span><span class="createSpan1hChange"></span></div>
+        <div class="kurs"><image class="kursImg"></image><span class="createRankSymbol"></span><span class="createSpanName"></span><span class="createSpanPrice"></span><span class="createSpan1hChange"></span></div>
+        <div class="kurs"><image class="kursImg"></image><span class="createRankSymbol"></span><span class="createSpanName"></span><span class="createSpanPrice"></span><span class="createSpan1hChange"></span></div>
+        <div class="kurs"><image class="kursImg"></image><span class="createRankSymbol"></span><span class="createSpanName"></span><span class="createSpanPrice"></span><span class="createSpan1hChange"></span></div>
+        <div class="kurs"><image class="kursImg"></image><span class="createRankSymbol"></span><span class="createSpanName"></span><span class="createSpanPrice"></span><span class="createSpan1hChange"></span></div>
+        <div class="kurs"><image class="kursImg"></image><span class="createRankSymbol"></span><span class="createSpanName"></span><span class="createSpanPrice"></span><span class="createSpan1hChange"></span></div>
+        <div class="kurs"><image class="kursImg"></image><span class="createRankSymbol"></span><span class="createSpanName"></span><span class="createSpanPrice"></span><span class="createSpan1hChange"></span></div>
+        
+    </div>
+    </div>
+    
+    <div class="czatujTeraz">
+        <h1 class="tresc1">Chatuj juz teraz</h1>
+        <div class="chatCont">
+            <img src="/img/ss.png"> 
+            <a href="/join-chat" class="linkJoinChat"><button id="btnJoinChat2">Czat</button></a>
+        </div>
+    </div>
+    <div class="pageCurrencyBlock">
+        <div class="pageCurrency">
+            <h1 class="tresc2">Sprawdź aktualne kursy</h1>
+            <p class="currencyLorem">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+            <a href="/crypto" ><button id="btnJoinCurrency">Kursy walut</button></a>
+        </div>
+        <img src="/img/sswaluty.png">
+    </div>
+    <div class="mainHot">
+        <div class="hotContainer">
+            <h1 class="strzal">Gorący strzał 24h🔥📈</h1>
+            <div class="hotCoin">
+                <span class="hotCoinRank"></span>
+                <div class="hotCoinImgContainer"><img class="hotCoinImg"/></div>
+                <h1 class="hotCoinId"></h1>
+                <h1><span class="hotCoin24Change"></span></h1>
+                <h1><span class="hotCoin24Price"></span></h1>
+            </div>
+        </div>
+        <div class="hotContainer">
+            <h1 class="strzal">Rakieta tygodnia🔥📈</h1>
+            <div class="hotCoin">
+                <span class="hotCoinRank7"></span>
+                <div class="hotCoinImgContainer"><img class="hotCoinImg7"/></div>
+                <h1 class="hotCoinId7"></h1>
+                <h1><span class="hotCoin24Change7"></span></h1>
+                <h1><span class="hotCoin7Price"></span></h1>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src='/socket.io/socket.io.js'></script>
+    <script src="/js/cryptoIndex.js"></script>
+    {{>footer}}
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/logoFavicon.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>{{title}}</title>
+</head>
+<body>
+    {{>header}}
+    <h1 class='tresc'>{{text}}</h1>
+    <div class="crypto_container">
+        <table class='table'>
+            <tr class="crypto_head">
+                <th class="coin_txt">Waluta</th>
+                <th class='rank'>Ranga</th>
+                <th></th>
+                <th class="nameth">Nazwa</th>
+                <th class="priceth">Cena</th>
+                <th class="th24">24h</th>
+                <th class="th7">7 dni</th>
+                <th class="thHigh">Wysoka 24h</th>
+                <th class="thLow">Niska 24h</th>    
+            </tr>
+        </table>
+    </div>
+    <script src='/socket.io/socket.io.js'></script>
+    <script src="/js/crypto.js"></script>
+    {{>footer}}
+</body>
+</html>

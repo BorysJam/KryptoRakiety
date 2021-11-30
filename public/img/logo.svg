@@ -1,1 +1,189 @@
-<svg id="SvgjsSvg1001" width="288" height="288" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs"><defs id="SvgjsDefs1002"></defs><g id="SvgjsG1008" transform="matrix(1,0,0,1,0,0)"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 455.008 455.008" viewBox="0 0 455.008 455.008" width="288" height="288"><path d="M162.499 266.543h130.008c7.204 0 13.761-5.568 14.927-12.678.298-1.815 7.292-44.741 7.292-68.028 0-74.062-30.048-142.626-80.377-183.41C232.417.861 229.986 0 227.503 0c-2.485 0-4.917.862-6.844 2.427-50.329 40.784-80.377 109.349-80.377 183.41 0 23.287 6.993 66.212 7.291 68.028C148.739 260.975 155.296 266.543 162.499 266.543zM227.504 93.801c21.914 0 39.678 17.764 39.678 39.678s-17.764 39.678-39.678 39.678-39.678-17.764-39.678-39.678S205.59 93.801 227.504 93.801zM323.683 326.587c-.264-.716-2.884-7.348-13.573-19.394-3.22-3.626-5.414-5.977-6.184-6.62-4.41-3.686-12.365-6.661-18.196-6.774L169.192 293.8c-5.745.112-13.701 3.087-18.113 6.773-.769.643-2.964 2.995-6.182 6.621-10.688 12.045-13.309 18.677-13.572 19.393-1.838 4.996-3.278 13.078-3.278 18.4v70.574c0 4.593.609 11.401 1.628 14.845l.57 1.93 4.059 1.804c1.287.572 2.647.862 4.044.862h2.92l1.126-.79c1.812-1.269 6.263-5.134 9.521-8.137l43.571-40.18c.688 2.693 1.689 5.694 2.686 8.173l22.04 54.87c2.122 5.28 5.48 6.069 7.293 6.069s5.171-.789 7.293-6.07l22.04-54.868c.995-2.479 1.998-5.478 2.685-8.17l43.572 40.176c3.252 2.999 7.699 6.861 9.512 8.135l1.127.792h2.927c1.401 0 2.764-.292 4.032-.858l4.07-1.798.572-1.936c1.018-3.446 1.627-10.256 1.627-14.849v-70.574C326.961 339.665 325.521 331.583 323.683 326.587z" fill="#ffffff" class="color000 svgShape"></path></svg></g></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="250"
+   height="100"
+   viewBox="0 0 66.145832 26.458334"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="logo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="4.192802"
+     inkscape:cx="153.71582"
+     inkscape:cy="78.587065"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Warstwa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:8.11389px;line-height:1.25;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Semi-Bold';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="1.1404874"
+       y="15.045066"
+       id="text891"><tspan
+         sodipodi:role="line"
+         id="tspan889"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:8.11389px;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;fill:#ffffff;stroke-width:0.264583"
+         x="1.1404874"
+         y="15.045066">KryptoRakiety</tspan></text>
+    <g
+       id="g21836"
+       transform="matrix(0.02474264,0.01450769,-0.01450769,0.02474264,57.824638,4.5679246)">
+      <rect
+         x="43.189907"
+         y="321.81284"
+         style="fill:#324a5e"
+         width="136.66499"
+         height="22.448999"
+         id="rect21738" />
+      <polygon
+         style="fill:#acb3ba"
+         points="200.468,187.865 89.403,357.612 89.403,378.88 209.92,378.88 "
+         id="polygon21740"
+         transform="translate(-46.213092,-57.067183)" />
+      <rect
+         x="231.8419"
+         y="321.81284"
+         style="fill:#324a5e"
+         width="136.66499"
+         height="22.448999"
+         id="rect21742" />
+      <polygon
+         style="fill:#acb3ba"
+         points="303.655,187.865 414.72,357.612 414.72,378.88 294.203,378.88 "
+         id="polygon21744"
+         transform="translate(-46.213092,-57.067183)" />
+      <path
+         style="fill:#dbdbdb"
+         d="m 166.46391,38.243817 c -14.572,34.658 -23.631,79.557003 -23.631,99.249003 0,51.594 0,206.375 0,206.375 h 126.031 c 0,0 0,-154.782 0,-206.375 0,-20.086 -9.058,-64.591003 -23.631,-99.249003 z"
+         id="path21746" />
+      <path
+         style="fill:#eaeaea"
+         d="m 184.58091,38.243817 c -7.877,34.658 -12.603,79.557003 -12.603,99.249003 0,51.594 0,206.375 0,206.375 h 68.135 c 0,0 0,-154.782 0,-206.375 0,-20.086 -5.12,-64.591003 -12.603,-99.249003 z"
+         id="path21748" />
+      <g
+         id="g21754"
+         transform="translate(-46.213092,-57.067183)">
+	<path
+   style="fill:#324a5e"
+   d="m 275.298,145.723 c -12.997,-12.997 -33.871,-12.997 -46.474,0 l -13.785,-13.785 c 20.48,-20.48 53.957,-20.48 74.437,0 z"
+   id="path21750" />
+
+	<rect
+   x="181.16901"
+   y="400.935"
+   style="fill:#324a5e"
+   width="54.351002"
+   height="23.237"
+   id="rect21752" />
+
+</g>
+      <path
+         style="fill:#ffffff"
+         d="m 188.91291,343.86782 h -53.957 v -63.803 c 0,-13.391 11.028,-24.418 24.418,-24.418 h 5.12 c 13.391,0 24.418,11.028 24.418,24.418 v 63.803 z"
+         id="path21756" />
+      <rect
+         x="222.78392"
+         y="343.86783"
+         style="fill:#324a5e"
+         width="54.351002"
+         height="23.237"
+         id="rect21758" />
+      <path
+         style="fill:#ffffff"
+         d="m 276.74091,343.86782 h -53.957 v -63.803 c 0,-13.391 11.028,-24.418 24.418,-24.418 h 5.12 c 13.391,0 24.418,11.028 24.418,24.418 v 63.803 z"
+         id="path21760" />
+      <g
+         id="g21766"
+         transform="translate(-46.213092,-57.067183)">
+	<circle
+   style="fill:#54c0eb"
+   cx="146.511"
+   cy="341.07101"
+   r="17.723"
+   id="circle21762" />
+
+	<circle
+   style="fill:#54c0eb"
+   cx="357.612"
+   cy="341.07101"
+   r="17.723"
+   id="circle21764" />
+
+</g>
+      <path
+         style="fill:#324a5e"
+         d="m 205.84891,-8.2301827 v 0 c -14.966,0 -28.751,20.4799997 -39.385,46.4739997 h 78.769 c -10.634,-25.994 -24.418,-46.4739997 -39.384,-46.4739997 z"
+         id="path21768" />
+      <g
+         id="g21770">
+</g>
+      <g
+         id="g21772">
+</g>
+      <g
+         id="g21774">
+</g>
+      <g
+         id="g21776">
+</g>
+      <g
+         id="g21778">
+</g>
+      <g
+         id="g21780">
+</g>
+      <g
+         id="g21782">
+</g>
+      <g
+         id="g21784">
+</g>
+      <g
+         id="g21786">
+</g>
+      <g
+         id="g21788">
+</g>
+      <g
+         id="g21790">
+</g>
+      <g
+         id="g21792">
+</g>
+      <g
+         id="g21794">
+</g>
+      <g
+         id="g21796">
+</g>
+      <g
+         id="g21798">
+</g>
+    </g>
+  </g>
+</svg>

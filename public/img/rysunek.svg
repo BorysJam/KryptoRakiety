@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="250"
+   height="100"
+   viewBox="0 0 66.145832 26.458334"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="rysunek.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="4.192802"
+     inkscape:cx="153.71582"
+     inkscape:cy="78.587065"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Warstwa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:8.11388889px;line-height:1.25;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Semi-Bold';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="1.1404874"
+       y="15.045066"
+       id="text891"><tspan
+         sodipodi:role="line"
+         id="tspan889"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Semi-Bold';fill:#000000;stroke-width:0.264583;font-size:8.11388889px"
+         x="1.1404874"
+         y="15.045066">KryptoRakiety</tspan></text>
+    <g
+       id="g21836"
+       transform="matrix(0.02474264,0.01450769,-0.01450769,0.02474264,57.824638,4.5679246)">
+      <rect
+         x="43.189907"
+         y="321.81284"
+         style="fill:#324a5e"
+         width="136.66499"
+         height="22.448999"
+         id="rect21738" />
+      <polygon
+         style="fill:#acb3ba"
+         points="200.468,187.865 89.403,357.612 89.403,378.88 209.92,378.88 "
+         id="polygon21740"
+         transform="translate(-46.213092,-57.067183)" />
+      <rect
+         x="231.8419"
+         y="321.81284"
+         style="fill:#324a5e"
+         width="136.66499"
+         height="22.448999"
+         id="rect21742" />
+      <polygon
+         style="fill:#acb3ba"
+         points="303.655,187.865 414.72,357.612 414.72,378.88 294.203,378.88 "
+         id="polygon21744"
+         transform="translate(-46.213092,-57.067183)" />
+      <path
+         style="fill:#dbdbdb"
+         d="m 166.46391,38.243817 c -14.572,34.658 -23.631,79.557003 -23.631,99.249003 0,51.594 0,206.375 0,206.375 h 126.031 c 0,0 0,-154.782 0,-206.375 0,-20.086 -9.058,-64.591003 -23.631,-99.249003 z"
+         id="path21746" />
+      <path
+         style="fill:#eaeaea"
+         d="m 184.58091,38.243817 c -7.877,34.658 -12.603,79.557003 -12.603,99.249003 0,51.594 0,206.375 0,206.375 h 68.135 c 0,0 0,-154.782 0,-206.375 0,-20.086 -5.12,-64.591003 -12.603,-99.249003 z"
+         id="path21748" />
+      <g
+         id="g21754"
+         transform="translate(-46.213092,-57.067183)">
+	<path
+   style="fill:#324a5e"
+   d="m 275.298,145.723 c -12.997,-12.997 -33.871,-12.997 -46.474,0 l -13.785,-13.785 c 20.48,-20.48 53.957,-20.48 74.437,0 z"
+   id="path21750" />
+
+	<rect
+   x="181.16901"
+   y="400.935"
+   style="fill:#324a5e"
+   width="54.351002"
+   height="23.237"
+   id="rect21752" />
+
+</g>
+      <path
+         style="fill:#ffffff"
+         d="m 188.91291,343.86782 h -53.957 v -63.803 c 0,-13.391 11.028,-24.418 24.418,-24.418 h 5.12 c 13.391,0 24.418,11.028 24.418,24.418 v 63.803 z"
+         id="path21756" />
+      <rect
+         x="222.78392"
+         y="343.86783"
+         style="fill:#324a5e"
+         width="54.351002"
+         height="23.237"
+         id="rect21758" />
+      <path
+         style="fill:#ffffff"
+         d="m 276.74091,343.86782 h -53.957 v -63.803 c 0,-13.391 11.028,-24.418 24.418,-24.418 h 5.12 c 13.391,0 24.418,11.028 24.418,24.418 v 63.803 z"
+         id="path21760" />
+      <g
+         id="g21766"
+         transform="translate(-46.213092,-57.067183)">
+	<circle
+   style="fill:#54c0eb"
+   cx="146.511"
+   cy="341.07101"
+   r="17.723"
+   id="circle21762" />
+
+	<circle
+   style="fill:#54c0eb"
+   cx="357.612"
+   cy="341.07101"
+   r="17.723"
+   id="circle21764" />
+
+</g>
+      <path
+         style="fill:#324a5e"
+         d="m 205.84891,-8.2301827 v 0 c -14.966,0 -28.751,20.4799997 -39.385,46.4739997 h 78.769 c -10.634,-25.994 -24.418,-46.4739997 -39.384,-46.4739997 z"
+         id="path21768" />
+      <g
+         id="g21770">
+</g>
+      <g
+         id="g21772">
+</g>
+      <g
+         id="g21774">
+</g>
+      <g
+         id="g21776">
+</g>
+      <g
+         id="g21778">
+</g>
+      <g
+         id="g21780">
+</g>
+      <g
+         id="g21782">
+</g>
+      <g
+         id="g21784">
+</g>
+      <g
+         id="g21786">
+</g>
+      <g
+         id="g21788">
+</g>
+      <g
+         id="g21790">
+</g>
+      <g
+         id="g21792">
+</g>
+      <g
+         id="g21794">
+</g>
+      <g
+         id="g21796">
+</g>
+      <g
+         id="g21798">
+</g>
+    </g>
+  </g>
+</svg>

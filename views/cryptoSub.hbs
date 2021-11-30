@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/logoFavicon.png">
+ 
+</head>
+<body>
+    {{>header}}
+    <h1 class="tresc">{{text}}</h1>
+    <div class="containerCryptoSub">
+        <div class="cryptoSubImageDiv">
+            <img class="cryptoSubImg">
+        </div>
+        <p class="cryptoSubProcent"></p>
+        <p class="cryptoSubID"></p>
+        <p class="marketCapRank"></p>
+        <p class="cryptoSubPRICE"></p>
+        <p class="cryptoSubMARKETCAP"></p>
+        <p class="CirculatingSupply"></p>
+        <p class="cryptoSubMaxSupply"></p>
+        <p class="cryptoSub24highlow"></p>
+        <p class="priceChangePercentage_1h"></p>
+        <p class="priceChangePercentage_24h"></p>
+        <p class="priceChangePercentage_7d"></p>
+        <p class="priceChangePercentage_14d"></p>
+        <p class="priceChangePercentage_30d"></p>
+        <p class="priceChangePercentage_1y"></p>
+        <p class="cryptoHomeV">Strona <i class="fas fa-home"></i>:<span><a class="cryptoHomePage"></a></span></p>
+   
+    </div>
+    <script>
+        const cryptoSubImageDiv = document.querySelector('.cryptoSubImageDiv')
+        const cryptoSubImg = document.querySelector('.cryptoSubImg')
+        const cryptoSubProcent = document.querySelector('.cryptoSubProcent')
+        const cryptoSubID = document.querySelector('.cryptoSubID')
+        const cryptoSubPRICE = document.querySelector('.cryptoSubPRICE')
+        const cryptoSub1h = document.querySelector('.cryptoSubMARKETCAP')
+        const marketCapRank = document.querySelector('.marketCapRank')
+        const CirculatingSupply = document.querySelector('.CirculatingSupply')
+        const cryptoSub24highlow = document.querySelector('.cryptoSub24highlow')
+        const cryptoSubMaxSupply = document.querySelector('.cryptoSubMaxSupply')
+        const crypoMarketDominance = document.querySelector('.crypoMarketDominance')
+        const priceChangePercentage_24h = document.querySelector('.priceChangePercentage_24h')
+        const priceChangePercentage7d = document.querySelector('.priceChangePercentage_7d')
+        const priceChangePercentage14d = document.querySelector('.priceChangePercentage_14d')
+        const priceChangePercentage30d = document.querySelector('.priceChangePercentage_30d')
+        const priceChangePercentage_1y = document.querySelector('.priceChangePercentage_1y')
+        const cryptoHomePage = document.querySelector('.cryptoHomePage')
+
+        const info = document.querySelector('.tresc').innerHTML;
+        async function fetchJSON(){ 
+            const res = await fetch(`https://api.coingecko.com/api/v3/coins/${info}`)
+            const data = await res.json()
+            return data;
+        }
+        fetchJSON().then((data) =>{
+            console.log(data)
+            cryptoSubID.innerHTML = data.id + ` (${data.symbol})`;
+            cryptoSubProcent.innerHTML = (data.market_data.price_change_percentage_24h).toPrecision(3) + "%";
+            cryptoSubPRICE.innerHTML = "Cena: " + `<span>` + " $" +  data.market_data.current_price.usd +`</span>`;
+            cryptoSub1h.innerHTML = "Wartość rynku: " + `<span>` +" $"+((data.market_data.market_cap.usd).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')) +  `</span>`;
+            cryptoSubImg.src = data.image.small;
+            cryptoSub24highlow.innerHTML = "24h Wysoki / Niski: " + '<span>' +"$" + data.market_data.high_24h.usd + " / "  + '$' + data.market_data.low_24h.usd + '</span>'
+            marketCapRank.innerHTML = '<span>' + "#" + data.market_data.market_cap_rank + '</span>';
+            CirculatingSupply.innerHTML = "Ilość w obiegu:" + "<span>" + ((data.market_data.circulating_supply).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')) + "</span>"
+            if(data.links.homepage[0].length > 0){
+                cryptoHomePage.href = data.links.homepage[0];
+                cryptoHomePage.innerHTML = data.links.homepage[0];
+            }
+            if(data.market_data.max_supply !== null){
+                cryptoSubMaxSupply.innerHTML = "Ilość maksymalna: " + "<span>" + ((data.market_data.max_supply).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')) + "</span>";
+            }else{
+                cryptoSubMaxSupply.innerHTML = "Ilość maksymalna: " + "<span>" + "Brak Danych" + "</span>";
+            }
+            priceChangePercentage_24h.innerHTML = "Zmiana 24h:" + "<span class='span24'>" + (data.market_data.price_change_percentage_24h).toPrecision(3) + "%" +"</span>";
+            priceChangePercentage7d.innerHTML = "Zmiana 7d:" + "<span class='span7'>" + (data.market_data.price_change_percentage_7d).toPrecision(3) + "%" +"</span>";
+            priceChangePercentage14d.innerHTML = "Zmiana 14d:" + "<span class='span14'>" + (data.market_data.price_change_percentage_14d).toPrecision(3) + "%" + "</span>";
+            priceChangePercentage30d.innerHTML = "Zmiana 30d:" + "<span class='span30'>" + (data.market_data.price_change_percentage_30d).toPrecision(3) + "%" +"</span>";
+            priceChangePercentage_1y.innerHTML = "Zmiana 1r:" + "<span class='span1y'>" + (data.market_data.price_change_percentage_1y).toFixed(1) + "%" +"</span>";
+
+            if(Math.sign((data.market_data.price_change_percentage_24h)) === -1){
+                cryptoSubProcent.style.color = "red";
+                document.querySelector('.span24').style.color = "red";
+            }else{
+                cryptoSubProcent.style.color = "green"
+                document.querySelector('.span24').style.color = "green";
+            }
+            if(Math.sign(data.market_data.price_change_percentage_7d) === -1){
+                document.querySelector('.span7').style.color = "red"
+            }else{
+                document.querySelector('.span7').style.color = "green"
+            }
+            if(Math.sign(data.market_data.price_change_percentage_14d) === -1){
+                document.querySelector('.span14').style.color = "red"
+            }else{
+                document.querySelector('.span14').style.color = "green"
+            }
+            if(Math.sign(data.market_data.price_change_percentage_30d) === -1){
+                document.querySelector('.span30').style.color = "red"
+            }else{
+                document.querySelector('.span30').style.color = "green"
+            }
+          
+            if(Math.sign(data.market_data.price_change_percentage_1y) === -1){
+            document.querySelector('.span1y').style.color = "red"
+            }else{
+                document.querySelector('.span1y').style.color = "green"
+            }
+            
+            
+        })
+       
+    </script>
+    {{>footer}}
+</body>
+</html>

@@ -1,834 +1,1206 @@
 :root {
-	--dark-color-a: #750b37;
-	--dark-color-b: #750b37;
-	--dark-color-c: rgb(22, 19, 19);
-	--light-color: white;
-	--success-color: #5cb85c;
-	--error-color: #d9534f;
-	--light-background-msg: white;
-	--left-msg: #d6d6d6bb;
-	--right-msg: #750b37;
-	--button-send: #750b37;
-	--background: white;
-	--form-background: #750b37;
-	--border-on-form: none;
-	--button-bg: white;
+    --main_color:#432c72; 
+}
+*{
+    padding:0;
+    margin: 0;
+ 
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: rgb(255, 255, 255);
+   
 }
 
-.lightMode{
-	--dark-color-a:#0f0a27;
-	--dark-color-b: #0f0a27;
-	--light-color: white;
-	--success-color: #401346;
-	--error-color: #e01111;
-	--light-background-msg: #242526;
-	--left-msg: #ffffff;
-	--right-msg: #0084ff;
-	--button-send: #0f0a27;
-	--background: #18191a;
-	--form-background: #0f0a27;
-	--border-on-form: 1px solid rgb(51, 49, 49);
-	--button-bg: #0c0d0e;
+.hamburgerLogo{
+    display: none;
+}
+.header_container{
+    background: var(--main_color);
+    width: 100%;
+    margin: 0;
+    
+    padding:20px 0;
+    display:flex;
+    overflow-x: hidden;
+    justify-content: center;
+    
 }
 
-* {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+.logoContainer img{
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+.tekst{
+    border-left: 2px solid white;
+}
+.tekst .tekstli{
+    margin-left: 20px;
+    
+}
+.headul{
+    display:flex;
+    margin-left:15px;
+}
+.lorem{
+    margin-top: 35px;
+    width: 100%;
+    grid-row: 2;
+    grid-column: 1;
+    font-size: 18px;
+    text-align: justify;
+}
+.imag_contain{
+    position: relative;
+    display: grid;
+    width: 65%;
+    margin: 0 auto;
+    height: auto;
+}
+.imag_contain img{
+    margin-top: 10px;
+    width: 95%;
+    height: 95%;
+    
+    grid-row: 1;
+    grid-column: 2;
+}
+.tresc1{
+    color:#333;
+    width: 65%;
+    margin: 0 auto;
+    text-align: left;
+    padding-top: 3%;
+   
+    font-size: 30px;
+    font-weight: bold;
+}
+.czatujTeraz{
+    display: block;
+    height: 700px;
 }
 
-body {
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	font-size: 18px;
-	
-	
-	background: var(--background);
-	color: #1c1e21;
+.chatCont , .pageCurrency{
+    width: 65%;
+    display: grid;
+    margin: 0px auto;
+}
+.chatCont img{
+    margin-top: 20px;
+    border-radius: 12px;
+    grid-column: 1;
+    box-shadow: 2px 1px 7px #333;
+}
+#btnJoinChat2{
+    grid-row: 2;
+    grid-column: 3;
+    
 }
 
-
-
-ul {
-	list-style: none;
+.pageCurrencyBlock{
+    background: linear-gradient(var(--main_color),#7060BC);
+    height: 800px;
+    border-top: solid #333 0.5px;
+    padding-bottom: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
-
-a {
-	text-decoration: none;
+.pageCurrency{
+    display: grid;
+    width: 100%;
+    grid-column-start: 2;
+    grid-column-end:4;
+    align-content:center;
+   
 }
-
-.btn {
-	cursor: pointer;
-	padding: 5px 15px;
-	background: var(--light-color);
-	color: var(--dark-color-a);
-	border: 0;
-	font-size: 17px;
-	font-weight: 600;
-	margin-left: 6px;
-	border-radius: 8px;
-	border: 1px solid var(--dark-color-a);
+.tresc2{
+    color:white;
+    width: 100%;
+    font-size:49px;
+    font-weight: bold;
 }
-.btn:hover{
-	color: var(--light-color);
-	background: var(--dark-color-a);
-	border: 1px solid white;
+.pageCurrencyBlock img{
+    display: grid;
+    
+    align-self: center;
+    justify-self: center;
+    grid-column-start: 4;
+    grid-column-end:5;
+    max-height: 480px;
+    max-width: 440px;
+
+    border-radius: 10%;
+    box-shadow: 0 0 9px #333;
 }
-
-.Container_btn{
-	display: flex;
-	position: relative;
-	margin: 10px 10px 10px 10px;
-
-}
-
-.hjedynka{
-	margin-left: 50px;
-}
-
-
-/* Chat Page */
-
-
-.logo_title{
-	display: flex;
-	justify-content: start;
-}
-.logo_div{
-	transform: rotate(20deg);
-	width: 8%;
-	position: relative;
-	left: -1%;
-	margin-top: 8px;
-}
-.logo{
-	width: 100%;
-	cursor: pointer;
+.currencyLorem{
+    margin-top: 20px;
+    width: 80%;
+    color: white;
+    text-align: justify;
 }
 
-.chat-container {
-	max-width: 90%;
-	margin: 0 auto;
-	overflow: hidden;
-	
-	
+#btnJoinCurrency{
+    position: relative;
+    margin-top: 30px;
+    background: white;
+    color:var(--main_color);
+    border: 2px solid white;
+    padding: 20px 30px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 600;
 }
-::-webkit-scrollbar{
-	background: white;
-	
-	
-}
-
-::-webkit-scrollbar-thumb{
-	background: rgb(243, 240, 240);
-	border-radius: 10px;
-}
-.fa-door-open{
-	color: var(--dark-color-a)
-}
-
-.chat-header {
-	background: var(--dark-color-a);
-	color: #fff;
-	border-top-left-radius: 20px;
-	border-top-right-radius: 20px;
-	padding: 15px;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	height: 160px;
-	margin-top: 10px;
-}
-
-.chat-main {
-	display: grid;
-	grid-template-columns: 0.9fr 4fr;
-	height: 73vh;
-	background:var(--light-background-msg)
-}
-
-.chat-sidebar {
-	background: var(--dark-color-b);
-	color: #fff;
-	border-right: var(--border-on-form);
-	padding: 20px 20px 60px;
-	overflow-y:auto; 
-    overflow-x:hidden;
-}
-.message_box{
-	position:absolute;
-	display: flex;
-	flex-flow: row wrap;
-	height: 100%;
-	width: 90%;
-	bottom: 0px;
-	left:5%;
-	background:var(--dark-color-a);
-	border: solid white 1px;
-	display: none;
-	overflow-y: auto;
-	border-radius: 18px;
-	z-index: 9999;
-}
-.message_boxHeader{
-	width: 100%;
-	padding: 40px;
-	padding-bottom: 0;
-	display: flex;
-	justify-content: space-between;
-	
-}
-
-.message_box a{
-	color: white;
-	font-weight: 600;
-}
-.message_box a:hover{
-	text-decoration: underline;
-}
-.message_box .receivedDiv{
-	width: 100%;
-	background: white;
-	height: 80%;
-}
-
-.message_box .sentMsgDiv{
-	background: rgb(255, 255, 255);
-	height: 80%;
-	width: 100%;
-	display: none;
+#btnJoinCurrency:hover{
+    background: var(--main_color);
+    color:white;    
+    box-shadow: 0 0 4px white;
 }
 
 
-.message_box .fa-times{
-	color:white;
-	cursor: pointer;
-}
-.fa-envelope, .fa-trash{
-	margin-left: 20px;
-}
-.message_box .messageboxmsglink{
-	border-bottom: 1px solid rgb(214, 214, 214);
-	padding: 20px;
-	padding-bottom: 80px;
-	
-	
-	display: grid;
-}
-.message_box .messageboxmsglink:hover{
-	background: #f3f3f3;
-	
-}
-.message_box .messageboxmsglink h3{
-	grid-row: 1;
-	grid-column: 1;
-	color:#0f0a27;
-	padding-bottom: 10px;
-}
-.messageboxmsglink  #timeNotification{
-	grid-row: 2;
-	grid-column: 2;
-	justify-self: end;
-	text-transform:capitalize;
-}
-.message_box .messageboxmsglink p{
-	color:#0c0d0e;	
-	grid-row: 2;
-	grid-column: 1;
+.linkJoinChat{
+    color:white;
+    text-decoration: none;
 }
 
-.fa-trash{
-	visibility: hidden;
-}
-.fa-envelope{
-	visibility: none;
-}
-.fa-trash:hover{
-	color: rgb(192, 45, 45);
-}
-
-
-#name-room{
-	font-size: 18px;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	overflow: hidden; 
-	padding: 10px;
-	
-}
-.nameRoom_container{
-	display: flex;
-	width: 100%;
-	background:rgba(0, 0, 0, 0.1);
-	max-height: 45px;
-	border-radius: 8px;
-}
-.numberOfUsers{
-	width: 100%;
-	display: flex;
-	justify-content: center;
+.btnJoinChat{
+    background: var(--main_color);
+    border: 2px solid white;
+    color:white;
+    margin-top: 35px;
+    font-size: 20px;
+    border-radius: 8px;
+    padding: 20px 50px;
+    font-weight: 600;
+    box-shadow: 0 0 1px rgb(179, 179, 179);
 }
 
-
-
-.onlineUsers{
-	margin-top: 20px;
+.btnJoinChat:hover {
+    border: 2px solid var(--main_color);
+    background: white; 
 }
-#users{
-	font-size: 18px;
-	background: rgba(0, 0, 0, 0.1);
-	padding: 10px;
-	
-	list-style-type: none;
-	height: 100%;
-	width: 100%;
-	overflow: visible;
-
+.btnJoinChat:hover > .linkJoinChat{
+    color:var(--main_color);
 }
-.user_list{
-	overflow: hidden;
-	overflow-y: auto;
-	max-height: 250px;
-	border-radius: 8px;
-	
+.headul li{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+   
 }
-.fa-chevron-down{
-	right: 1px;
-	padding-right: 20px;
-	margin-top: 15px;
-	
+.headul li a{
+    color:white;
+    white-space: nowrap;
+    margin: 0 8vh;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 600;
 }
-.fa-chevron-down:hover{
-	color:grey;
-	cursor: pointer;
-}
-.inbox_iconTxt{
-	margin-top: 15px;
-}
-.inbox_iconTxt:hover{
-	cursor: pointer;
-}
-.hidden_container{
-	background: var(--dark-color-a);
-	padding: 20px 10px 20px 10px;
-
-	display: none;
-	width: 100%;
-}
-.hidden_container h2:hover{
-	box-shadow: 1px 2px 2px#342a80;
-	color:rgb(238, 238, 238);
-	width: 100%;
-}
-.hidden_links{
-	font-size: 18px;
-	
-	border-radius: 8px;
-}
-.hidden_links:hover{
-	cursor: pointer;
-}
-.userzz{
-	font-weight: 600;
-}
-.userzz .fa-edit{
-	margin-left: 20px;
-	display: none;
-}
-.userzz:hover > .fa-edit{
-	display: inline-block;
-	cursor: pointer;
-}
-.userzz:hover{
-	color: rgb(207, 207, 207);
-	cursor: pointer;
+.headul li a:not(.tekstli):hover{
+    border-bottom: 1px solid white;
 }
 
-.fa-bars{
-	float: right;
+.headul li a:focus{
+    color: rgb(241, 241, 241);
 }
-.fa-bars:hover{
-	cursor: pointer;
+.kursyContainer{
+    background: #eee6fe;    ;
+    padding:20px;
+    
 }
-.fa-arrow-right{
-	position: absolute;
-	margin-top: 1%;
-	margin-left: 1%;
-	display: none;
-	color: grey;
+.kursy{
+    width: 68%;
+    margin: 2px auto;
+    padding-bottom: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
-.fa-arrow-right:hover{
-	cursor: pointer;
+.kursy div{
+    text-align: center;
+    background: var(--main_color);
+
+    color:white;
+    margin: 10px;
+    padding: 15px 5px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 92%;
+    height: 82%;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: capitalize;
+    position: relative;
+}
+.kursy div:hover{
+    box-shadow:1px 2px 2px #333;
+    opacity: 0.95;
 }
 
-.messageNotification{
-	font-size: 18px;
-	background: rgba(0, 0, 0, 0.1);
-	padding: 10px;
+.kursy div span{
+    font-size:22px;
+    font-weight: 500;
 }
-.messageNotification:hover .fa-trash{
-	visibility: visible;
+.kursImg{
+    margin: 10px auto;
+    height: 50px;
+    width: 50px;
 }
-
-.chat-sidebar h2 {
-	font-size: 20px;
-	background: rgba(0, 0, 0, 0.1);
-	padding: 10px;
-	margin-bottom: 10%;
+.kursy div .createRankSymbol{
+    font-size: 18px;
+    color:rgb(167, 167, 167);
 }
-
-.chat-sidebar h3 {
-	margin-bottom: 15px;
-}
-
-.chat-sidebar ul li {
-	padding: 10px 0;
+.createRankSymbol{
+    font-size: 1px;
+    position:absolute;
+    top: 6px;
+    left: 10px;
 }
 
-.emoji{
-	background:rgb(241, 241, 241);
-	height: 300px;
-	width: 300px;
-	position: absolute;
-	top: 60vh;
-	left: 28vh;
-	display: none;
-	border-radius: 6px;
-	border: 2px solid var(--dark-color-c);
-	
+.h2kursy{
+    color:#333;
+    padding: 20px;
+
+}
+
+footer{
+    position:relative;
+    border-top: solid grey 1px;
+    padding: 20px;
+    bottom: 0;
+    width:100;
+    height: 110px;
+    background:#7060BC;
+}
+footer ul{
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 75%;
+    
+}
+footer ul li{
+    list-style-type: none;
+    
+}
+footer ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 600;
+}
+.copyRight{
+    margin: 0 auto;
+    width: 70%;
+}
+.copyRight p{
+    color:white;
+    float: right;
+    font-size: 13px;
+}
+.socialContainerFooter{
+    display: flex;
+}
+.socialContainerFooter a{
+    padding-right: 10px;
+}
+.socialContainerFooter a i:hover{
+    color: rgb(233, 233, 233);
+}
+.crypto_container{
+    width: 100%;
+    overflow-x: auto;
+    margin: 0;
+    margin-top:2%;
+}
+.scrollingContainer{
+    background: var(--main_color);
+    border-radius: 8px;
+    width: 50%;
+    margin: 20px auto;
+    color:white;
+    
+    
+}
+.scrollingContainer  #scroller{
+    padding: 10px;
+    
+    width: 50%;
+    display: flex;
+    white-space: nowrap;
+    text-transform: uppercase;
+    animation: animate 20s linear infinite;
+}
+.scrollingContainer #scroller div{
+    padding: 0 10px;
+    align-self: center;
+}
+.scrollingContainer #scroller div img{
+    align-self: center;
+    padding:10px;
+    
+    width: 20px;
+    height: 20px;
 }
 
 
-#toggleBtn{
-	position: relative;
-	left: 30%;
-	top: 2px;
-	
+table{
+    width: 65%;
+    margin:0 auto;
+    background:#ffffff;
+    border-radius: 16px;
+    
 }
-#checklight{
-	position: relative;
-	top: 8px;
-	width: 60px;
-	max-width: 70px;
-	height: 30px;
-	-webkit-appearance: none;
-	background: #f0efef;
-	outline: none;
-	border-radius: 20px;
-	box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
-	transition: .5s;
-	right: 10%;
+.crypto_head{
+    border-bottom: solid rgb(235, 235, 235) 2px;
+    
 }
-#checklight:checked{
-	background: #d0e3ffbb;
+.crypto_head th{
+    color:rgb(92, 92, 92); 
 }
-#checklight:before{
-	content: '';
-	position: absolute;
-	width: 30px;
-	height: 30px;
-	border-radius: 20px;
-	top:0;
-	left: 0;
-	background: #fff;
-	transform: scale(1.1);
-	box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
-	transition: .5s;
-}
-#checklight:checked::before{
-	left:50%;
+.headul .chatliheader a{
+    border: solid white 1px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    
 }
 
+.headul .contactliheader a{
+    border: solid white 1px;
+    background: white;
+    color: var(--main_color);
+    font-weight: 700;
+    border-radius: 6px;
+    padding: 10px 20px;
+    margin-right: -40px;
+}
+.headul .chatliheader a:hover{
+    background: white;
+    color: var(--main_color);
+    font-weight: 700;
+}
+.headul .contactliheader a:hover{
+    background: var(--main_color);
+    color: white;
+}
+.crypto_head .coin_txt{
+    position: relative;
+    max-width: 40px;
+    left: 46px;
+   
+ }
+
+
+table tr:not(.crypto_head){
+    height: 80px;
+    
+}
+table tr th{
+    text-align: left;
+    
+}
+
+
+table tr td div{
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+}
+
+.icon img{
+    max-width: 40px;
+    max-height: 40px;
+}
+
+
+td{
+    font-size: 16px;
+}
+table, td{
+    border-top: 0.1px solid rgb(235, 235, 235);
+    border-bottom: 0.1px solid rgb(235, 235, 235);
+    text-align: left;
+}
+
+table,th{
+    border-top: 0.1px solid rgb(235, 235, 235);
+    border-bottom: 0.1px solid rgb(235, 235, 235);
+    border-collapse: collapse;
+    color:rgb(12, 11, 11);
+    padding: 1em;
+}
+
+.th1{
+    color: pink;
+}
+
+
+
+
+.tresc{
+    color:#333;
+    text-transform: capitalize;
+    text-align: center;
+    padding-top: 2.5%;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+
+.contact_container{ 
+    
+    margin: 40px auto;
+    background: var(--main_color);
+    width: 60%;
+   
+    border-radius: 12px;
+    margin-bottom: 6%;
+    min-height: calc(66vh - 80px);
+    display:flex;
+    flex-direction: column;
+   
+    
+   
+}
+
+.image_container i{
+    color:grey;
+    margin-top: 220px;
+    position: absolute;
+    opacity: 0.6;
+    cursor: pointer;
+    width: 50%;
+} 
+.contact_info{
+    
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    
+    color: white;
+    
+    
+    margin: 10px auto;
+    text-decoration: none;
+}
+.contact_info span{
+    position: relative;
+    left: 30px;
+}
+.contact_info i{
+    width: 34px;
+}
+.contact_info:hover{
+    color:rgb(223, 223, 223);
+}
+.contact_info .fas{
+    position: relative;
+    top:6px;
+    right: 20px;
+}
+
+.headul a:hover{
+    transform: scale(1.1);
+}  
+
+h2{
+    padding: 6%;
+    text-align: center;
+    font-size: 24px;
+    color: white;
+}
+.btn{
+   
+   margin-bottom: 50px;
+   padding: 15px 25px;
+   border-radius: 24px;
+   font-size: 20px;
+   border: none;
+   background: white;
+   font-weight: 500;
+   display: inline-flex;
+}
+.fa-comments{
+    margin-right: 8px;
+}
+.fa-comments:hover, .btn:hover{
+    color:#4A00E0;
+    box-shadow: 1px 2px 2px white;
+}
+.btn_container{
+    margin-top: 20px;
+    text-align: center;
+}
+.fa-search{
+    right: 25%;
+    top: 10%;
+    position: absolute;
+    color:white;
+    font-size: 20px;
+}
+tr:not(.crypto_head):hover{
+    background:rgb(240, 240, 240);
+    transform: scale(1.05);
+}
 .icon{
-	display: inline-flex;
-	padding-left: 10px;
-	padding-top: 5px	;
-}
-.icon:hover{
-	transform: scale(1.6);
+    padding-left: 40px;
+    max-width: 40px;
 }
 
-@keyframes append-animate {
-	from {
-		transform: scale(0);
-		opacity: 0;
-	}
-	to {
-		transform: scale(1);
-		opacity: 1;	
-	}
+.rankN{
+    left: 20px;
+    padding-left: 30px;
+}
+.priceth{
+    position: relative;
+    right: 15px; 
+}
+.th24{
+    position: relative;
+   right: 15px;
+}
+.th7{
+    position: relative;
+    right: 15px;
+}
+.thHigh{
+    position: relative;
+    right: 15px;
+}
+.thLow{
+    position: relative;
+    right: 15px;
+}
+.cryptoID{
+    position: relative;
+    padding-left: 15px;
+    text-transform: capitalize;
+    padding-right: 20px;
+    max-width: 100px;
+    font-weight: 600;
+}
+.cena{
+
+    padding-right: 5px;
+    position: relative;
+    
 }
 
-
-
-.chat-messages {	
-	padding: 30px;
-	padding-bottom: 10px;
-	max-height: 100%;
-	overflow-y: scroll;
-	width: 100%;
+.symbol{
+    text-transform: uppercase;
+    font-size:12px;
+    position: relative;
+    
+}
+.hjenden404{
+    text-align: center;
+    color: var(--main_color);
+}
+.containerCryptoSub{
+    background: var(--main_color);
+    color: white;
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 12px;
+    padding: 30px;
+    margin-top: 10px;
+    display: grid;
+    margin-top: 40px;
+    margin-bottom: 20%;
+    position: relative;
+}
+.containerCryptoSub p{
+    padding: 5px 0px;
+}
+.cryptoSubImageDiv{
+    grid-column: 1;
+    grid-row: 1;
+    width: 70px;
+    position: relative;
+    margin-top: 10px;
+}
+.cryptoSubID{
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: 26px;
+    grid-column: 2 /4;
+    position: relative;
+    grid-row: 1;
+    top: 6px;
 }
 
-
-.chat-messages .message {
-
-	padding: 15px;
-	margin-bottom: 8px;
-	background-color: var(--light-color);
-	border-radius: 30px;
-	clear: both;
-	word-wrap:break-word;
-	width:  fit-content;
-	max-width: 70%;
-	max-height: 100%;
-	animation: append-animate .1s ease-in-out;
-	overflow: hidden;
+.cryptoSubMARKETCAP{
+    font-size: 18px;
+    grid-row: 2;
+    grid-column: 4;
+   
+}
+.cryptoSubMARKETCAP span{
+    position: relative;
+    float: right;
+}
+.cryptoSubPRICE span{
+    position: relative;
+    float: right;
+}
+.cryptoSubPRICE{
+    grid-row: 1;
+    grid-column: 4;
+    align-self: flex-end;
+    font-size: 18px;
+}
+.cryptoSubProcent{
+    grid-row: 2;
+    grid-column: 2 /4;
+    font-size: 26px;
+    position: absolute;
+    left: 0%;
+    top:-2%;
 }
 
-.chat-messages .message .meta {
-	font-size: 15px;
-	font-weight: bold;
-	color: var(--dark-color-c);
-	opacity: 0.7;
-	margin-bottom: 7px;
-	padding-left: 5px;
-	
-}
-
-
-.chat-messages .message .meta span {
-	margin-left: 10px;
-	color: rgb(22, 19, 19);
-}
-.image{
-	max-height: 100%;	
-}
-
-#btn-leave{
-	position: relative;
-	border-radius: 6px;
-	padding: 12px;
-	color: var(--dark-color-a);
-	white-space: nowrap;
-	background-color: var(--light-color);
-	
-}
-#btn-leave:hover{
-	background-color: var(--dark-color-a);
-	color: var(--light-color);
-	
-}
-#btn-leave:hover .fa-door-open{
-	color: var(--light-color);
-}
-#exit_svg{
-	display: none;
-}
-
-.chat-form-container {
-	padding: 20px 20px;
-	background-color: var(--form-background);
-	border-bottom-left-radius: 20px;
-	border-bottom-right-radius: 20px;
-	border-top: var(--border-on-form)
-	
-}
-.chat-form-container .btn{
-	font-weight: 600;
-}
-
-.chat-form-container form {
-	display: flex;
-	margin-left: 18%;
-	transition: margin-left 1s;
-}
-.fa-paper-plane{
-	margin-left: 6px;
-}
-.chat-form-container input[type='text'] {
-	font-size: 16px;
-	padding: 5px;
-	height: 40px;
-	flex: 1;
-	border-radius: 8px;
-	outline: none;
-	border: none;	
-}
-.chat-form-container input[type='text']:focus{
-background-color: #d0e3ffbb;
-}
-
-.chat-form-container .inputFileBtn{
-	margin: 0px 5px;
-	background: var(--form-background);
-	border: none;
-}
-.chat-form-container .fa-images{
-	color: white;
-}
-/* Join Page */
-.btnjoin{
-	text-align: center;
-}
-#exclamationTriangle{
-	display: none;
-	margin-left: 20px;
+.cryptoSub24highlow{
+    grid-row: 5;
+    grid-column: 4/4;
+    font-size: 18px;
 
 }
-#btnjoin{
-	padding: 18px;
-	background-color: var(--dark-color-a);
-	color: white;
-	width: 100%;
-	outline: 2px solid;
-	font-weight: 700;
-	margin: 0 auto;
-	
+.priceChangePercentage_24h{
+    font-size: 18px;
+    grid-row: 6;
+    grid-column: 4/4;
 }
-#btnjoin:hover{
-	background-color:white;
-	color:var(--dark-color-a);
-
+.CirculatingSupply{
+    grid-column: 4;
+    font-size: 18px;
+    grid-row: 3;
+}
+.CirculatingSupply span{
+    position: relative;
+    float: right;
+}
+.cryptoSub24highlow span{
+    position: relative;
+    float: right;
+}
+.cryptoSub24highlow #datahigh24{
+    color: green;
+}
+.cryptoSub24highlow #datalow24{
+    color: red;
+}
+.marketCapRank{
+    grid-column: 1;
+    grid-row: 2;
+    font-size: 18px;
+    color:rgb(172, 172, 172);
+}
+.marketCapRank span{
+    position: relative;
+    left: 12px;
+}
+.cryptoSubMaxSupply{
+    grid-column:4;
+    grid-row: 4;
+    font-size: 18px;
+}
+.cryptoSubMaxSupply span{
+    position: relative;
+    float: right;
+}
+.cryptoHomeV{
+    grid-row: 12;
+    font-size: 18px;
+    grid-column: 4;
+}
+.cryptoHomeV span{
+    position: relative;
+    float: right;
+}
+.cryptoHomeV span a{
+    color:rgb(231, 231, 231);
+}
+.priceChangePercentage_7d{
+    grid-row: 8;
+    grid-column: 4;
+    font-size: 18px;
+}
+.priceChangePercentage_14d{
+    grid-row: 9;
+    grid-column: 4;
+    font-size: 18px;
+}
+.priceChangePercentage_30d{
+    grid-row: 10;
+    grid-column: 4;
+    font-size: 18px;
+}
+.priceChangePercentage_1y{
+    grid-row: 11;
+    grid-column: 4;
+    font-size: 18px;
+}
+.priceChangePercentage_7d span, .priceChangePercentage_14d span, .priceChangePercentage_30d span{
+    position: relative;
+    float: right;
+}
+.span24,.span1y{
+    position: relative;
+    float:right;
+}
+.mobileLogo{
+    display: none;
+}
+.mainHot{
+    margin: 0 auto;
+    display:flex;
+    width: 68%;
+    padding:100px 0px;
+    
+}
+.hotContainer{
+    width: 100%;
+    margin: 0;  
+    text-align: center;
+    height: 500px;
+   
+}
+.hotCoin{
+    position: relative;
+    border-radius: 8px;
+    width: 80%;
+    padding: 30px;
+    margin: 0 auto;
+    background:#7060BC;
+    box-shadow:2px #333;
+}
+.hotCoinImgContainer{
+    max-height: 200px;
+    width: 100%;
+}
+.hotCoinImg{
+    max-height: 200px;
+}
+.hotCoinImg7{
+    max-height: 200px;
+}
+.hotCoinId, .hotCoinId7{
+    margin-top: 10px;
+    text-transform: capitalize;
+    color: white;
 }
 
-#username{
-	border-radius: 6px;
-	border: 1px solid #888888;
+.hotCoin24Change{
+    margin-top: 300px;
 }
-#room{
-	border-radius: 6px;
-	border: 1px solid #888888;	
-	margin-bottom: 1rem;
+.strzal{
+    font-size: 24px;
+    color: #333;
+    margin: 40px 0px;
 }
-
-.join-container {
-	margin: 80px auto;
-	max-width: 400px;
-	color:white;
+.hotCoin24Price, .hotCoin7Price{
+    color: white;
 }
-
-.join-header {
-	text-align: center;
-	padding: 3.5rem;
-	background: var(--dark-color-a);
-	border-top-left-radius: 8px;
-	border-top-right-radius: 8px;
+.hotCoinRank , .hotCoinRank7{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color:whitesmoke;
 }
 
-.join-main {
-	padding: 20px 40px;
-	background: var(--dark-color-b);
-	border-bottom-left-radius: 8px;
-	border-bottom-right-radius: 8px;
+/* About Page */
+.aboutHead{
+    background: #432c72;
+    height: 400px;
+    border-bottom-right-radius: 30%;
 }
-
-.join-main p {
-	margin-bottom: 20px;
+.aboutTresc{
+    margin: 0 auto;
+    width: 30%;
 }
-
-.join-main .form-control {
-	margin-bottom: 20px;
-	font-size: 18px;
+.trescAbout{
+    color:white;
+    text-transform: capitalize;
+    padding-top: 10.5%;
+    font-size: 32px;
+    font-weight: bold;
 }
-
-.join-main label {
-	display: block;
-	margin-bottom: 5px;
+.pAbout{
+    color: white;
+    font-size: 16px;
+    margin-top: 20px;
+    width: 600px;
+    text-align: justify;
 }
-
-.join-main input[type='text'] {
-	font-size: 18px;
-	padding: 5px;
-	height: 40px;
-	width: 100%;
-	outline: none;
+@media  (max-width: 1300px) {
+    .kursy{
+        grid-template-columns: 1fr 1fr 1fr;
+        height: 1000px;
+    }
+    .imag_contain{
+        width: 82%;
+    }
+    .tresc1{
+        width: 82%;
+    }
+    .tresc2{
+        font-size: 40px;
+    }
+    .loremContainer{
+        width: 100%;
+    }
+    .chatCont{
+        width: 82%;
+    }
+   
 }
-
-.join-main select {
-	font-size: 18px;
-	padding: 5px;
-	height: 40px;
-	width: 100%;
-	outline: none;
+@media screen and (max-width: 1200px){
+    .mainHot{
+        display: block;
+        width: 85%;
+    }
+    .kursy{
+        grid-template-columns: 1fr 1fr 1fr;
+        height: 800px;
+        width: 100%;
+    }
+    .kursImg{
+        margin: 5px auto;
+        height: 40px;
+        width: 40px;
+    }
+    .headul li a{
+        margin: 0 1.5em;
+    }
+    .containerCryptoSub{
+        width: 70%;
+    }
+    .containerCryptoSub p:not(.cryptoSubID){
+        font-size: 16px;
+    }
+    .cryptoSubID{
+        font-size: 20px;
+    }
+    .marketCapRank span{
+        left: 0
+    }
+    .headul .contactliheader a{
+        margin-right: -20px;
+    }
+    footer ul{
+        width: 90%;
+    }
+    .copyRight{
+        width: 85%;
+    }
+   
 }
+@media screen and (max-width: 980px) {
+    .contact_container{
+        width: 100%;
+        border-radius: 0;
+    }
+    .containerCryptoSub{
+        margin-top: 20px;
+        width: 100%;
+        display: block;
+        
+    }
+    .cryptoSubProcent{
+        position: relative;
+    }
+    
+    .headul{
+        margin-left: 25px;
+    }
+    
+    .headul li a{
+        margin: 0 0.9em;
+    }
+    .tresc1{
+        font-size: 24px;
+    }
+    .tresc2{
+        font-size: 30px;
+    }
+    .pageCurrencyBlock{
+        display: block;
+    }
+    .pageCurrency{
+        display: block;
 
-.join-main .btn {
-	margin-top: 20px;
-	width: 100%;
+    }
+    .pageCurrencyBlock img{
+        margin: 0 auto;
+        max-width: 80%;
+    }
+    footer ul{
+        width: 100%;
+    }
 }
-
-
-@media (max-width: 600px) {
-	body{
-		background: var(--dark-color-a);
-		margin: 0;
-		padding: 0;
-		height: 100%;
-		width: 100%;
-		position: fixed;
-	
-	}
-	.chat-main {
-		display: block;
-		height: 29.5rem;
-		
-	}
-
-	.chat-sidebar {
-		display: grid;
-		max-width: 100%;
-		width: 50vh;
-		height: 100%;
-	}
-	.chat-container{
-		max-width: 100%;
-	}
-	.hjedynka{
-		font-size: 24px;
-		margin-left: 6px;
-	}
-	#checklight{
-	position: relative;
-	width: 35px;
-	height: 20px;
-	-webkit-appearance: none;
-	background: #f0efef;
-	outline: none;
-	border-radius: 20px;
-	box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
-	transition: .5s;
-	top: 8px;
-	
-	}
-	#checklight:before{
-		content: '';
-		position: absolute;
-		width: 20px;
-		height: 20px;
-		border-radius: 20px;
-		background: #fff;
-		transform: scale(1.1);
-		box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
-		transition: .5s;
-	}
-	#checklight:checked::before{
-		left: 45%;
-	}
-
-	.chat-form-container form{
-		margin: 0;
-	}
-	#btn-leave{
-	position: relative;
-	border-radius: 4px;
-	padding: 8px;
-	font-size: 14px;
-	float: right;
-	}
-	.Container_btn{
-		margin-left: 12%;
-	}
-	.logo{
-		display: none;
-	}
-	
-	.chat-messages .message{
-		max-width: 65%;
-		font-size: 12px;
-		border-radius: 12px;
-		padding: 12px;
-		
-	}
-	.chat-messages .image{
-		margin: 0;
-		max-height: fit-content;
-	}
-
-	.chat-messages .message .meta {
-		font-size: 12px;
-		font-weight: bold;
-		color: var(--dark-color-c);
-		opacity: 0.7;
-		margin-bottom: 7px;
-		padding-left: 0px;
-		
-	}
-	
-	
-	.chat-messages .message .meta span {
-		margin-left: 10px;
-		color: rgb(22, 19, 19);
-	}
-	.chat-messages {	
-		padding: 15px;
-		padding-bottom: 3px;
-		max-height: 29.5rem;
-		overflow-y: scroll;
-	}
-	.chat-form-container {
-		padding: 10px 10px;
-		
-		width: 100%;
-		margin: 0 auto;
-		border-bottom-left-radius: 0;
-		border-bottom-right-radius: 0;
-		
-	}
-	.chat-form-container .inputFileBtn{
-		margin: 0;
-		margin-left: 5px;
-		
-	}
-	.fa-images{
-		font-size:1.5em;
-	}
-	.fa-smile{
-		font-size: 1.5em;
-		margin-top: 3px;
-	}
-	
-		
-	.chat-form-container input[type='text'] {
-		font-size: 12px;
-		height: 35px;
-		
-		
-		
-	}
-	.chat-header {
-		border-top-left-radius: 0;
-		border-top-right-radius: 0;
-		padding: 10px;
-		height: 100px;	
-	}
-	.numberOfUsers{
-		position: relative;
-		left: 15px;
-	}
-	.emoji{
-		background:rgb(241, 241, 241);
-		height: 200px;
-		width: 80%;
-		position: absolute;
-		top: 23rem;
-		left: 0vh;
-		
-		
-	}
-	::-webkit-scrollbar{
-		width: 8px;	
-	}
-	.btn{
-		padding: 8px;
-		font-size: 14px;
-		background: white;
-	}
-	.chat-form-container input[type='text']{
-		padding: 0;
-	}
-	.chat-form{
-		display: flex;
-		justify-content: center;
-	}
-
-	
+@media screen and (max-width: 600px) {
+    .mobileLogo{
+        display: grid;
+        grid-column: 1;
+        margin-top: 5px;
+        width: 100%;
+        
+        
+    }
+    .mobileLogo img{
+        width: 70%;
+       
+    
+    }
+    .btnJoinChat{
+        
+        margin-top: 0px;
+        font-size: 16px;
+        border-radius: 8px;
+        margin-left: 10px;
+        padding: 20px 20px;
+        font-weight: 600;
+        
+    }
+    .kursyContainer{
+        height: 950px;
+        padding:12px;
+    }
+    .kursy{
+        grid-template-columns: 1fr 1fr;
+        height: 800px;
+        width: 100%;
+    
+    }
+    .kursy div{
+        margin:10px 0px;
+    }
+    .tresc{
+        font-size: 22px;
+        
+    }
+    .tresc1{
+        font-size: 22px;
+        width: 85%;
+        padding-top: 8%;
+    }
+    .chatCont{
+        width: 85%;
+    }
+    
+    .containerCryptoSub .cryptoSubID{
+        font-size: 18px;
+    }
+    .containerCryptoSub p{
+        font-size: 14px;
+    }
+    .header_container{
+        padding: 10px 0px;
+        display: grid;
+        align-items: center;
+        justify-content: space-around;
+    }
+ 
+    footer{
+        height:100%;
+        padding: 0px;
+        width: 100%;
+       
+    }
+    footer ul{
+        display: block;
+       
+        margin: 10px auto;
+        width: 100%;
+    }
+    footer ul li{
+        padding: 10px;
+        margin-left: 20px;
+    }
+    footer ul li a{
+        font-size: 14px;
+    }
+    .headul{
+        grid-row: 2;
+        margin-left: 0px;
+        display:none;
+        padding-bottom: 20px;
+        
+    }
+    .headul li{
+        padding: 15px 3px;
+        margin: 0;
+        width: 100%;
+        
+    }
+    .headul li a{
+        font-size: 14px;
+        margin: 0px 0px;
+    }
+    .logoContainer{
+        display: none;
+       
+    }
+    .headul .contactliheader a{
+        border: none;
+        background: none;
+        color: white;
+        font-weight: normal;
+        border-radius: 0;
+        padding: 0;
+        margin-right: 0;
+    }
+    .headul .chatliheader a{
+        border: none;
+        background: none;
+        color: white;
+        font-weight: normal;
+        border-radius: 0;
+        padding: 0;
+        margin-right: 0;
+    }
+    .tekst{
+        border-left: none;
+        
+    }
+    .tekst .tekstli{
+        margin: 0;
+    }
+    table tr td div{
+        width: 30px;
+        height: 30px;
+        margin-left: 18px;
+    }
+    .crypto_head{
+        font-size: 12px;
+    }
+    
+   .icon img{
+       max-width: 30px;
+       max-height: 30px;
+   }
+   .icon{
+    max-width: 30px;
+    padding-left: 0;
+    padding-right: -109px;
+    }
+    
+    .cryptoID{
+        left: 5px;
+        text-transform: capitalize;
+        padding-right: 20px;
+        padding-left: 0px;
+        
+    }
+    .cena{
+    
+        padding-right: 5px;
+        position: relative;
+        
+    }
+    .crypto_head .coin_txt{
+        position: relative;
+        left: -4px;
+    }
+    .nameth{
+        padding-right: 29px;
+        
+    }
+    table tr td{
+        font-size: 14px;
+    }
+    .rankN{
+        position: relative;
+        left: -5px;
+        
+    }
+    .imag_contain{
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    .imag_contain img{
+        padding: 10px;
+    }
+    .lorem{
+        width: 90%;
+        text-align: justify;
+        font-size: 16px;
+        padding: 0;
+        margin: 0 auto 20px auto;
+       
+        
+    }
+    .loremContainer{
+        width: 95%;
+        text-align: justify;
+        font-size: 16px;
+        padding: 0;
+        margin: 0 auto 40px auto;
+        margin-top:20px;
+    }
+  
+    .tresc{
+        padding: 20px;
+        font-size: 22px;
+        
+    }
+    .imag_contain img{
+        width: 70%;
+        height: 70%;
+    }
+    .contact_info{
+        font-size: 14px;
+        width: 100%;
+       
+    }
+   
+    .hamburgerLogo{
+        display: grid;
+        grid-column: 2;
+        grid-row: 1;
+        margin-right: auto;
+        width: 30px;
+        height: 30px;
+        
+    }
+    .menuIcon{
+        margin: 5px 10px;
+        width: 70%;
+        height: 70%;
+    }
+    .containerCryptoSub{
+        width: 100%;
+        display: block;
+        width: 80%;
+        margin-bottom: 42%;
+    }
+  
+    .hour24s{
+        padding-right: 20px;
+    }
+    .cena, .sevendays, .niska{
+        padding-right: 25px;
+    }
+    .wysoka{
+        padding-right: 30px;
+    }
+    .contact_container{
+        margin: 0 auto;
+    }
+    .symbol{
+        font-size: 10px;
+    }
+    .hotCoin{
+        width: 70%;
+    }
+    .hotCoinImg{
+        max-height: 130px;
+    }
+    .hotCoinImg7{
+        max-height: 130px;
+    }
 }
