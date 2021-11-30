@@ -19,10 +19,7 @@ const io = socketio(server, {
     pingTimeout: 100000,
     pingInterval: 5000
 });
-
-
 const hbs = require('hbs')
-
 
 app.set('view engine', 'hbs')    
 
@@ -34,7 +31,7 @@ hbs.registerPartials(partialsPath)
 //1. Import coingecko-api
 app.use(express.static("/views/img"))
 
-
+moment.locale("pl")
 
 
 
@@ -107,9 +104,9 @@ io.on('connection', socket =>{
             console.log('This is sender ' + user.username)
             console.log('this is the receiver ' + userp.username)
             const userID = userp.id
-            socket.emit('wysylka', {usernamex: privName ,id: wysylka, time: moment().format('MMMM Do, HH:mm'), user: username})
+            socket.emit('wysylka', {usernamex: privName ,id: wysylka, time: moment().format('MMMM Do HH:mm'), user: username})
             if(userID !== undefined){
-                socket.to(userID).emit('privateNot', {usernamex: username, id: wysylka, time: moment().format('MMMM Do, HH:mm')})
+                socket.to(userID).emit('privateNot', {usernamex: username, id: wysylka, time: moment().format('MMMM Do HH:mm')})
             }
             else{
                 console.log('check sendPriv it can be undefined')
@@ -127,7 +124,7 @@ io.on('connection', socket =>{
             const socketid = socket.id;
             const username = user.username;
             const room = user.room;
-            const czas = moment().format('MMMM Do, HH:mm')
+            const czas = moment().format('MMMM Do HH:mm')
             const text = msg;
             const message = new Msg({socketid, username, text, room, czas})
             message.save()
