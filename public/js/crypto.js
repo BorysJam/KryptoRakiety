@@ -23,7 +23,6 @@ socket.on('coingeckoDATA', (data) =>{
                     const oldTh6 = document.querySelectorAll('.niska')
                     const oldTh7 = document.querySelectorAll('.sevendays')
                     const oldTh8 = document.querySelectorAll('.symbol')
-                    console.log("update dom")
                     
                     oldTh1.innerHTML = data.data[c].id;
                     oldTh2.innerHTML = data.data[c].market_cap_rank;
