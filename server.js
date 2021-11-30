@@ -96,7 +96,7 @@ io.on('connection', socket =>{
    
     })
 
-    socket.on('sendPriv', privName =>{
+    socket.once('sendPriv', privName =>{
         const user = getCurrentUser(socket.id);
         const userp = findUserPriv(privName)
         if(user && userp !== undefined){
