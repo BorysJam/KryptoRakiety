@@ -348,6 +348,8 @@ a {
 	background: rgba(0, 0, 0, 0.1);
 	padding-top: 0px;
 	padding: 10px;
+	margin-top: 0 !important;
+	border-radius: 8px;
 }
 .messageNotification:hover .fa-trash{
 	visibility: visible;

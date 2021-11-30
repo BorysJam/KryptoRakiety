@@ -85,7 +85,7 @@ socket.on('userIsTyping', data =>{
 var userArrayMSG = [];
 var sentuserArrayMSG = [];
 //prywatne wiadomosci powiadomienie
-socket.once('privateNot', ({usernamex, id, time}) => {
+socket.on('privateNot', ({usernamex, id, time}) => {
     outputPrivateNotification(usernamex)
     savetoBox(usernamex, id, time)
     
