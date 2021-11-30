@@ -1,4 +1,4 @@
- const users = [];
+const users = [];
 
 //Join user to chat
 function userJoin(id, username, room){
@@ -11,10 +11,10 @@ function userJoin(id, username, room){
 
 //get current user
 function getCurrentUser(id){
-    if(id){
+    if(id !== undefined){
         return users.find(user => user.id === id);
     }else{
-        console.log('something wrong')
+        console.log('cos nie tak')
     }
 }
 
@@ -30,6 +30,11 @@ function userCheckRoom(room){
     return users.filter(user => user.room === room)
 }
 
+function findUserPriv(privName){
+    const userp = users.find(user => user.username === privName)
+    return userp
+}
+
 
 
 //nieuzywane
@@ -38,5 +43,6 @@ module.exports = {
     getCurrentUser,
     disconnectUser,
     userCheckRoom, 
-    userx: users
+    userx: users,
+    findUserPriv
 }
