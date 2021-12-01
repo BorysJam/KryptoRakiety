@@ -87,28 +87,27 @@ body{
 }
 .czatujTeraz{
     display: grid;
-    height: 700px;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    height: 800px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    
+    
 }
 .linkJoinChat{
     color:white;
     text-decoration: none;
 }
 .chatCont {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    justify-items: end;
-    
-    grid-row: 1;
+  
+    grid-column: 2;
+    justify-items: start;
+    align-items: center;
     height: 100%;
 }
 .chatContLorem{
-    display: grid;
-    grid-column-start: 3;
-    grid-column-end: 5;
-    grid-row: 1;
-    align-self:flex-end;
+    grid-column-start: 4;
+    grid-column-end: 6;
+ 
+    align-self: center;
     width: 80%;
     color:#333;
     text-align: justify;
@@ -126,15 +125,21 @@ body{
     font-weight: 600;
 }
 
-
-.chatCont , .pageCurrency{
+.chatCont {
+    width: 100%;
+    display: grid;
+}
+.pageCurrency{
     width: 65%;
     display: grid;
     margin: 0px auto;
 }
 .chatCont img{
+    height: 450px;
     border-radius: 12px;
     box-shadow: 2px 1px 7px #333;
+    position: relative;
+    left: 20px;
 }
 
 .pageCurrencyBlock{
@@ -296,7 +301,7 @@ body{
 .h2kursy{
     color:#333;
     padding: 20px;
-
+    font-size: 30px;
 }
 
 footer{
@@ -829,7 +834,7 @@ tr:not(.crypto_head):hover{
     margin-top: 300px;
 }
 .strzal{
-    font-size: 24px;
+    font-size: 30px;
     color: #333;
     margin: 40px 0px;
 }
@@ -847,7 +852,7 @@ tr:not(.crypto_head):hover{
 .aboutHead{
     background: #432c72;
     height: 400px;
-    border-bottom-right-radius: 30%;
+
 }
 .aboutTresc{
     margin: 0 auto;
@@ -878,7 +883,7 @@ tr:not(.crypto_head):hover{
     .tresc1{
         width: 82%;
     }
-    .tresc2{
+    .tresc2, .tresc3{
         font-size: 40px;
     }
     .loremContainer{
@@ -956,18 +961,53 @@ tr:not(.crypto_head):hover{
         font-size: 24px;
     }
     .tresc2{
+        width: 90%;
+        margin: 20px auto;
+    }
+    .tresc2, .tresc3{
         font-size: 30px;
+    }
+    .czatujTeraz{
+        height: 950px;
+    }
+    .czatujTeraz, .chatCont, .chatContLorem{
+        display: block;
+    }
+    .chatCont{
+        width: 100%;
+        height: 400px;
+    }
+    #btnJoinCurrency{
+        position: relative;
+        left: 5%;
+    }
+    .chatContLorem{
+        margin: 100px;
+        height: 400px;
+        width: 90%;
+        margin: 100px auto;
+    }
+ 
+    .chatCont img{
+        display: block;
+        margin: 50px auto;
     }
     .pageCurrencyBlock{
         display: block;
+        height: 900px;
     }
     .pageCurrency{
         display: block;
 
     }
     .pageCurrencyBlock img{
-        margin: 0 auto;
-        max-width: 80%;
+        margin: 30px auto;
+        max-width: 90%;
+    }
+    .currencyLorem{
+        width: 90%;
+        
+        margin:0 auto;
     }
     footer ul{
         width: 100%;
@@ -1018,6 +1058,15 @@ tr:not(.crypto_head):hover{
         font-size: 22px;
         width: 85%;
         padding-top: 8%;
+    }
+    .tresc2{
+        margin-top: 40px;
+    }
+    .pageCurrencyBlock img{
+        margin-top: 50px;
+    }
+    .czatujTeraz{
+        height: 960px;
     }
     .chatCont{
         width: 85%;
@@ -1167,7 +1216,7 @@ tr:not(.crypto_head):hover{
         
     }
     .loremContainer{
-        width: 95%;
+        width: 90%;
         text-align: justify;
         font-size: 16px;
         padding: 0;
