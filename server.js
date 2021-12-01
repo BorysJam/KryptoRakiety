@@ -209,10 +209,10 @@ app.get('', (req,res)=>{
 })
 
 
-app.get('/about', (req,res)=>{
-    res.render('about', {
+app.get('/o-nas', (req,res)=>{
+    res.render('onas', {
         title: 'Krypto Rakiety - O nas',
-        text: 'O nas'
+        text: 'O nas 🔍'
         
     })
 })
