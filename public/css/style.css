@@ -1060,10 +1060,10 @@ tr:not(.crypto_head):hover{
     }
     .btnJoinChat{
         
-        margin-top: 0px;
+        margin-top: 10px;
         font-size: 16px;
         border-radius: 8px;
-        margin-left: 10px;
+        margin-left: 0px;
         padding: 20px 20px;
         font-weight: 600;
         
@@ -1087,7 +1087,7 @@ tr:not(.crypto_head):hover{
     }
     .tresc1{
         font-size: 22px;
-        width: 85%;
+        width: 90%;
         padding-top: 8%;
     }
     .tresc2{
@@ -1242,7 +1242,7 @@ tr:not(.crypto_head):hover{
         padding: 10px;
     }
     .lorem{
-        width: 90%;
+        width: 100%;
         text-align: justify;
         font-size: 16px;
         padding: 0;
