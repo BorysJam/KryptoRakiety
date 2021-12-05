@@ -31,7 +31,32 @@
         <p class="cryptoHomeV">Strona <i class="fas fa-home"></i>:<span><a class="cryptoHomePage"></a></span></p>
    
     </div>
+        
+        <div class="chartContainer">
+            <h3 class="chartText">{{text}} wykres ceny</h3>
+            <select name="chartTime" id="chartTime" onchange="odpal()">
+                <option value="1">24h</option>
+                <option value="7">7 dni</option>
+                <option value="14">14 dni</option>
+                <option value="30">30 dni</option>
+                <option value="60">60 dni</option>
+                <option value="100">100 dni</option>
+                <option value="180">180 dni</option>
+                <option value="365">365 dni</option>
+                <option value="730">2 lata</option>
+                <option value="max">Max</option>
+         
+            </select>
+            <canvas id="myChart"></canvas>
+            </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   
+
     <script>
+        
+        const ctx = document.getElementById('myChart').getContext('2d');
+        var myChart;
+        const selectOtption = document.querySelector('select')
         const cryptoSubImageDiv = document.querySelector('.cryptoSubImageDiv')
         const cryptoSubImg = document.querySelector('.cryptoSubImg')
         const cryptoSubProcent = document.querySelector('.cryptoSubProcent')
@@ -49,15 +74,26 @@
         const priceChangePercentage30d = document.querySelector('.priceChangePercentage_30d')
         const priceChangePercentage_1y = document.querySelector('.priceChangePercentage_1y')
         const cryptoHomePage = document.querySelector('.cryptoHomePage')
-
+        var arr= []
+      
+        
+        function odpal(){
+            
+            start()
+        }
+    
         const info = document.querySelector('.tresc').innerHTML;
         async function fetchJSON(){ 
             const res = await fetch(`https://api.coingecko.com/api/v3/coins/${info}`)
+           
+            
+           
             const data = await res.json()
+           
+            
             return data;
         }
-        fetchJSON().then((data) =>{
-            console.log(data)
+        fetchJSON().then((data =>{
             cryptoSubID.innerHTML = data.id + ` (${data.symbol})`;
             cryptoSubProcent.innerHTML = (data.market_data.price_change_percentage_24h).toPrecision(3) + "%";
             cryptoSubPRICE.innerHTML = "Cena: " + `<span>` + " $" +  data.market_data.current_price.usd +`</span>`;
@@ -109,10 +145,83 @@
             }else{
                 document.querySelector('.span1y').style.color = "green"
             }
+   
             
-            
-        })
+        }))
+        function start(){
+        async function fetchChartData(){
+            let res = await fetch(`https://api.coingecko.com/api/v3/coins/${info}/market_chart?vs_currency=usd&days=${selectOtption.value}`)
+        
+            const data = await res.json()
        
+            return data
+        }
+        fetchChartData().then((data=>{
+            if(myChart !== undefined){
+                myChart.destroy()
+            }
+            createChart(data)
+            
+        }))
+       function createChart(data){
+           
+            let arrCena = []
+            let arrCzas = []
+            arr = []
+            arr.push(data.prices)
+
+            arr[0].forEach(e => {
+                
+                let nowyCzas = new Date(e[0])
+                let ddMMrrrr = nowyCzas.getFullYear() + "-" + (nowyCzas.getMonth()+1) + "-" + nowyCzas.getDate()
+                
+                arrCzas.push(ddMMrrrr)
+                arrCena.push(e[1])
+                
+            })
+
+            const options = {
+                type: 'line',
+                data: {
+                    labels: arrCzas,
+                    datasets: [{
+                        label: '$ cena w dolarach',
+                        data: arrCena,
+                        fill:1,
+                        backgroundColor: [
+                            '#432c72',
+                            
+                        ],
+                        borderColor: [
+                            '#432c72',
+                            
+                        ],
+                        
+                        borderWidth: 2,
+                        pointRadius: 0.4
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: false
+                        }
+                        
+                        
+                    }
+                }
+        }
+            
+            myChart = new Chart(ctx, options);
+            return myChart  
+       }
+     
+        }
+           
+        
+      
+    start()
+      
     </script>
     {{>footer}}
 </body>

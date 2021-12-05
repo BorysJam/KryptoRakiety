@@ -647,7 +647,7 @@ tr:not(.crypto_head):hover{
     margin-top: 10px;
     display: grid;
     margin-top: 40px;
-    margin-bottom: 20%;
+    margin-bottom: 10%;
     position: relative;
 }
 .containerCryptoSub p{
@@ -872,6 +872,37 @@ tr:not(.crypto_head):hover{
     width: 600px;
     text-align: justify;
 }
+.chartContainer{
+    margin: 20px auto;
+    width: 50%;
+    height: 100%;
+    padding: 20px;
+    background:WHITE;
+    border-radius: 8px;
+    border:2px solid #432c72;
+}
+#myChart{
+    height: 100%;
+    width: 100%;
+}
+.chartText{
+    text-transform: capitalize;
+    color:#333;
+}
+#chartTime{
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-left: 105px;
+    margin: 15px;
+    margin-bottom: 0;
+    background: (108, 122, 137);
+    color:var(--main_color);
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+}
+
+
 @media  (max-width: 1300px) {
     .kursy{
         grid-template-columns: 1fr 1fr 1fr;
@@ -1078,6 +1109,10 @@ tr:not(.crypto_head):hover{
     .containerCryptoSub p{
         font-size: 14px;
     }
+    .chartContainer{
+        width: 100%;
+    }
+    
     .header_container{
         padding: 10px 0px;
         display: grid;
