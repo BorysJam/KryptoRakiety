@@ -1,4 +1,4 @@
-const moment = require('moment')
+const moment = require('moment');
 function formatFileMessage(username, file){
     return{
         username,
