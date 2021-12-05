@@ -1319,4 +1319,9 @@ tr:not(.crypto_head):hover{
     .hotCoinImg7{
         max-height: 130px;
     }
+    .chartContainer{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
 }
