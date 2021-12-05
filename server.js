@@ -1,16 +1,15 @@
-const path = require('path')
-const moment = require('moment')
-const dotenv = require('dotenv')
-const http = require('http')
-const mongoose = require('mongoose')
-const Msg = require('./utils/messagemodel')
-const express = require('express')
-const socketio = require('socket.io')
-const formatMessage = require('./utils/messages')
-const formatFileMessage = require('./utils/filemessages')
-const {userJoin, getCurrentUser, disconnectUser, userCheckRoom, userx, findUserPriv} = require('./utils/users')
+const path = require('path');
+const moment = require('moment');
+const dotenv = require('dotenv');
+const http = require('http');
+const mongoose = require('mongoose');
+const Msg = require('./utils/messagemodel');
+const express = require('express');
+const socketio = require('socket.io');
+const formatMessage = require('./utils/messages');
+const formatFileMessage = require('./utils/filemessages');
+const {userJoin, getCurrentUser, disconnectUser, userCheckRoom, findUserPriv} = require('./utils/users');
 const CoinGecko = require('coingecko-api');
-
 const app = express()
 const dotenvRes = dotenv.config()
 const server = http.createServer(app)
@@ -19,7 +18,7 @@ const io = socketio(server, {
     pingTimeout: 100000,
     pingInterval: 5000
 });
-const hbs = require('hbs')
+const hbs = require('hbs');
 
 app.set('view engine', 'hbs')    
 
@@ -32,8 +31,6 @@ hbs.registerPartials(partialsPath)
 app.use(express.static("/views/img"))
 
 moment.locale("pl")
-
-
 
 const admin = 'Admin'
 

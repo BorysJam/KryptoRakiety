@@ -306,35 +306,6 @@ function outputMessage(message){
 
 }
 
-
-
-
-
-//emoji 
-
-  //  const emojidiv = document.querySelector('.emoji')
-  //  const smiley = document.querySelector('#smiley')
-   // smiley.addEventListener('click', ()=>{
-    //    if (emojidiv.style.display == 'none'){
-     //   emojidiv.style.display ='block';
-      //  smiley.style.color = '#d0e3ffbb';
-    //}
-    //else{
-     //   emojidiv.style.display ='none';
-     //   smiley.style.color = 'white';
-    //}})
-
-    //click outside the emoji div to close it
-    //window.addEventListener('mouseup',(event)=>{
-     //   if(event.target != emojidiv && event.target.parentNode != emojidiv){
-      //      emojidiv.style.display = 'none';
-       //     smiley.style.color = 'white';
-        //}
-  //});  
-
-
-
-
 //Light mode/Dark mode
 let lightMode = localStorage.getItem('lightMode');
 const lightModeToggle = document.querySelector('#checklight');
@@ -418,27 +389,16 @@ function fileMessageSend(src){
         div.style.display = 'inline'
         div.style.textAlign = 'right';
         div.style.color = 'white';
-        div.style.backgroundColor = 'var(--right-msg)';
-      //  const audio = new Audio(audioRight);
-       // audio.play();
-   
+        div.style.backgroundColor = 'var(--right-msg)';  
     }
     else{
-
     div.style.backgroundColor = 'var(--left-msg)';
-   // const audio = new Audio(audioLeft);
-     //   audio.play();
-
     }
     img.addEventListener('click', ()=>{
     img.requestFullscreen()})
 
     document.querySelector('.chat-messages').appendChild(div) 
 }
-
-
-
-
 
 //checking screen max width 
 const checkMobile = window.matchMedia("(max-width: 600px)")
