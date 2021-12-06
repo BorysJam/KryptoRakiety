@@ -106,7 +106,7 @@ body{
 .chatContLorem{
     grid-column-start: 4;
     grid-column-end: 6;
- 
+    font-size: 18px;
     align-self: center;
     width: 80%;
     color:#333;
@@ -181,6 +181,7 @@ body{
     margin-top: 20px;
     width: 80%;
     color: white;
+    font-size: 18px;
     text-align: justify;
 }
 
