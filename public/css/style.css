@@ -1025,6 +1025,7 @@ tr:not(.crypto_head):hover{
         margin: 50px auto;
     }
     .pageCurrencyBlock{
+        margin-top: 110px;
         display: block;
         height: 900px;
     }
@@ -1311,8 +1312,14 @@ tr:not(.crypto_head):hover{
     .symbol{
         font-size: 10px;
     }
+    .mainHot{
+        width: 95%;
+        margin:0 auto;
+        padding: 0;
+    }
     .hotCoin{
-        width: 70%;
+        width: 90%;
+        padding: 20px;
     }
     .hotCoinImg{
         max-height: 130px;
