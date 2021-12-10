@@ -1317,6 +1317,9 @@ tr:not(.crypto_head):hover{
         margin:0 auto;
         padding: 0;
     }
+    .strzal{
+        margin: 25px 0;
+    }
     .hotCoin{
         width: 90%;
         padding: 20px;
