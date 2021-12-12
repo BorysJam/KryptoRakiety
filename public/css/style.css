@@ -853,7 +853,7 @@ tr:not(.crypto_head):hover{
 .aboutHead{
     background: #432c72;
     height: 400px;
-
+    width: 100%;
 }
 .aboutTresc{
     margin: 0 auto;
@@ -1331,8 +1331,39 @@ tr:not(.crypto_head):hover{
         max-height: 130px;
     }
     .chartContainer{
-        width: 100%;
+        width: 99%;
+        height: 400px;
         padding: 0;
         margin: 0;
     }
+    #myChart{
+        min-height:290px;
+        
+    }
+    #chartTime{
+        padding: 4px 10px;
+        border-radius: 8px;
+        border:none;
+        
+        font-size: 14px;
+        
+    }
+    .aboutHead{
+        margin: 0 auto;
+        height: 600px;
+    }
+    .aboutTresc{
+        
+        width: 100%;
+    }
+    .trescAbout{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .pAbout{
+        
+        width:90%;
+        margin: 30px auto;
+    }
+  
 }

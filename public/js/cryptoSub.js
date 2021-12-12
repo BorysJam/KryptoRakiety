@@ -148,7 +148,7 @@ function createChart(data){
         options: {
             scales: {
                 y: {
-                    beginAtZero: false
+                    beginAtZero: falsefi
                 }
                 
                 
