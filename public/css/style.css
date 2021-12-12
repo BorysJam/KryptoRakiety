@@ -1088,7 +1088,8 @@ tr:not(.crypto_head):hover{
         
     }
     .tresc1{
-        font-size: 22px;
+        font-size: 28px;
+        color:var(--main_color);
         width: 90%;
         padding-top: 8%;
     }
@@ -1246,7 +1247,8 @@ tr:not(.crypto_head):hover{
     .lorem{
         width: 100%;
         text-align: justify;
-        font-size: 16px;
+        font-size: 18px;
+        font-weight: 500;
         padding: 0;
         margin: 0 auto 20px auto;
        
@@ -1255,7 +1257,7 @@ tr:not(.crypto_head):hover{
     .loremContainer{
         width: 90%;
         text-align: justify;
-        font-size: 16px;
+        font-size: 18px;
         padding: 0;
         margin: 0 auto 40px auto;
         margin-top:20px;
@@ -1315,7 +1317,7 @@ tr:not(.crypto_head):hover{
     .mainHot{
         width: 95%;
         margin:0 auto;
-        padding: 0;
+        padding-top: 90px;
     }
     .strzal{
         margin: 25px 0;
