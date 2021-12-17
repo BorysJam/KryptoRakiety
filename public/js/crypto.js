@@ -23,8 +23,7 @@ socket.on('coingeckoDATA', (data) =>{
                     var oldTh6 = document.querySelectorAll('.niska')
                     var oldTh7 = document.querySelectorAll('.sevendays')
                     var oldTh8 = document.querySelectorAll('.symbol')
-                    console.log(c)
-                    console.log('update')
+                    
                     oldTh1[c].innerHTML = data.data[c].id;
                    
                     
