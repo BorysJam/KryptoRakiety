@@ -11,27 +11,30 @@ var i = 2;
 
 socket.on('coingeckoDATA', (data) =>{   
     if(data !== undefined){ 
-        var c = 0;
-        for(c; c< data.data.length; c++){
+       
+        for(let c = 0; c< data.data.length; c++){
                 if(table.childElementCount === 201){
 
-                    const oldTh1 = document.querySelectorAll('.cryptoID')
-                    const oldTh2 = document.querySelectorAll('.rankN')
-                    const oldTh3 = document.querySelectorAll('.cena')
-                    const oldTh4 = document.querySelectorAll('.hour24s')
-                    const oldTh5 = document.querySelectorAll('.wysoka')
-                    const oldTh6 = document.querySelectorAll('.niska')
-                    const oldTh7 = document.querySelectorAll('.sevendays')
-                    const oldTh8 = document.querySelectorAll('.symbol')
+                    var oldTh1 = document.querySelectorAll('.cryptoID')
+                    var oldTh2 = document.querySelectorAll('.rankN')
+                    var oldTh3 = document.querySelectorAll('.cena')
+                    var oldTh4 = document.querySelectorAll('.hour24s')
+                    var oldTh5 = document.querySelectorAll('.wysoka')
+                    var oldTh6 = document.querySelectorAll('.niska')
+                    var oldTh7 = document.querySelectorAll('.sevendays')
+                    var oldTh8 = document.querySelectorAll('.symbol')
+                    console.log(c)
+                    console.log('update')
+                    oldTh1[c].innerHTML = data.data[c].id;
+                   
                     
-                    oldTh1.innerHTML = data.data[c].id;
-                    oldTh2.innerHTML = data.data[c].market_cap_rank;
-                    oldTh8.innerHTML = data.data[c].symbol
-                    oldTh3.innerHTML = '$'+ (data.data[c].current_price).toFixed(2);
-                    oldTh4.innerHTML = (data.data[c].price_change_percentage_24h).toFixed(1) + "%";
-                    oldTh7.innerHTML = (data.data[c].price_change_percentage_7d_in_currency).toFixed(1) + "%"
-                    oldTh5.innerHTML = "$" + (data.data[c].high_24h).toFixed(1);
-                    oldTh6.innerHTML = "$" + (data.data[c].low_24h).toFixed(1);
+                    oldTh2[c].innerHTML = data.data[c].market_cap_rank;
+                    oldTh8[c].innerHTML = data.data[c].symbol
+                    oldTh3[c].innerHTML = '$'+ parseFloat(data.data[c].current_price).toFixed(2);
+                    oldTh4[c].innerHTML = parseFloat(data.data[c].price_change_percentage_24h).toFixed(2) + "%";
+                    oldTh7[c].innerHTML = parseFloat(data.data[c].price_change_percentage_7d_in_currency).toFixed(1) + "%"
+                    oldTh5[c].innerHTML = "$" + parseFloat(data.data[c].high_24h).toFixed(1);
+                    oldTh6[c].innerHTML =parseFloat(data.data[c].low_24h).toFixed(1);
                     
                 }else{
                     
@@ -74,10 +77,10 @@ socket.on('coingeckoDATA', (data) =>{
                     th2.innerHTML = data.data[c].market_cap_rank;
                     th8.innerHTML = data.data[c].symbol
                     th3.innerHTML = '$'+ (data.data[c].current_price).toFixed(2);
-                    th4.innerHTML = (data.data[c].price_change_percentage_24h).toFixed(1) + "%";
-                    th7.innerHTML = (data.data[c].price_change_percentage_7d_in_currency).toFixed(1) + "%"
-                    th5.innerHTML = "$" + (data.data[c].high_24h).toFixed(1);
-                    th6.innerHTML = "$" + (data.data[c].low_24h).toFixed(1);
+                    th4.innerHTML = parseFloat(data.data[c].price_change_percentage_24h).toFixed(2) + "%";
+                    th7.innerHTML = parseFloat(data.data[c].price_change_percentage_7d_in_currency).toFixed(1) + "%"
+                    th5.innerHTML = "$" + parseFloat(data.data[c].high_24h).toFixed(1);
+                    th6.innerHTML = "$" + parseFloat(data.data[c].low_24h).toFixed(1);
                     imag.src = data.data[c].image
     
                     if(Math.sign(data.data[c].market_cap_change_percentage_24h) === -1){
