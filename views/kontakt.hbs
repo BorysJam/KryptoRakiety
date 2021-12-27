@@ -12,8 +12,13 @@
     
     <h1 class='tresc'>{{text}}</h1>
     <div class="contact_container">
-            <a class="contact_info"><i class="fas fa-phone-volume fa-2x"></i>Telefon: <span>+41 11 11 11 11</span></a>
-            <a class="contact_info" href="mailto:borysj98@gmail.com"><i class="fas fa-at fa-2x"></i>E-mail: <span>kryptorakiety@gmail.com</span></a>
+            <form id="contactForm">
+               
+                <input placeholder="Imie" type="name" name="name" id="nameContactInput" required>
+                <input placeholder="Twój adres E-mail" type="email" name="email" id="emailContactInput" required>
+                <textarea name="text" cols="30" rows="10" id="contactTextInput" required placeholder="Twoja wiadomość"></textarea>
+                <div><button type="submit">Wyślij</button></div>
+            </form>
     </div>
         
         
