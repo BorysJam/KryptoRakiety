@@ -897,7 +897,7 @@ tr:not(.crypto_head):hover{
     display: flex;
     justify-content: end;
 }
-#contactForm div button{
+#contactForm #contactFormBTN button{
     padding: 12px 40px;
     border-radius: 16px;
     border:1px solid #333;
@@ -905,10 +905,10 @@ tr:not(.crypto_head):hover{
     color:white;
     font-weight: bold;
     font-size: 16px;
-    width: 50%;
-    
-   
-    
+    width: 50%;    
+}
+#contactForm #contactFormBTN button:hover{
+    background-color:#7f72bd;
 }
 #emailContactInput, #nameContactInput{
     padding: 10px 5px;    
