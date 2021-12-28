@@ -1004,6 +1004,9 @@ tr:not(.crypto_head):hover{
     .copyRight{
         width: 85%;
     }
+    .chatContLoremP{
+        width: 100%;
+    }
    
 }
 @media screen and (max-width: 980px) {
@@ -1062,6 +1065,10 @@ tr:not(.crypto_head):hover{
     .chatCont img{
         display: block;
         margin: 50px auto;
+        width: 100%;
+    }
+    .chatCont{
+        width: 100%;
     }
     .pageCurrencyBlock{
         margin-top: 110px;
