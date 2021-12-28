@@ -506,7 +506,7 @@ table,th{
 .contact_container{ 
     
     margin: 40px auto;
-    background: var(--main_color);
+    background:linear-gradient(var(--main_color),#7060BC);
     width: 60%;
    
     border-radius: 12px;
@@ -839,7 +839,7 @@ tr:not(.crypto_head):hover{
 
 /* About Page */
 .aboutHead{
-    background: #432c72;
+    background: linear-gradient(var(--main_color),#7060BC);
     height: 400px;
     width: 100%;
 }
