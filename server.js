@@ -21,8 +21,8 @@ const io = socketio(server, {
     pingInterval: 5000
 });
 
-app.use(bodyParser.urlencoded({extended:false}))
-app.use(bodyParser.json())
+app.use('/send', bodyParser.urlencoded({extended:false}))
+app.use('/send',bodyParser.json())
 
 const hbs = require('hbs');
 
