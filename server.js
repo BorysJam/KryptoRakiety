@@ -10,6 +10,8 @@ const formatMessage = require('./utils/messages');
 const formatFileMessage = require('./utils/filemessages');
 const {userJoin, getCurrentUser, disconnectUser, userCheckRoom, findUserPriv} = require('./utils/users');
 const CoinGecko = require('coingecko-api');
+const bodyParser = require('body-parser');
+const nodemailer = require("nodemailer");
 const app = express()
 const dotenvRes = dotenv.config()
 const server = http.createServer(app)
@@ -18,6 +20,10 @@ const io = socketio(server, {
     pingTimeout: 100000,
     pingInterval: 5000
 });
+
+app.use(bodyParser.urlencoded({extended:false}))
+app.use(bodyParser.json())
+
 const hbs = require('hbs');
 
 app.set('view engine', 'hbs')    
@@ -248,6 +254,54 @@ app.get('/kontakt', (req,res)=>{
         text: 'Kontakt'
     })
 })
+app.post('/send', (req, res)=>{
+    const output = `
+        <p>You have a new contact request</p>
+        <h3>Contact details</h3>
+        <ul>
+            <li>E-mail: ${req.body.email}</li>
+            <li>Subject: ${req.body.subject}</li>
+            
+        </ul>
+        <h3>Message</h3>
+        <p>Text: ${req.body.text}</p>
+    `
+    let transporter = nodemailer.createTransport({
+        service: "hotmail",
+        auth: {
+          user: "kryptorakiety@outlook.com", // generated ethereal user
+          pass: "Bydlak123", // generated ethereal password
+        },
+        tls:{
+          rejectUnauthorized: false
+        }
+      });
+    
+      // send mail with defined transport object
+     let mailOptions = {
+        from: `kryptorakiety@outlook.com`, // sender address
+        to: "kryptorakiety@outlook.com", // list of receivers
+        subject: `KryptoRakiety kontakt ${req.body.email}`, // Subject line
+        text: "hello world", // plain text body
+        html: output, // html body    
+      }
+
+      transporter.sendMail(mailOptions, (error, info)=>{
+          if(error){
+              return console.log(error)
+          }
+          console.log("Message sent: %s", info.messageId);
+
+          console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+         
+          res.render('kontakt', {msg:"Wiadomość została wysłana"})
+      })
+    
+     
+     
+})
+
+
 
 app.get("/*", (req,res)=>{
     res.render('404', {

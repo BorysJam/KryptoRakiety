@@ -11,11 +11,12 @@
     {{>header}}
     
     <h1 class='tresc'>{{text}}</h1>
+    <h3 class="tresc">{{msg}}</h3>
     <div class="contact_container">
-            <form id="contactForm">
+            <form id="contactForm" method="post" action="send">
                 <h3 style="color: white;">Napisz do nas:</h3>
-                <input placeholder="Imie" type="name" name="name" id="nameContactInput" required>
                 <input placeholder="Twój adres E-mail" type="email" name="email" id="emailContactInput" required>
+                <input placeholder="Temat" type="name" name="subject" id="nameContactInput" required>
                 <textarea name="text" cols="30" rows="10" id="contactTextInput" required placeholder="Twoja wiadomość"></textarea>
                 <div id="contactFormBTN"><button type="submit">Wyślij <i class="fas fa-paper-plane" id="planeLogo"></i></button></div>
             </form>
