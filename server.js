@@ -251,7 +251,7 @@ app.get("/crypto/coinName=:CryptoName", (req,res)=>{
 app.get('/kontakt', (req,res)=>{
     res.render('kontakt', {
         title: 'Krypto Rakiety - Kontakt',
-        text: 'Kontakt'
+        text: 'Skontaktuj się z nami!'
     })
 })
 app.post('/send', (req, res)=>{
@@ -294,7 +294,7 @@ app.post('/send', (req, res)=>{
 
           console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
          
-          res.render('kontakt', {msg:"Wiadomość została wysłana"})
+          res.render('kontakt', {text:"Wiadomość została wysłana"})
       })
     
      

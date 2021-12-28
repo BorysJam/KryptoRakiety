@@ -880,7 +880,7 @@ tr:not(.crypto_head):hover{
 #contactForm{
     margin: 20px auto;
     display:block;
-    height: 400px;
+    height: 26rem;
     padding: 50px 0 ;
 }
 
@@ -890,7 +890,7 @@ tr:not(.crypto_head):hover{
     border: 1px solid grey;
     margin: 16px 0;
     font-size: 16px;
-    width: 500px;
+    width: 33rem;
     
 }
 #contactForm div{
@@ -920,7 +920,7 @@ tr:not(.crypto_head):hover{
     border: 1px solid grey;
     margin: 16px 0;
     font-size: 16px;
-    width: 500px;
+    width: 33rem;
     font-family: inherit;
     resize: none;
 }
