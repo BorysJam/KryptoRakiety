@@ -487,6 +487,20 @@ table,th{
     padding-top: 2.5%;
     font-size: 26px;
     font-weight: bold;  
+    position: relative;
+}
+.tresc::before{
+    content: "";
+  position: absolute;
+  
+  bottom: -20px;
+  width: 10%;
+  height: 4px;
+  left: 45%;
+  border-radius: 20px;
+  background:var(--main_color);
+  z-index: -1;
+  
 }
 
 .contact_container{ 
@@ -924,6 +938,7 @@ tr:not(.crypto_head):hover{
     font-family: inherit;
     resize: none;
 }
+
 
 
 
