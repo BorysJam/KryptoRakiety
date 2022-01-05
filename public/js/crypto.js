@@ -3,7 +3,7 @@ const socket = io()
     
 const container = document.querySelector('.crypto_container')
 const table = document.querySelector('.table')
-
+const btnUp = document.querySelector('#btnUp')
 
 
 var i = 2;
@@ -119,4 +119,17 @@ socket.on('coingeckoDATA', (data) =>{
     }
 }) 
 
+function scrollingPage(){
+    const yPosition = window.scrollY
+    if(yPosition >= 800){
+        btnUp.className = "btnUp btnShow"
+    }else{
+        btnUp.className = ""
+    }
+}
 
+window.addEventListener('scroll', scrollingPage)
+
+function goUp(){
+    window.scrollTo({top: 0, behavior: 'smooth'})
+}
