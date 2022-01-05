@@ -1154,10 +1154,12 @@ tr:not(.crypto_head):hover{
         grid-template-columns: 1fr 1fr;
         height: 800px;
         width: 100%;
-    
+        justify-items: center;
+        
     }
     .kursy div{
         margin:10px 0px;
+        
     }
     .tresc{
         font-size: 22px;
