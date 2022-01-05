@@ -113,18 +113,6 @@ body{
     text-align: justify;
 }
 
-#btnJoinChat2{
-    
-    margin-top: 30px;
-    background:var(--main_color);
-    color: white;
-    border: 2px solid white;
-    padding: 20px 30px;
-    border-radius: 8px;
-    font-size: 20px;
-    font-weight: 600;
-}
-
 .chatCont {
     width: 100%;
     display: grid;
@@ -219,6 +207,8 @@ body{
 .btnJoinChat:hover {
     border: 2px solid var(--main_color);
     background: white; 
+    color:var(--main_color);
+    cursor: pointer;
 }
 .btnJoinChat:hover > .linkJoinChat{
     color:var(--main_color);
@@ -256,7 +246,7 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
-.kursy div{
+.kursy div:not(.loadingbar){
     text-align: center;
     background: var(--main_color);
 
@@ -287,6 +277,7 @@ body{
     margin: 10px auto;
     height: 50px;
     width: 50px;
+    display: none;
 }
 .kursy div .createRankSymbol{
     font-size: 18px;
@@ -965,7 +956,20 @@ tr:not(.crypto_head):hover{
     color:white;
     font-size: 35px;
 }
-
+.loadingbar {
+    border: 6px solid #ffffff;
+    border-top: 6px solid #7f72bd;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
 
 
 
