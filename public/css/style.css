@@ -991,18 +991,16 @@ tr:not(.crypto_head):hover{
     overflow: hidden;
     width: 100%;
     white-space: nowrap;
- 
 
 }
 .cryptoSpinItem{
     color:white;
     display: flex;
     width: 300px;
-    
     font-size: 18px;
     text-transform:capitalize;
     padding:5px;
-    animation: linear infinite scroller-left1 14s;
+    animation: linear infinite scroller-left 13s;
 }
 
 
@@ -1016,13 +1014,13 @@ tr:not(.crypto_head):hover{
     
 }
 
-@keyframes scroller-left1 {
-    from{
-        transform: translateX(100%);
-    }to
-    {
-        transform: translateX(-500%);
-    }
+@keyframes scroller-left {
+    0% {
+        transform: translate3d(400px, 0, 0);
+      }
+      100% {
+        transform: translate3d(-3000px, 0, 0); /* The image width */
+      }
 }
 
 
@@ -1195,7 +1193,7 @@ tr:not(.crypto_head):hover{
     }
     .cryptoSpinItem{
     
-        animation: scroller-left1 20s linear infinite;
+        animation: scroller-left 15s linear infinite;
         font-size: 16px;
     }
 
