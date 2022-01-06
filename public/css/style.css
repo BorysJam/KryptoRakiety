@@ -1198,17 +1198,13 @@ tr:not(.crypto_head):hover{
        
     
     }
-    .cryptoSpinItem:nth-child(1),.cryptoSpinItem:nth-child(2),.cryptoSpinItem:nth-child(3),.cryptoSpinItem:nth-child(4),.cryptoSpinItem:nth-child(5),.cryptoSpinItem:nth-child(6),.cryptoSpinItem:nth-child(7){
+    .cryptoSpinItem{
     
         animation: scroller-left1 20s linear infinite;
     }
-    .cryptoSpinItem:nth-child(8),.cryptoSpinItem:nth-child(9),.cryptoSpinItem:nth-child(10){
-        animation: scroller-left1 20s linear infinite;
-     
-    }
 
     .cryptoSpinPrice{
-        padding: 0 10px;
+        padding: 0 12px;
         
     }
     .btnJoinChat{
