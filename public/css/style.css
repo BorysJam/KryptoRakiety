@@ -998,19 +998,14 @@ tr:not(.crypto_head):hover{
     color:white;
     display: flex;
     width: 300px;
-    justify-content: space-evenly;
+    
     font-size: 18px;
     text-transform:capitalize;
     padding:5px;
+    animation: linear infinite scroller-left1 14s;
 }
-.cryptoSpinItem:nth-child(1),.cryptoSpinItem:nth-child(2),.cryptoSpinItem:nth-child(3),.cryptoSpinItem:nth-child(4),.cryptoSpinItem:nth-child(5),.cryptoSpinItem:nth-child(6),.cryptoSpinItem:nth-child(7){
-    
-    animation: scroller-left1 13s linear infinite;
-}
-.cryptoSpinItem:nth-child(8),.cryptoSpinItem:nth-child(9),.cryptoSpinItem:nth-child(10){
-    animation: scroller-left1 13s linear infinite;
- 
-}
+
+
 .cryptoSpinName{
     position: relative;
     padding-left:100px;
@@ -1201,12 +1196,14 @@ tr:not(.crypto_head):hover{
     .cryptoSpinItem{
     
         animation: scroller-left1 20s linear infinite;
+        font-size: 16px;
     }
 
     .cryptoSpinPrice{
         padding: 0 12px;
-        
+        font-size: 16px;
     }
+    
     .btnJoinChat{
         
         margin-top: 10px;
