@@ -629,7 +629,7 @@ tr:not(.crypto_head):hover{
 .containerCryptoSub{
     background: var(--main_color);
     color: white;
-    width: 50%;
+    width: 60%;
     margin: 0 auto;
     border-radius: 12px;
     padding: 30px;
@@ -863,7 +863,7 @@ tr:not(.crypto_head):hover{
 }
 .chartContainer{
     margin: 20px auto;
-    width: 50%;
+    width: 60%;
     height: 100%;
     padding: 20px;
     background:WHITE;
@@ -1099,7 +1099,9 @@ tr:not(.crypto_head):hover{
     .chatContLoremP{
         width: 100%;
     }
-   
+    .chartContainer{
+        width: 72%;
+    }
 }
 @media screen and (max-width: 980px) {
     .contact_container{
@@ -1108,9 +1110,12 @@ tr:not(.crypto_head):hover{
     }
     .containerCryptoSub{
         margin-top: 20px;
-        width: 100%;
+        width: 90%;
         display: block;
         
+    }
+    .chartContainer{
+        width: 90%;
     }
     .cryptoSubProcent{
         position: relative;

@@ -1,4 +1,26 @@
+let size;
 const ctx = document.getElementById('myChart').getContext('2d');
+//Chart.defaults.font.size =size;
+function screenSizeMatters(){
+    if(window.innerWidth < 600){
+        smallScreen()
+        Chart.defaults.font.size = size;
+    }else{
+        bigScreen()
+        Chart.defaults.font.size = size;
+    }
+}
+screenSizeMatters()
+
+function smallScreen(){
+    size = 10
+    return size
+}
+function bigScreen(){
+    size = 14
+   
+    return size
+}
 let myChart;
 const selectOtption = document.querySelector('select')
 const cryptoSubImageDiv = document.querySelector('.cryptoSubImageDiv')
@@ -23,6 +45,7 @@ var arr= []
 const charter = document.getElementById('myChart')
 
 
+
 function odpal(){
     
     start()
@@ -30,9 +53,10 @@ function odpal(){
 
 const info = document.querySelector('.tresc').innerHTML;
 async function fetchJSON(){ 
+    screenSizeMatters()
     const res = await fetch(`https://api.coingecko.com/api/v3/coins/${info}`)
    
-    
+   
    
     const data = await res.json()
    
@@ -148,17 +172,30 @@ function createChart(data){
             }]
         },
         options: {
+            plugins: {
+                legend: {
+                    labels: {
+                        // This more specific font property overrides the global property
+                        font: {
+                            size: 16
+                        }
+                    
+                }
+            }
+        },
             scales: {
                 y: {
-                    beginAtZero: false
+                    beginAtZero: false,
+                    
                 }
                 
                 
             }
         }
 }
-    
+
     myChart = new Chart(ctx, options);
+   
     return myChart  
 }
 }
