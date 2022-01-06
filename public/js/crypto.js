@@ -4,7 +4,7 @@ const socket = io()
 const container = document.querySelector('.crypto_container')
 const table = document.querySelector('.table')
 const btnUp = document.querySelector('#btnUp')
-
+const loading = document.querySelector('.loading-box')
 
 var i = 2;
 
@@ -99,8 +99,8 @@ socket.on('coingeckoDATA', (data) =>{
                     trc.appendChild(th5)
                     trc.appendChild(th6)
                     
-    
                     
+                    loadingFunction()
     
                     if(Math.sign(data.data[c].price_change_percentage_7d_in_currency) === -1){
                         th7.style.color = '#FF2626'
@@ -132,4 +132,9 @@ window.addEventListener('scroll', scrollingPage)
 
 function goUp(){
     window.scrollTo({top: 0, behavior: 'smooth'})
+}
+
+function loadingFunction(){
+    loading.style.display = 'none'
+    table.style.display = 'table'
 }

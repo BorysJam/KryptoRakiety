@@ -380,9 +380,10 @@ footer ul li a{
 
 table{
     width: 65%;
-    margin:0 auto;
+    margin:10px auto;
     background:#ffffff;
     border-radius: 16px;
+    display: none;
     
 }
 .crypto_head{
@@ -423,6 +424,18 @@ table{
     left: 46px;
    
  }
+.loading-box{
+    text-align: center;
+    height: 600px;
+    margin: 100px auto;
+    font-size: 24px;
+    font-weight: 600;
+    color:#333;
+}
+.loadingBarTable{
+    padding: 30px;
+    background: #333;
+}
 
 
 table tr:not(.crypto_head){
@@ -962,7 +975,7 @@ tr:not(.crypto_head):hover{
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    margin: 0 auto;
+    margin:0 auto;
     animation: spin 2s linear infinite;
   }
   
@@ -1305,6 +1318,9 @@ tr:not(.crypto_head):hover{
     .nameth{
         padding-right: 29px;
         
+    }
+    table{
+        margin: 0 auto;
     }
     table tr td{
         font-size: 14px;
