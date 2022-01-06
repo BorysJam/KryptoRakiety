@@ -22,8 +22,10 @@ socket = io()
 
 createDiv.forEach((e)=>{
     e.addEventListener('click',()=>{
-        const getToCoin = e.childNodes[2].innerHTML
-        window.location.href = '/crypto/coinName=' + getToCoin
+        const getToCoin = e.childNodes[2].innerHTML.substring(1)
+        const number = parseFloat(getToCoin) - 1;
+        const link = (createSpanName[number].outerText).toLowerCase()
+        window.location.href = '/crypto/coinName=' + link
     })
 })
 hotCoin.forEach((e)=>{
