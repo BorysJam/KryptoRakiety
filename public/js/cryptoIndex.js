@@ -17,6 +17,11 @@ const hotCoin7Price = document.querySelector('.hotCoin7Price')
 const hotCoinRank = document.querySelector('.hotCoinRank')
 const hotCoinRank7 = document.querySelector('.hotCoinRank7')
 const loadingbar = document.querySelectorAll('.loadingbar')
+const spinningContainer = document.querySelector('.spinningContainer')
+const cryptoSpinName = document.querySelectorAll('.cryptoSpinName')
+const cryptoSpinPrice = document.querySelectorAll('.cryptoSpinPrice')
+const cryptoSpinChange = document.querySelectorAll('.cryptoSpinChange')
+      
 
 socket = io()
 
@@ -45,13 +50,18 @@ socket.on('secondData', (data) => {
             createSpanName[x].innerHTML = data.data[x].id;
             createSpanPrice[x].innerHTML = "$" + (data.data[x].current_price).toFixed(2)
             createSpan1hChange[x].innerHTML = (data.data[x].price_change_percentage_1h_in_currency).toFixed(2) + "<span>%</span>"
-
-            
+//nowe funkcje do spiner 06.01.2022
+            cryptoSpinName[x].innerHTML = data.data[x].id
+            cryptoSpinPrice[x].innerHTML =  "$" + (data.data[x].current_price).toFixed(2)
+            cryptoSpinChange[x].innerHTML = (data.data[x].price_change_percentage_1h_in_currency).toFixed(2) + "<span>%</span>"
+//spinner          
             
             if(Math.sign(data.data[x].price_change_percentage_1h_in_currency) === -1){
-                createSpan1hChange[x].style.color = "#FF2626"
+                createSpan1hChange[x].style.color = "#FF2626";
+                cryptoSpinChange[x].style.color =  "#FF2626";   
             }else{
-                createSpan1hChange[x].style.color = "#6ECB63"
+                createSpan1hChange[x].style.color = "#6ECB63";
+                cryptoSpinChange[x].style.color = "#6ECB63";
             }
             
             }
@@ -105,5 +115,7 @@ function hotThisWeek(data){
     
 }
 
-    
+function spinner(){
+    console.log(spinningContainer.childNodes)
+}
     
