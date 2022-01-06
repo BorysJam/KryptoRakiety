@@ -1261,6 +1261,10 @@ tr:not(.crypto_head):hover{
     .chatCont{
         width: 85%;
     }
+    .chartText{
+        font-size: 16px;
+        padding-bottom: 0;
+    }
     
     .containerCryptoSub .cryptoSubID{
         font-size: 18px;
@@ -1451,7 +1455,7 @@ tr:not(.crypto_head):hover{
         width: 100%;
         display: block;
         width: 80%;
-        margin-bottom: 42%;
+        margin-bottom: 30%;
     }
   
     .hour24s{
