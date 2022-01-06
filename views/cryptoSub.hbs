@@ -41,19 +41,21 @@
         
         <div class="chartContainer">
             <h3 class="chartText">{{text}} wykres ceny</h3>
-            <select name="chartTime" id="chartTime" onchange="odpal()">
-                <option value="1">24h</option>
-                <option value="7">7 dni</option>
-                <option value="14">14 dni</option>
-                <option value="30">30 dni</option>
-                <option value="60">60 dni</option>
-                <option value="100">100 dni</option>
-                <option value="180">180 dni</option>
-                <option value="365">365 dni</option>
-                <option value="730">2 lata</option>
-                <option value="max">Max</option>
-         
-            </select>
+            <div class="chartMenu">
+                <select name="chartTime" id="chartTime" onchange="odpal()">
+                    <option value="1">24h</option>
+                    <option value="7">7 dni</option>
+                    <option value="14">14 dni</option>
+                    <option value="30">30 dni</option>
+                    <option value="60">60 dni</option>
+                    <option value="100">100 dni</option>
+                    <option value="180">180 dni</option>
+                    <option value="365">365 dni</option>
+                    <option value="730">2 lata</option>
+                    <option value="max">Max</option>
+                </select>
+                <div class="fullScreen"><i class="fas fa-expand"></i></div>
+            </div>
             <canvas id="myChart"></canvas>
             </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

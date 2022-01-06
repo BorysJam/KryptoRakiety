@@ -869,6 +869,7 @@ tr:not(.crypto_head):hover{
     background:WHITE;
     border-radius: 8px;
     border:2px solid #432c72;
+    
 }
 #myChart{
     height: 100%;
@@ -877,18 +878,28 @@ tr:not(.crypto_head):hover{
 .chartText{
     text-transform: capitalize;
     color:#333;
+    font-size: 22px;
+    padding:15px;
 }
 #chartTime{
-    padding: 12px 20px;
+    padding:6px 20px;
     border-radius: 8px;
-    margin-left: 105px;
-    margin: 15px;
-    margin-bottom: 0;
     background: (108, 122, 137);
     color:var(--main_color);
     font-weight: 600;
     font-size: 18px;
     text-align: center;
+}
+.chartMenu{
+    margin: 15px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.fullScreen{
+    color:#333;
+    font-size: 30px;
+    padding: 0px 15px;
 }
 
 #contactForm{
@@ -1472,22 +1483,25 @@ tr:not(.crypto_head):hover{
         max-height: 130px;
     }
     .chartContainer{
-        width: 99%;
-        height: 400px;
+        width: 95%;
+    
+        height: 500px;
         padding: 0;
-        margin: 0;
+        margin: 0 auto;
     }
     #myChart{
-        min-height:290px;
-        
+        min-height:350px;
+    }
+    .chartMenu{
+        width: 90%;
     }
     #chartTime{
         padding: 4px 10px;
         border-radius: 8px;
-        border:none;
-        
-        font-size: 14px;
-        
+        font-size: 14px; 
+    }
+    .fullScreen{
+        padding: 0px;
     }
     .aboutHead{
         margin: 0 auto;

@@ -20,6 +20,8 @@ const priceChangePercentage_1y = document.querySelector('.priceChangePercentage_
 const cryptoHomePage = document.querySelector('.cryptoHomePage')
 var arr= []
 
+const charter = document.getElementById('myChart')
+
 
 function odpal(){
     
@@ -159,9 +161,14 @@ function createChart(data){
     myChart = new Chart(ctx, options);
     return myChart  
 }
-
 }
+
+const fullScreenBtn = document.querySelector('.fullScreen')
+fullScreenBtn.addEventListener('click', ()=>{
+    charter.requestFullscreen()
+})
    
+
 
 
 start()
