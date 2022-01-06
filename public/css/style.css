@@ -626,10 +626,6 @@ tr:not(.crypto_head):hover{
     position: relative;
     
 }
-.hjenden404{
-    text-align: center;
-    color: var(--main_color);
-}
 .containerCryptoSub{
     background: var(--main_color);
     color: white;
