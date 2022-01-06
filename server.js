@@ -36,7 +36,7 @@ hbs.registerPartials(partialsPath)
 //1. Import coingecko-api
 app.use(express.static("/views/img"))
 
-moment.locale()
+moment.locale('pl')
 
 const admin = 'Admin'
 

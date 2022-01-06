@@ -1,5 +1,5 @@
 const moment = require('moment');
-moment().locale()
+moment().locale('pl')
 function formatMessage(username, text){
     return{
         username,
