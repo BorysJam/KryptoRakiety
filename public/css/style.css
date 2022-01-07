@@ -436,6 +436,9 @@ table{
     padding: 30px;
     background: #333;
 }
+#loadingbarP{
+    padding:24px;
+}
 
 
 table tr:not(.crypto_head){
