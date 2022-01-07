@@ -1001,7 +1001,7 @@ tr:not(.crypto_head):hover{
     overflow: hidden;
     width: 100%;
     white-space: nowrap;
-    height: 36px;
+    
 }
 .cryptoSpinItem{
     color:white;
