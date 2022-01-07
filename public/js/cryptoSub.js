@@ -44,8 +44,6 @@ var arr= []
 
 const charter = document.getElementById('myChart')
 
-
-
 function odpal(){
     
     start()
