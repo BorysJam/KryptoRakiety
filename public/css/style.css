@@ -1001,7 +1001,6 @@ tr:not(.crypto_head):hover{
     overflow: hidden;
     width: 100%;
     white-space: nowrap;
-    
 }
 .cryptoSpinItem{
     color:white;
@@ -1210,9 +1209,6 @@ tr:not(.crypto_head):hover{
         height: 21px;
         animation: scroller-left 15s linear infinite;
         font-size: 16px;
-    }
-    .spinningContainer{
-        height: 21px;
     }
 
     .cryptoSpinPrice{
