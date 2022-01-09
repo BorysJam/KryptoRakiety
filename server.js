@@ -8,7 +8,7 @@ const express = require('express');
 const socketio = require('socket.io');
 const formatMessage = require('./utils/messages');
 const formatFileMessage = require('./utils/filemessages');
-const {userJoin, getCurrentUser, disconnectUser, userCheckRoom, findUserPriv} = require('./utils/users');
+const {userJoin, getCurrentUser, disconnectUser, userCheckRoom, findUserPriv, returnUsers} = require('./utils/users');
 const CoinGecko = require('coingecko-api');
 const bodyParser = require('body-parser');
 const nodemailer = require("nodemailer");
@@ -59,6 +59,11 @@ io.on('connection', socket =>{
         socket.emit('output-message', result)
        
     })
+    socket.on('checkDuplicate', (data) => {
+        const userExist = returnUsers(data)
+        socket.emit('usernameTaken', userExist)
+        
+      })
     //socket.emit('usercheck',    )
     socket.on('joinRoom', ({username, room}) =>{
         const user = userJoin(socket.id, username, room)
@@ -104,8 +109,6 @@ io.on('connection', socket =>{
             const username = user.username;
             //let userp = userx.find(({username}) => username === privName)
             const wysylka = user.username + user.id;
-            console.log('This is sender ' + user.username)
-            console.log('this is the receiver ' + userp.username)
             const userID = userp.id
             socket.emit('wysylka', {usernamex: privName ,id: wysylka, time: moment().format('MMMM Do HH:mm'), user: username})
             if(userID !== undefined){
@@ -115,7 +118,7 @@ io.on('connection', socket =>{
                 console.log('check sendPriv it can be undefined')
             }
         }else{
-            console.log('user: ' + user + " userp: " + userp)
+            console.log(error)
         }
     })
 

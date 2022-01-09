@@ -35,6 +35,14 @@ function findUserPriv(privName){
     return userp
 }
 
+function returnUsers(data){
+    const duplicate = users.find(user => user.username === data)
+    if(duplicate){
+        return false
+    }else{
+        return true
+    }
+}
 
 
 //nieuzywane
@@ -43,5 +51,6 @@ module.exports = {
     getCurrentUser,
     disconnectUser,
     userCheckRoom, 
-    findUserPriv
+    findUserPriv,
+    returnUsers
 }
