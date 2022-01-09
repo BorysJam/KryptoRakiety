@@ -281,18 +281,14 @@ function chatCommands(e){
 function outputMessage(message){
     const div = document.createElement('div');
     div.classList.add('message');
-    div.innerHTML = `<p class="meta" >${message.username}<span>${message.czas}</span></p><p class="text">${message.text}</p>`;
-    
+    div.innerHTML = `<p class="meta">${message.username}<span>${message.czas}</span></p><p class="text">${message.text}</p>`;
     if(message.username === username){
         div.style.float = 'right'
         div.style.clear = 'both'
-        //div.style.marginLeft = '60%';
         div.style.textAlign = 'right';
         div.style.color = 'white';
         div.style.backgroundColor = 'var(--right-msg)';
-        //const audio = new Audio(audioRight);
-        //audio.play();
-        
+        div.children[0].style.color = '#FFFFF0';
        
     }else{
         div.style.backgroundColor = 'var(--left-msg)';
@@ -389,6 +385,7 @@ function fileMessageSend(src){
         div.style.textAlign = 'right';
         div.style.color = 'white';
         div.style.backgroundColor = 'var(--right-msg)';  
+        div.children[0].style.color = '#FFFFF0';
     }
     else{
     div.style.backgroundColor = 'var(--left-msg)';

@@ -6,7 +6,7 @@
 	--success-color: #5cb85c;
 	--error-color: #d9534f;
 	--light-background-msg: white;
-	--chat-message-meta: rgb(22, 19, 19);
+	--chat-message-meta: rgb(58, 58, 58);
 	--left-msg: #dadadabb;
 	--right-msg: #432c72;
 	--button-send: #432c72;
@@ -461,18 +461,16 @@ a {
 
 .chat-messages .message .meta {
 	font-size: 15px;
-	font-weight: bold;
-	color: var(--chat-message-meta);
-	opacity: 0.7;
+	font-weight: 700;
 	margin-bottom: 7px;
-	padding-left: 5px;
 	
+	color:var(--chat-message-meta);
 }
+
 
 
 .chat-messages .message .meta span {
 	margin-left: 10px;
-	color: var(--chat-message-meta);
 }
 
 .image{
@@ -813,8 +811,7 @@ background-color: #e4e4e4bb;
 	.chat-messages .message .meta {
 		font-size: 12px;
 		font-weight: bold;
-		color: var(--dark-color-c);
-		opacity: 0.7;
+
 		margin-bottom: 7px;
 		padding-left: 0px;
 		
@@ -823,7 +820,6 @@ background-color: #e4e4e4bb;
 	
 	.chat-messages .message .meta span {
 		margin-left: 10px;
-		color: rgb(22, 19, 19);
 	}
 	.chat-messages {	
 		padding: 15px;
