@@ -129,8 +129,10 @@ io.on('connection', socket =>{
             const room = user.room;
             const czas = moment().format('MMMM Do HH:mm')
             const text = msg;
+            //mongoose zapisywanie wiaodmości 
             const message = new Msg({socketid, username, text, room, czas})
             message.save()
+            //mongoose
             io.to(user.room).emit('message',formatMessage(user.username, msg))
         }else{
             console.log('Something went wrong or user is undefined, this is user: ' + user)
