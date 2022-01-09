@@ -23,8 +23,10 @@ socket.on('usernameTaken', (data)=>{
     console.log(data)
     if(data == false){
         duplicateText.innerHTML = 'Pseudonim ' + '<span style="font-weight: bold;">" '+ CheckDuplicateusername.value + ' "</span>'+' jest już żajęty'
+        btn.disabled = true
     }
     else{
         duplicateText.innerHTML = ''
+        btn.disabled = false
     }
 })
