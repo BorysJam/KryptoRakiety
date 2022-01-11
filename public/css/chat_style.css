@@ -189,6 +189,12 @@ a {
 .fa-envelope, .fa-trash{
 	margin-left: 20px;
 }
+.fa-envelope, .fa-trash:hover{
+	cursor: pointer;
+}
+.fa-envelope:hover{
+	color:lightgray;
+}
 .message_box .messageboxmsglink{
 	border-bottom: 1px solid rgb(214, 214, 214);
 	padding: 20px;

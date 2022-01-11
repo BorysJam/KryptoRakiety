@@ -102,8 +102,8 @@ io.on('connection', socket =>{
     })
 
     socket.on('sendPriv', privName =>{
-        const user = getCurrentUser(socket.id);
-        const userp = findUserPriv(privName)
+        let user = getCurrentUser(socket.id);
+        let userp = findUserPriv(privName)
         if(user && userp !== undefined){
             
             const username = user.username;
@@ -113,12 +113,14 @@ io.on('connection', socket =>{
             socket.emit('wysylka', {usernamex: privName ,id: wysylka, time: moment().format('MMMM Do HH:mm'), user: username})
             if(userID !== undefined){
                 socket.to(userID).emit('privateNot', {usernamex: username, id: wysylka, time: moment().format('MMMM Do HH:mm')})
+                user = undefined
+                userp = undefined
             }
             else{
                 console.log('check sendPriv it can be undefined')
             }
         }else{
-            console.log(error)
+            console.log('unable to send priv')
         }
     })
 
