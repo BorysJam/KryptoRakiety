@@ -600,6 +600,10 @@ tr:not(.crypto_head):hover{
     position: relative;
     right: 15px;
 }
+.th1{
+    position: relative;
+    right:15px;
+}
 .thHigh{
     position: relative;
     right: 15px;
@@ -689,6 +693,9 @@ tr:not(.crypto_head):hover{
     position: absolute;
     left: 0%;
     top:-2%;
+}
+#cryptoSubProc{
+    color:white;
 }
 
 .cryptoSub24highlow{

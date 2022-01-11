@@ -23,6 +23,7 @@ socket.on('coingeckoDATA', (data) =>{
                     var oldTh6 = document.querySelectorAll('.niska')
                     var oldTh7 = document.querySelectorAll('.sevendays')
                     var oldTh8 = document.querySelectorAll('.symbol')
+                    var oldTh9 = document.querySelectorAll('.godzina1')
                     
                     oldTh1[c].innerHTML = data.data[c].id;
                    
@@ -30,11 +31,12 @@ socket.on('coingeckoDATA', (data) =>{
                     oldTh2[c].innerHTML = data.data[c].market_cap_rank;
                     oldTh8[c].innerHTML = data.data[c].symbol
                     oldTh3[c].innerHTML = '$'+ parseFloat(data.data[c].current_price).toFixed(2);
+                    oldTh9[c].innerHTML = parseFloat(data.data[c].price_change_percentage_1h_in_currency).toFixed(2) + '%'
                     oldTh4[c].innerHTML = parseFloat(data.data[c].price_change_percentage_24h).toFixed(2) + "%";
                     oldTh7[c].innerHTML = parseFloat(data.data[c].price_change_percentage_7d_in_currency).toFixed(1) + "%"
                     oldTh5[c].innerHTML = "$" + parseFloat(data.data[c].high_24h).toFixed(1);
                     oldTh6[c].innerHTML =parseFloat(data.data[c].low_24h).toFixed(1);
-                    
+
                 }else{
                     
                   
@@ -59,6 +61,8 @@ socket.on('coingeckoDATA', (data) =>{
                     th7.className = 'sevendays'
                     const th8 = document.createElement('TD')
                     th8.className = 'symbol'
+                    const th9 = document.createElement('TD')
+                    th9.className = 'godzina1'
                     tr.className = `tr${c}`
                     iconContainer.className = `icon`
                     
@@ -76,6 +80,7 @@ socket.on('coingeckoDATA', (data) =>{
                     th2.innerHTML = data.data[c].market_cap_rank;
                     th8.innerHTML = data.data[c].symbol
                     th3.innerHTML = '$'+ (data.data[c].current_price).toFixed(2);
+                    th9.innerHTML = parseFloat(data.data[c].price_change_percentage_1h_in_currency).toFixed(2) + '%'
                     th4.innerHTML = parseFloat(data.data[c].price_change_percentage_24h).toFixed(2) + "%";
                     th7.innerHTML = parseFloat(data.data[c].price_change_percentage_7d_in_currency).toFixed(1) + "%"
                     th5.innerHTML = "$" + parseFloat(data.data[c].high_24h).toFixed(1);
@@ -83,9 +88,9 @@ socket.on('coingeckoDATA', (data) =>{
                     imag.src = data.data[c].image
     
                     if(Math.sign(data.data[c].market_cap_change_percentage_24h) === -1){
-                        th4.style.color = 'red'
+                        th4.style.color = '#FF2626'
                     }else{
-                        th4.style.color = 'green'
+                        th4.style.color = '#6ECB63'
                     }
                 
                     //document.querySelector(`.icon${c}`).appendChild(imag)
@@ -94,6 +99,7 @@ socket.on('coingeckoDATA', (data) =>{
                     trc.appendChild(th8)
                     trc.appendChild(th1)
                     trc.appendChild(th3)
+                    trc.appendChild(th9)
                     trc.appendChild(th4)
                     trc.appendChild(th7)
                     trc.appendChild(th5)
@@ -107,10 +113,16 @@ socket.on('coingeckoDATA', (data) =>{
                     }else{
                         th7.style.color = '#6ECB63'
                     }
+
+                    if(Math.sign(data.data[c].price_change_percentage_1h_in_currency) === -1){
+                        th9.style.color = '#FF2626'
+                    }else{
+                        th9.style.color = '#6ECB63'
+                    }
                     
                     trc.addEventListener('click', ()=>{
                         const getToCoin = th1.innerHTML
-                        window.location.href = '/crypto/coinName=' + getToCoin
+                        window.location.href = '/crypto/nazwa-waluty=' + getToCoin
                         
                     })
                           

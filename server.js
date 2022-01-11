@@ -243,7 +243,7 @@ app.get('/crypto', (req, res)=>{
         text: 'Aktualne kursy kryptowalut 💸'
     })
 })
-app.get("/crypto/coinName=:CryptoName", (req,res)=>{
+app.get("/crypto/nazwa-waluty=:CryptoName", (req,res)=>{
     res.render('cryptoSub', {
         title: 'Krypto Rakiety - Waluta: ' + req.params.CryptoName,
         text: req.params.CryptoName

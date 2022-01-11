@@ -31,13 +31,13 @@ createDiv.forEach((e)=>{
         const number = parseFloat(getToCoin) - 1;
       
         const link = (createSpanName[number].innerHTML).toLowerCase()
-        window.location.href = '/crypto/coinName=' + link
+        window.location.href = '/crypto/nazwa-waluty=' + link
     })
 })
 hotCoin.forEach((e)=>{
     e.addEventListener('click',()=>{
         const getToCoin = e.childNodes[5].innerHTML
-        window.location.href = '/crypto/coinName=' + getToCoin
+        window.location.href = '/crypto/nazwa-waluty=' + getToCoin
     })
 })
 

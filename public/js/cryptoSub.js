@@ -63,7 +63,7 @@ async function fetchJSON(){
 }
 fetchJSON().then((data =>{
     cryptoSubID.innerHTML = data.id + ` (${data.symbol})`;
-    cryptoSubProcent.innerHTML = (data.market_data.price_change_percentage_24h).toPrecision(3) + "%";
+    cryptoSubProcent.innerHTML = "<span id='cryptoSubProc'>1h:  </span>"+(data.market_data.price_change_percentage_1h_in_currency['usd']).toPrecision(3) + "%";
     cryptoSubPRICE.innerHTML = "Cena: " + `<span>` + " $" +  data.market_data.current_price.usd +`</span>`;
     cryptoSub1h.innerHTML = "Wartość rynku: " + `<span>` +" $"+((data.market_data.market_cap.usd).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')) +  `</span>`;
     cryptoSubImg.src = data.image.small;
@@ -85,11 +85,14 @@ fetchJSON().then((data =>{
     priceChangePercentage30d.innerHTML = "Zmiana 30d:" + "<span class='span30'>" + (data.market_data.price_change_percentage_30d).toPrecision(3) + "%" +"</span>";
     priceChangePercentage_1y.innerHTML = "Zmiana 1r:" + "<span class='span1y'>" + (data.market_data.price_change_percentage_1y).toFixed(1) + "%" +"</span>";
 
-    if(Math.sign((data.market_data.price_change_percentage_24h)) === -1){
+    if(Math.sign((data.market_data.price_change_percentage_1h_in_currency['usd'])) === -1){
         cryptoSubProcent.style.color = "red";
-        document.querySelector('.span24').style.color = "red";
     }else{
         cryptoSubProcent.style.color = "green"
+    }
+    if(Math.sign((data.market_data.price_change_percentage_24h)) === -1){
+        document.querySelector('.span24').style.color = "red";
+    }else{
         document.querySelector('.span24').style.color = "green";
     }
     if(Math.sign(data.market_data.price_change_percentage_7d) === -1){
