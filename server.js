@@ -263,15 +263,15 @@ app.get('/kontakt', (req,res)=>{
 })
 app.post('/send', (req, res)=>{
     const output = `
-        <p>You have a new contact request</p>
-        <h3>Contact details</h3>
+        <p>Nowa prośba o kontakt</p>
+        <h3>Dane kontaktowe</h3>
         <ul>
             <li>E-mail: ${req.body.email}</li>
-            <li>Subject: ${req.body.subject}</li>
+            <li>Temat: ${req.body.subject}</li>
             
         </ul>
-        <h3>Message</h3>
-        <p>Text: ${req.body.text}</p>
+        <h3>Wiadomość</h3>
+        <p>Treść: ${req.body.text}</p>
     `
     let transporter = nodemailer.createTransport({
         service: "hotmail",
