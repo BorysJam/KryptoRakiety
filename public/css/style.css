@@ -934,7 +934,7 @@ tr:not(.crypto_head):hover{
 }
 #contactForm #contactFormBTN button{
     padding: 12px 40px;
-    border-radius: 16px;
+    border-radius: 8px;
     border:1px solid #333;
     background-color:#7060BC;
     color:white;

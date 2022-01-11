@@ -267,8 +267,7 @@ app.post('/send', (req, res)=>{
         <h3>Dane kontaktowe</h3>
         <ul>
             <li>E-mail: ${req.body.email}</li>
-            <li>Temat: ${req.body.subject}</li>
-            
+            <li>Temat: ${req.body.subject}</li>    
         </ul>
         <h3>Wiadomość</h3>
         <p>Treść: ${req.body.text}</p>
