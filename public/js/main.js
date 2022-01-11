@@ -73,7 +73,6 @@ inputText.addEventListener("keypress", ()=>{
 
 //listening for the user is typing data from the server
 socket.on('userIsTyping', data =>{
-    console.log(data)
     document.querySelector('.userTyping').innerHTML = "Użytkownik " + data + " pisze..."
     setTimeout(()=>{
         document.querySelector('.userTyping').innerHTML = ""
