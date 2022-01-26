@@ -1,7 +1,7 @@
 {
   "name": "chat",
   "version": "1.0.0",
-  "description": "Aplikacja czatowa wersja alpha 0.0.1",
+  "description": "Aplikacja czatowa wersja  1.0",
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
@@ -19,7 +19,7 @@
     "mongoose": "^6.0.12",
     "nodemailer": "^6.7.2",
     "nodemon": "^2.0.15",
-    "socket.io": "^4.0.1"
+    "socket.io": "^4.4.1"
   },
   "devDependencies": {}
 }

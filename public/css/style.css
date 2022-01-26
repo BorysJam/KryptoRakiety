@@ -399,7 +399,9 @@ table{
     border-radius: 6px;
     
 }
-
+.nameth{
+    padding-right: 0px;
+}
 .headul .contactliheader a{
     border: solid white 1px;
     background: white;
@@ -594,7 +596,8 @@ tr:not(.crypto_head):hover{
 }
 .th24{
     position: relative;
-   right: 15px;
+    right: 15px;
+    padding: 0px 15px;
 }
 .th7{
     position: relative;
