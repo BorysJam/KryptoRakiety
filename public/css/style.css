@@ -345,7 +345,7 @@ footer ul li a{
     width: 100%;
     overflow-x: auto;
     margin: 0;
-    margin-top:2%;
+    margin-top:0;
 }
 .scrollingContainer{
     background: var(--main_color);
@@ -380,7 +380,7 @@ footer ul li a{
 
 table{
     width: 65%;
-    margin:10px auto;
+    margin:0px auto;
     background:#ffffff;
     border-radius: 16px;
     display: none;
@@ -498,27 +498,17 @@ table,th{
 
 
 .tresc{
-    color:#333;
+    color:white;
     text-transform: capitalize;
     text-align: center;
-    padding-top: 2.5%;
+    padding: 2% 0;
     font-size: 26px;
     font-weight: bold;  
     position: relative;
+    background: #333;
+    border-bottom: 4px solid rgb(59, 59, 59);
 }
-.tresc::before{
-    content: "";
-  position: absolute;
-  
-  bottom: -20px;
-  width: 10%;
-  height: 4px;
-  left: 45%;
-  border-radius: 20px;
-  background:var(--main_color);
-  z-index: -1;
-  
-}
+
 
 .contact_container{ 
     
@@ -1213,6 +1203,7 @@ tr:not(.crypto_head):hover{
     }
 }
 @media screen and (max-width: 600px) {
+    
     .mobileLogo{
         display: grid;
         grid-column: 1;
@@ -1263,7 +1254,7 @@ tr:not(.crypto_head):hover{
         
     }
     .tresc{
-        font-size: 22px;
+        font-size: 18px;
         
     }
     .tresc1{
@@ -1451,7 +1442,7 @@ tr:not(.crypto_head):hover{
   
     .tresc{
         padding: 20px;
-        font-size: 22px;
+     
         
     }
     .imag_contain img{
