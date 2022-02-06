@@ -429,7 +429,7 @@ table{
 .loading-box{
     text-align: center;
     height: 600px;
-    margin: 100px auto;
+    margin: 70px auto;
     font-size: 24px;
     font-weight: 600;
     color:#333;
@@ -438,8 +438,16 @@ table{
     padding: 30px;
     background: #333;
 }
-#loadingbarP{
-    padding:24px;
+.loadingbarP{
+    font-size: 2em;
+    padding-top: 24px;
+    padding:12px;
+    color:#432c72;
+    font-weight: 700;
+}
+.loadingbarP2{
+    padding:0;
+    font-size: 1.3em;
 }
 
 
@@ -997,6 +1005,7 @@ tr:not(.crypto_head):hover{
     height: 40px;
     margin:0 auto;
     animation: spin 2s linear infinite;
+    font-size: 1.5em;
   }
   
 @keyframes spin {

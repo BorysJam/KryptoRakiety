@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 
-
 const msgSchema = new mongoose.Schema({
     username:{
         type:String,
         required: true
     },
     text:{
-        type:String
+        type:String,
+        required: true
     },
     socketid: {
         type:String,
@@ -18,11 +18,13 @@ const msgSchema = new mongoose.Schema({
         required:true
     },
     czas:{
-        type:String
+        type:String,
+        required:true
     }
   })
-
 
 const Msg = mongoose.model('msg', msgSchema);
 
 module.exports = Msg;
+
+
