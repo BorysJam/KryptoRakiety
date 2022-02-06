@@ -941,7 +941,7 @@ tr:not(.crypto_head):hover{
     color:white;
     font-weight: bold;
     font-size: 16px;
-    width: 50%;    
+    width: 38%;    
 }
 #contactForm #contactFormBTN button:hover{
     background-color:#7f72bd;
@@ -1043,36 +1043,55 @@ tr:not(.crypto_head):hover{
 }
 .faqContainer{
     width: 100%;
-    height: 32rem;
+    height: 36rem;
+    position: relative;
     flex-direction: column;
     display: flex;
     justify-content: center;
 }
-
+.faqItem{
+    margin: 15px auto;
+}
 .faqItem, .faqItemText{
     display: flex;
     font-size: 20px;
     padding: 20px;
-    background: #1403368a;
+    background: #432c72;
     justify-content: space-between;
     align-items: center;
-    margin: 15px auto;
     margin-bottom: 0;
     color:white;
     font-weight: 600;
-    width: 50%;
+    width: 45%;
     border-radius: 5px;
 }
 .faqItemText{
     display: none;
+    color:black;
+    margin: 0 auto;
+    background: white;
+    border: 1px solid #432c72;
 }
-
+.faqItem:hover{
+    cursor: pointer;
+}
+#faqH3{
+    font-size: 1.7em;
+    text-align: center;
+    position: relative;
+    top:5rem;
+    margin: 5px;
+}
 .fa-plus-square{
+    display: block;
+}
+.fa-minus-square{
+    display: none;
+}
+.fa-plus-square, .fa-minus-square{
     position: relative;
     font-size: 1.5em;
-}
-.fa-plus-square:hover{
-    cursor: pointer;
+    pointer-events: none;
 }
 
 
