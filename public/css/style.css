@@ -449,7 +449,9 @@ table{
     padding:0;
     font-size: 1.3em;
 }
-
+.godzina1,.hour24s, .sevendays{
+    font-weight: 500;
+}
 
 table tr:not(.crypto_head){
     height: 80px;
@@ -1032,6 +1034,7 @@ tr:not(.crypto_head):hover{
     
 }
 
+
 @keyframes scroller-left {
     0% {
         transform: translate3d(400px, 0, 0);
@@ -1040,8 +1043,39 @@ tr:not(.crypto_head):hover{
         transform: translate3d(-3000px, 0, 0); /* The image width */
       }
 }
+.faqContainer{
+    width: 100%;
+    height: 32rem;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+}
 
+.faqItem, .faqItemText{
+    display: flex;
+    font-size: 20px;
+    padding: 20px;
+    background: #1403368a;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px auto;
+    margin-bottom: 0;
+    color:white;
+    font-weight: 600;
+    width: 50%;
+    border-radius: 5px;
+}
+.faqItemText{
+    display: none;
+}
 
+.fa-plus-square{
+    position: relative;
+    font-size: 1.5em;
+}
+.fa-plus-square:hover{
+    cursor: pointer;
+}
 
 
 
