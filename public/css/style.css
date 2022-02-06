@@ -449,9 +449,7 @@ table{
     padding:0;
     font-size: 1.3em;
 }
-.godzina1,.hour24s, .sevendays{
-    font-weight: 500;
-}
+
 
 table tr:not(.crypto_head){
     height: 80px;
