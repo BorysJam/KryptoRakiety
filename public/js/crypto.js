@@ -35,7 +35,7 @@ socket.on('coingeckoDATA', (data) =>{
                     oldTh4[c].innerHTML = parseFloat(data.data[c].price_change_percentage_24h).toFixed(2) + "%";
                     oldTh7[c].innerHTML = parseFloat(data.data[c].price_change_percentage_7d_in_currency).toFixed(1) + "%"
                     oldTh5[c].innerHTML = "$" + parseFloat(data.data[c].high_24h).toFixed(1);
-                    oldTh6[c].innerHTML =parseFloat(data.data[c].low_24h).toFixed(1);
+                    oldTh6[c].innerHTML = "$" + parseFloat(data.data[c].low_24h).toFixed(1);
 
                 }else{
                     
