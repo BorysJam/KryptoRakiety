@@ -47,11 +47,22 @@ body{
 }
 .lorem{
     margin-top: 35px;
-    width: 100%;
+    width: 75vh;
     grid-row: 2;
     grid-column: 1;
-    font-size: 18px;
+    font-size: 1.26em;
     text-align: justify;
+}
+#lorenSpanSecond{
+    font-weight: 600;
+    color:#432c72;
+}
+#loremSpanThird{
+    font-weight: 600;
+    font-size: larger;
+}
+#firstBtnJoinChat{
+    margin-top: 10px;
 }
 .imag_contain{
     position: relative;
@@ -509,6 +520,14 @@ table,th{
     border-bottom: 4px solid rgb(59, 59, 59);
 }
 
+.loremSpanMain{
+    font-size: 1.5em;
+    color:#333;
+    font-weight: bold;
+}
+.loremSpanMain span{
+    color:#432c72;
+}
 
 .contact_container{ 
     
@@ -1284,7 +1303,7 @@ tr:not(.crypto_head):hover{
     .btnJoinChat{
         
         margin-top: 10px;
-        font-size: 16px;
+        font-size: 1.05em;
         border-radius: 8px;
         margin-left: 0px;
         padding: 20px 20px;
@@ -1332,7 +1351,12 @@ tr:not(.crypto_head):hover{
         font-size: 16px;
         padding-bottom: 0;
     }
-    
+    .loremSpanMain{
+        font-size: 1.1em;
+    }
+    #loremSpanThird{
+        font-size: inherit;
+    }
     .containerCryptoSub .cryptoSubID{
         font-size: 18px;
     }
@@ -1477,10 +1501,10 @@ tr:not(.crypto_head):hover{
     .lorem{
         width: 100%;
         text-align: justify;
-        font-size: 16px;
-        font-weight: 500;
+        font-size: 1.3em;
+        font-weight: 400;
         padding: 0;
-        margin: 0 auto 20px auto;
+        margin: 0 auto 0px auto;
        
         
     }
