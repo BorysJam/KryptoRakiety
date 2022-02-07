@@ -213,7 +213,7 @@ io.on('connection', socket =>{
 app.get('', (req,res)=>{
     res.render('index', {
     title: 'Krypto Rakiety - Chat, Waluty, O nas',
-    text: 'Witaj w KryptoRakiety Odkrywaj z nami nowe rakiety!'
+    text: 'Witaj w KryptoRakiety, Odkrywaj z nami nowe rakiety!'
     })
 
 })

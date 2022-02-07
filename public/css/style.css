@@ -815,6 +815,7 @@ tr:not(.crypto_head):hover{
     display:flex;
     width: 68%;
     padding:100px 0px;
+    padding-bottom: 140px;
     
 }
 .hotContainer{
@@ -1330,7 +1331,7 @@ tr:not(.crypto_head):hover{
         
     }
     .tresc1{
-        font-size: 24px;
+        font-size: 1.7em;
         color:var(--main_color);
         width: 90%;
         padding-top: 8%;
@@ -1568,6 +1569,7 @@ tr:not(.crypto_head):hover{
         width: 95%;
         margin:0 auto;
         padding-top: 90px;
+        padding-bottom: 130px;
     }
     .strzal{
         margin: 25px 0;
