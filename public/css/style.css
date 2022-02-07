@@ -1569,7 +1569,7 @@ tr:not(.crypto_head):hover{
         width: 95%;
         margin:0 auto;
         padding-top: 90px;
-        padding-bottom: 130px;
+        padding-bottom:60px;
     }
     .strzal{
         margin: 25px 0;
