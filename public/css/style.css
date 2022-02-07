@@ -1225,13 +1225,21 @@ tr:not(.crypto_head):hover{
     }
     .czatujTeraz{
         height: 950px;
+        flex-direction: column;
+        display: flex;
+        position: relative;
     }
     .czatujTeraz, .chatCont, .chatContLorem{
-        display: block;
+        flex-direction: column;
+        display: flex;
+        margin:0;
+        padding:0;
+      position: relative;
     }
     .chatCont{
         width: 100%;
-        height: 400px;
+        height: 50%;
+        margin:0px auto;
     }
     #btnJoinCurrency{
         position: relative;
@@ -1239,24 +1247,24 @@ tr:not(.crypto_head):hover{
     }
     .chatContLorem{
         margin: 100px;
-        height: 400px;
+        height: 50%;
         width: 90%;
-        margin: 100px auto;
+        margin: 0 auto;
     }
  
     .chatCont img{
-        display: block;
-        margin: 50px auto;
-        width: 100%;
+        
+        width: 90%;
     }
     .chatCont{
         width: 100%;
     }
     .pageCurrencyBlock{
-        margin-top: 110px;
+        margin-top: 0px;
         display: flex;
         height: 900px;
         flex-direction: column;
+        padding: 50px 0;
         justify-content: center;
     }
     .pageCurrency{
@@ -1277,7 +1285,9 @@ tr:not(.crypto_head):hover{
     }
 }
 @media screen and (max-width: 600px) {
-    
+    .chatContLorem{
+        padding-top:60px;
+    }
     .mobileLogo{
         display: grid;
         grid-column: 1;
@@ -1344,10 +1354,16 @@ tr:not(.crypto_head):hover{
         margin-top: 50px;
     }
     .czatujTeraz{
-        height: 960px;
+        padding-top: 100px;
+        max-height: 1050px;
+        
+        padding-bottom: 0;
     }
     .chatCont{
-        width: 85%;
+        align-content: center;
+        flex-direction: row;
+        width: 100%;
+        height: 50%;
     }
     .chartText{
         font-size: 16px;
