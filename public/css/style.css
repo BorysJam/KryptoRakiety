@@ -1354,10 +1354,10 @@ tr:not(.crypto_head):hover{
         margin-top: 50px;
     }
     .czatujTeraz{
-        padding-top: 50px;
+        padding-top: 100px;
         max-height: 1250px;
         
-        padding-bottom: 150px;
+        padding-bottom: 160px;
     }
     .chatCont{
         align-content: center;
