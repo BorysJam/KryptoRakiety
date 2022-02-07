@@ -1355,9 +1355,9 @@ tr:not(.crypto_head):hover{
     }
     .czatujTeraz{
         padding-top: 100px;
-        max-height: 1050px;
+        max-height: 1250px;
         
-        padding-bottom: 0;
+        padding-bottom: 150px;
     }
     .chatCont{
         align-content: center;
@@ -1643,7 +1643,7 @@ tr:not(.crypto_head):hover{
         margin: 30px auto;
     }
     .currencyLorem, .chatContLoremP{
-        font-size: 16px;
+        font-size: 1.1em;
     }
     #contactForm{
         width: 100%;
