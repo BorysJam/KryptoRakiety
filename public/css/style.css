@@ -58,7 +58,8 @@ body{
     background-color:#020007c7;
 }
 #firstBtnJoinChat{
-    background: #01000271;
+    background:var(--main_color);
+    border: none;
 }
 #firstBtnJoinChat:hover{
     background: white;
