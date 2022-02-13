@@ -46,40 +46,56 @@ body{
     display:flex;
     margin-left:15px;
 }
-.lorem{
-    margin-top: 35px;
-    width: 75vh;
-    grid-row: 2;
-    grid-column: 1;
-    font-size: 1.26em;
-    text-align: justify;
-}
-#lorenSpanSecond{
-    font-weight: 600;
-    color:#432c72;
-}
-#loremSpanThird{
-    font-weight: 600;
-    font-size: larger;
+
+.firstBlock{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    height: 70vh;
+    background-color:#020007c7;
 }
 #firstBtnJoinChat{
-    margin-top: 10px;
+    background: #01000271;
 }
-.imag_contain{
-    position: relative;
-    display: grid;
-    width: 65%;
-    margin: 0 auto;
-    height: auto;
+#firstBtnJoinChat:hover{
+    background: white;
 }
-.imag_contain img{
-    margin-top: 10px;
-    max-width: 100%;
-    max-height: 100%;
+
+.firstBlock::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: .6;
+    content: "";
+    z-index: -1;
+    background-image:url("/img/space.jpg");
+}
+.firstBlock h1{
+    padding:1.3em;
+    padding-bottom: 0;
+    margin-bottom: 15px;
+    color:whitesmoke;
+    text-shadow: 0px 1px 3px rgba(255, 255, 255, 0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 10px 13px rgba(0,0,0,0.1);
+    font-size: 4em;
+}
+.firstBlockText{
     
-    grid-row: 1;
-    grid-column: 2;
+    font-size: 1.6em;
+    font-weight: 400;
+    width: 50rem;
+    text-shadow: 0px 0px 1px white;
+    color:white;
+    margin: 22px;
+    text-align: center;
 }
+
+
 .tresc1{
     color:#333;
     width: 65%;
@@ -87,7 +103,7 @@ body{
     text-align: left;
     padding-top: 3%;
    
-    font-size: 30px;
+    font-size: 2em;
     font-weight: bold;
 }
 .tresc3{
@@ -521,14 +537,6 @@ table,th{
     border-bottom: 4px solid rgb(59, 59, 59);
 }
 
-.loremSpanMain{
-    font-size: 1.5em;
-    color:#333;
-    font-weight: bold;
-}
-.loremSpanMain span{
-    color:#432c72;
-}
 
 .contact_container{ 
     
@@ -1037,6 +1045,7 @@ tr:not(.crypto_head):hover{
     color:white;
     display: flex;
     width: 300px;
+    height: 24px;
     font-size: 18px;
     text-transform:capitalize;
     padding:5px;
@@ -1125,18 +1134,14 @@ tr:not(.crypto_head):hover{
         grid-template-columns: 1fr 1fr 1fr;
         height: 1000px;
     }
-    .imag_contain{
-        width: 82%;
-    }
+    
     .tresc1{
         width: 82%;
     }
     .tresc2, .tresc3{
         font-size: 40px;
     }
-    .loremContainer{
-        width: 100%;
-    }
+
     .chatCont{
         width: 82%;
     }
@@ -1214,7 +1219,7 @@ tr:not(.crypto_head):hover{
         margin: 0 0.9em;
     }
     .tresc1{
-        font-size: 24px;
+        font-size: 1.7em;
     }
     .tresc2{
         width: 90%;
@@ -1283,6 +1288,7 @@ tr:not(.crypto_head):hover{
     footer ul{
         width: 100%;
     }
+
 }
 @media screen and (max-width: 600px) {
     .chatContLorem{
@@ -1343,7 +1349,7 @@ tr:not(.crypto_head):hover{
     }
     .tresc1{
         font-size: 1.7em;
-        color:var(--main_color);
+        color:#333;
         width: 90%;
         padding-top: 8%;
     }
@@ -1369,12 +1375,8 @@ tr:not(.crypto_head):hover{
         font-size: 16px;
         padding-bottom: 0;
     }
-    .loremSpanMain{
-        font-size: 1.1em;
-    }
-    #loremSpanThird{
-        font-size: inherit;
-    }
+
+
     .containerCryptoSub .cryptoSubID{
         font-size: 18px;
     }
@@ -1511,42 +1513,13 @@ tr:not(.crypto_head):hover{
         left: -5px;
         
     }
-    .imag_contain{
-        display: block;
-        width: 100%;
-        text-align: center;
-    }
-    .imag_contain img{
-        padding: 10px;
-    }
-    .lorem{
-        width: 100%;
-        text-align: justify;
-        font-size: 1.3em;
-        font-weight: 400;
-        padding: 0;
-        margin: 0 auto 0px auto;
-       
-        
-    }
-    .loremContainer{
-        width: 90%;
-        text-align: justify;
-        font-size: 16px;
-        padding: 0;
-        margin: 0 auto 40px auto;
-        margin-top:20px;
-    }
-  
+
     .tresc{
         padding: 20px;
      
         
     }
-    .imag_contain img{
-        width: 70%;
-        height: 70%;
-    }
+
     
    
     .hamburgerLogo{

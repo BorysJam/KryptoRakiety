@@ -80,6 +80,8 @@ socket.on('userIsTyping', data =>{
 })
 
 
+
+
 //array obiektów zawierających dane do prywatnych wiadomosci
 var userArrayMSG = [];
 var sentuserArrayMSG = [];
