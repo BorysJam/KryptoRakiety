@@ -52,6 +52,7 @@ body{
     display: flex;
     flex-direction: column;
     width: 100%;
+    justify-content: center;
     position: relative;
     height: 70vh;
     background-color:#020007c7;
@@ -66,6 +67,7 @@ body{
 .firstBlock::before{
     position: absolute;
     top: 0;
+    width: 100%;
     left: 0;
     bottom: 0;
     right: 0;
@@ -75,7 +77,7 @@ body{
     background-image:url("/img/space.jpg");
 }
 .firstBlock h1{
-    padding:1.3em;
+    
     padding-bottom: 0;
     margin-bottom: 15px;
     color:whitesmoke;
@@ -1194,6 +1196,12 @@ tr:not(.crypto_head):hover{
     }
 }
 @media screen and (max-width: 980px) {
+    .firstBlock h1{
+        font-size: 2em;
+    }
+    .firstBlockText{
+        width: 90%;
+    }
     .contact_container{
         width: 100%;
         border-radius: 0;
