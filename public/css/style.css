@@ -1197,7 +1197,7 @@ tr:not(.crypto_head):hover{
 }
 @media screen and (max-width: 980px) {
     .firstBlock{
-        height: 80vh;
+        height: 75vh;
     }
     .firstBlock h1{
         font-size: 2em;
