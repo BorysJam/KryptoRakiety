@@ -552,9 +552,9 @@ table,th{
     min-height: calc(66vh - 80px);
     display:flex;
     flex-direction: column;
-   
-    
-   
+}
+#contactH1{
+    color:white;
 }
 
 .image_container i{
@@ -988,7 +988,7 @@ tr:not(.crypto_head):hover{
     border-radius: 4px;
     border: 1px solid grey;
     margin: 16px 0;
-    font-size: 16px;
+    font-size: 18px;
     width: 33rem;
     font-family: inherit;
     resize: none;
@@ -1631,9 +1631,12 @@ tr:not(.crypto_head):hover{
     .currencyLorem, .chatContLoremP{
         font-size: 1.1em;
     }
+    #contactH1{
+        margin-left: 4%;
+    }
     #contactForm{
         width: 100%;
-        
+        font-size: 18px;
     }
     #contactForm input, #contactTextInput{
         width: 90%;
