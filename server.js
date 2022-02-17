@@ -18,7 +18,8 @@ const server = http.createServer(app)
 const io = socketio(server, {
     maxHttpBufferSize: 1e8,
     pingTimeout: 100000,
-    pingInterval: 5000
+    pingInterval: 5000,
+    cookie: false,
 });
 
 app.use('/send', bodyParser.urlencoded({extended:false}))
