@@ -139,7 +139,7 @@ body{
     grid-column-end: 6;
     font-size: 18px;
     align-self: center;
-    width: 80%;
+    width: 100%;
     color:#333;
     text-align: justify;
 }

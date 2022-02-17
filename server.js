@@ -22,6 +22,7 @@ const io = socketio(server, {
     cookie: false,
 });
 
+
 app.use('/send', bodyParser.urlencoded({extended:false}))
 app.use('/send',bodyParser.json())
 
@@ -212,6 +213,10 @@ io.on('connection', socket =>{
 
 
 app.get('', (req,res)=>{
+    res.setHeader('set-cookie', [
+        'cookie1=value1; SameSite=Lax',
+        'cookie2=value2; SameSite=None; Secure',
+      ]);
     res.render('index', {
     title: 'Krypto Rakiety - Chat, Waluty, O nas',
     text: 'Witaj w KryptoRakiety, Odkrywaj z nami nowe rakiety!'
