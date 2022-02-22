@@ -529,6 +529,7 @@ a {
 .chat-form-container form {
 	display: flex;
 	margin-left: 18%;
+	align-items: center;
 	transition: margin-left 1s;
 }
 .fa-paper-plane{

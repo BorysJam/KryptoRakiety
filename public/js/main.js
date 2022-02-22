@@ -202,7 +202,6 @@ function sentMessageLink(){
             
         })
     }else{
-        console.log(sentuserArrayMSG)
         document.querySelector('.numberSent').innerHTML = " (" + sentuserArrayMSG.length + ") ";
     }
 }
@@ -328,11 +327,9 @@ lightModeToggle.addEventListener('click', ()=>{
    
     if(lightMode !== 'enabled'){
         enableLightMode();
-        console.log(lightMode)
     }
     else{
         disableLightMode();
-        console.log(lightMode)
     }
 })
     
