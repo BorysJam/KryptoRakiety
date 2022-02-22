@@ -29,7 +29,6 @@ body{
     justify-content: center;
     
 }
-
 .logoContainer img{
     width: 100%;
     height: 100%;
@@ -64,6 +63,21 @@ body{
 #firstBtnJoinChat:hover{
     background: white;
 }
+#witaj{
+    position: relative;
+    animation: transformacja 10s infinite;
+   
+}
+@keyframes transformacja{
+    0%{
+        transform: scale(1);
+    }50%{
+        transform: scale(1.2);
+    }100%{
+        transform: scale(1);
+    }
+}
+
 
 .firstBlock::before{
     position: absolute;
