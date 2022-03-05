@@ -1659,6 +1659,9 @@ tr:not(.crypto_head):hover{
     #contactForm div{
         justify-content: center;
     }
+    #witaj{
+        animation: none;
+    }
    
   
 }
