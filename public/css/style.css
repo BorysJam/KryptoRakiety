@@ -1214,9 +1214,11 @@ tr:not(.crypto_head):hover{
 }
 @media screen and (max-width: 980px) {
     .firstBlock{
-        height: 75vh;
+        height: unset;
+        padding:40px 0;
     }
     .firstBlock h1{
+        text-align: center;
         font-size: 2.7em;
     }
     .firstBlockText{
