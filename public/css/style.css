@@ -1219,6 +1219,7 @@ tr:not(.crypto_head):hover{
     }
     .firstBlockText{
         width: 90%;
+        text-align: justify;
         font-size: 1.3em;
     }
     .contact_container{
