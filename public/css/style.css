@@ -240,7 +240,7 @@ body{
 
 .btnJoinChat{
     background: var(--main_color);
-    border: 2px solid white;
+    border: 2px solid var(--main_color);
     color:white;
     margin-top: 35px;
     font-size: 20px;
