@@ -1310,7 +1310,7 @@ tr:not(.crypto_head):hover{
     }
     .currencyLorem{
         width: 90%;
-        
+    
         margin:0 auto;
     }
     footer ul{
@@ -1644,7 +1644,7 @@ tr:not(.crypto_head):hover{
         margin: 30px auto;
     }
     .currencyLorem, .chatContLoremP{
-        font-size: 1.1em;
+        font-size: 1.3em;
     }
     #contactH1{
         margin-left: 4%;
