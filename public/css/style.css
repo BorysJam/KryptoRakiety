@@ -54,16 +54,18 @@ body{
     justify-content: center;
     position: relative;
     height: 70vh;
-    background-color:#020007c7;
+    background-color:#9e84d0df;
 }
 #firstBtnJoinChat{
     background:var(--main_color);
     border: none;
+    margin-top: 20px;
 }
 #firstBtnJoinChat:hover{
     background: white;
 }
 #witaj{
+    color:#333;
     position: relative;
     animation: transformacja 10s infinite;
    
@@ -86,7 +88,7 @@ body{
     left: 0;
     bottom: 0;
     right: 0;
-    opacity: .6;
+    opacity: .4;
     content: "";
     z-index: -1;
     background-image:url("/img/space.jpg");
@@ -96,20 +98,20 @@ body{
     padding-bottom: 0;
     margin-bottom: 15px;
     color:whitesmoke;
-    text-shadow: 0px 1px 3px rgba(255, 255, 255, 0.4),
-             0px 8px 13px rgba(0,0,0,0.1),
-             0px 10px 13px rgba(0,0,0,0.1);
+    text-shadow: 0px 1px 2px rgba(59, 56, 56, 0.4),
+             0px 6px 13px rgba(0,0,0,0.1),
+             0px 8px 13px rgba(0,0,0,0.1);
     font-size: 4em;
 }
 .firstBlockText{
     
     font-size: 1.6em;
     font-weight: 400;
-    width: 50rem;
-    text-shadow: 0px 0px 1px white;
-    color:white;
+    max-width: 50rem;
+    text-shadow: 0px 0px .5px #333;
+    color:#333;
     margin: 22px;
-    text-align: center;
+    text-align: justify;
 }
 
 
@@ -1215,7 +1217,7 @@ tr:not(.crypto_head):hover{
         height: 75vh;
     }
     .firstBlock h1{
-        font-size: 2em;
+        font-size: 2.7em;
     }
     .firstBlockText{
         width: 90%;
@@ -1348,7 +1350,7 @@ tr:not(.crypto_head):hover{
     
     .btnJoinChat{
         
-        margin-top: 10px;
+        margin-top: 30px;
         font-size: 1.05em;
         border-radius: 8px;
         margin-left: 0px;
