@@ -54,7 +54,7 @@ body{
     justify-content: center;
     position: relative;
     height: 70vh;
-    background-color:#9e84d0df;
+    background-color:#eaeaeabb;
 }
 #firstBtnJoinChat{
     background:var(--main_color);
@@ -1219,7 +1219,8 @@ tr:not(.crypto_head):hover{
     }
     .firstBlock h1{
         text-align: center;
-        font-size: 2.7em;
+        font-size: 1.9em;
+        width: 90%;
     }
     .firstBlockText{
         width: 90%;
