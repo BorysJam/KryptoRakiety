@@ -54,7 +54,7 @@ body{
     justify-content: center;
     position: relative;
     height: 70vh;
-    background-color:#ffffffa7;
+    background-color:#ffffffcb;
 }
 #firstBtnJoinChat{
     background:var(--main_color);
