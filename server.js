@@ -22,7 +22,6 @@ const io = socketio(server, {
     cookie: false,
 });
 
-
 app.use('/send', bodyParser.urlencoded({extended:false}))
 app.use('/send',bodyParser.json())
 
@@ -34,7 +33,6 @@ const viewsPath = path.join(__dirname + '/views')
 const partialsPath = path.join(__dirname + '/partials')
 app.set('views', viewsPath)
 hbs.registerPartials(partialsPath)
-
 //1. Import coingecko-api
 app.use(express.static("/views/img"))
 
@@ -42,19 +40,13 @@ moment.locale('pl')
 
 const admin = 'Admin'
 
-
 const mongoDB = `mongodb+srv://borysj:${process.env.mongoURI}@cluster0.x1i4d.mongodb.net/message-chat-collection?retryWrites=true&w=majority`
 
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true}).then(()=>{
     console.log('connected to database')
 }).catch(err => console.log(err))
-
-
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')))
-
-
-
 //run when client connects
 io.on('connection', socket =>{
     Msg.find().then(result => {
@@ -77,8 +69,6 @@ io.on('connection', socket =>{
     
         //Broadcast when a user connects 
         socket.broadcast.to(user.room).emit('message',formatMessage(admin,  `<b>${user.username}</b> dołączył/dołączyła do czatu`))
-        
-
        
         io.to(user.room).emit('usersList', {
            room: user.room,
@@ -86,9 +76,7 @@ io.on('connection', socket =>{
         })
         socket.on('changeROOM', privName =>{
             socket.emit('changeURL', privName)
-        
         })
-       
     });
     //send image file
     socket.on('submitImage', src => {
@@ -99,15 +87,11 @@ io.on('connection', socket =>{
             console.log('unable to send the image bc user is undefined, this is user: ' + user)
         }
         //Client submit an image
-       
-   
     })
-
     socket.on('sendPriv', privName =>{
         let user = getCurrentUser(socket.id);
         let userp = findUserPriv(privName)
-        if(user && userp !== undefined){
-            
+        if(user && userp !== undefined){  
             const username = user.username;
             //let userp = userx.find(({username}) => username === privName)
             const wysylka = user.username + user.id;
@@ -125,7 +109,6 @@ io.on('connection', socket =>{
             console.log('unable to send priv')
         }
     })
-
 
     //listen for chatMessage
     socket.on('chatMessage', msg => {
@@ -152,18 +135,13 @@ io.on('connection', socket =>{
         if(user !== undefined){
             socket.to(user.room).emit("userIsTyping", data)
         }
-    })
-
-    
+    })  
     const CoinGeckoClient = new CoinGecko({
         timeout: 10000
     });
-   
     async function coin(){
         let waluta = "usd"
-       
-        try{
-            
+        try{      
             let data = await CoinGeckoClient.coins.markets({vs_currency: waluta, per_page: 200, price_change_percentage: '1h,24h,7d'})
             if(data){
                 dataUpdate()
@@ -174,44 +152,24 @@ io.on('connection', socket =>{
                 function dataUpdate(){
                     socket.emit('coingeckoDATA', data)
                     socket.emit('secondData', data)
-                }
-                
+                }            
             }
         }catch(error){
             console.log(error)
-        }
-       
-        
-        
-       
-    }
-    
-    coin()
-       
-        
-        
-    
-        
-    
+        }      
+    }   
+    coin()  
     socket.on('disconnect', () => {
-        const user = disconnectUser(socket.id)
-        
+        const user = disconnectUser(socket.id) 
         if (user){
             io.to(user.room).emit('message',formatMessage(admin, `<b>${user.username}</b> Użytkownik opuścil czat`))
             io.to(user.room).emit('usersList', {
                 room: user.room,
                 users: userCheckRoom(user.room)
-            })
-            
+            })   
         }
-        
-        
-    
     });
 });
-
-
-
 app.get('', (req,res)=>{
     res.render('index', {
     title: 'Krypto Rakiety - Chat, Waluty, O nas',
@@ -219,8 +177,6 @@ app.get('', (req,res)=>{
     })
 
 })
-
-
 app.get('/o-nas', (req,res)=>{
     res.render('onas', {
         title: 'Krypto Rakiety - O nas',
@@ -240,7 +196,6 @@ app.get('/faq', (req,res)=>{
         text: 'FAQ'
     })
 })
-
 app.get('/crypto', (req, res)=>{
     res.render('crypto', {
         title: 'Krypto Rakiety - Crypto',
@@ -252,11 +207,8 @@ app.get("/crypto/nazwa-waluty=:CryptoName", (req,res)=>{
         title: 'Krypto Rakiety - Waluta: ' + req.params.CryptoName,
         text: req.params.CryptoName
         
-    })
-    
-   
+    }) 
 })
-
 app.get('/kontakt', (req,res)=>{
     res.render('kontakt', {
         title: 'Krypto Rakiety - Kontakt',
@@ -303,20 +255,12 @@ app.post('/send', (req, res)=>{
           console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
          
           res.render('kontakt', {text:"Wiadomość została wysłana"})
-      })
-    
-     
-     
+      })    
 })
-
-
-
 app.get("/*", (req,res)=>{
     res.render('404', {
         title: 'Krypto Rakiety - 404',
         text: '404'
     })
 })
-
-
 server.listen(process.env.PORT || 3000, ()=> console.log(`Server running on port: 3000`));
