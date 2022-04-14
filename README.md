@@ -1,3 +1,7 @@
+<h1>KryptoRakiety</h1>
+
+![alt text](https://i.ibb.co/SV5jsX8/image.png)
+
 Open real-time chat rooms for crypto society built on Socket.io
 ![alt text](https://i.ibb.co/bQ74h0d/image.png)
 
@@ -14,3 +18,5 @@ The prices are updated using websockets, so the updates are in real time.
 Historical charts
 
 ![alt text](https://i.ibb.co/KXfd3cp/image.png)
+
+
