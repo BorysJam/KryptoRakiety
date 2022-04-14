@@ -2,7 +2,7 @@
 
 ![alt text](https://i.ibb.co/SV5jsX8/image.png)
 
-<h2>Open real-time chat rooms for crypto society built on Socket.io</h2>
+<h2>Open real-time chat rooms for crypto society built on Socket.io / Includes private messages & sending pictures</h2>
 
 ![alt text](https://i.ibb.co/bQ74h0d/image.png)
 
