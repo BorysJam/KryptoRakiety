@@ -227,7 +227,8 @@ app.post('/send', (req, res)=>{
         <p>Treść: ${req.body.text}</p>
     `
     let transporter = nodemailer.createTransport({
-        service: "hotmail",
+        host: 'smtp-mail.outlook.com',
+        port: 587,
         auth: {
           user: "kryptorakiety@outlook.com", // generated ethereal user
           pass: process.env.MAIL_PASS, // generated ethereal password
