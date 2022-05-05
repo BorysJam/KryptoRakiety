@@ -230,7 +230,7 @@ app.post('/send', (req, res)=>{
         service: "hotmail",
         auth: {
           user: "kryptorakiety@outlook.com", // generated ethereal user
-          pass: "Bydlak123", // generated ethereal password
+          pass: process.env.MAIL_PASS, // generated ethereal password
         },
         tls:{
           rejectUnauthorized: false
